@@ -14,7 +14,7 @@ You need BNG Framework.
 All Construction Sector-specific content should go into Assets/ConstructionScenario/*
 
 
-### Make sure to use the following conventions:
+### It is recommended to use the following conventions:
 _ (taken from the main VR4VET repository)_
 
 Coding conventions are used to make the project more uniform and understandable.
