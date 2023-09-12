@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
+  m_Name: Task1Subtask0_shoes
+  m_EditorClassIdentifier: 
+  _subtaskName: Safety Shoes
+  _description: In this exercise you will learn how to assemble a wooden frame wall.
+    Before we start, you will need to apply your personal protection equipment on
+    the work bench in front of you. Simply grab the right item and bring it towards
+    your body to apply it. What personal protective equipment will we need to assemble
+    the timber frame wall? What do you think?
+  _autocompleate: 1
+  _stepList:
+  - {fileID: 0}
