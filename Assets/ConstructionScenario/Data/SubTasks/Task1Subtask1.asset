@@ -23,5 +23,8 @@ MonoBehaviour:
     together.
 
 '
-  _autocompleate: 0
-  _stepList: []
+  _autocompleate: 1
+  _stepList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
