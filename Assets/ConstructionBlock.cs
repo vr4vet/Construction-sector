@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConstructionBlock : MonoBehaviour
 {
 
-
+    //state of the current block
     public enum blockState
     {
         unplaceable,
@@ -14,7 +14,17 @@ public class ConstructionBlock : MonoBehaviour
         placed,
     }
 
-   [HideInInspector]public blockState _state = blockState.unplaceable;
+    public enum requiredObject
+    {
+        plank1,
+        plank2,
+        plank3,
+        sheet,
+        misc,
+    }
+
+    [HideInInspector]public blockState _state = blockState.placeable;
+    [SerializeField] public requiredObject _type ;
     bool hoveredOn;
 
     [HideInInspector] public ConstructionBlockManager managerRef;
