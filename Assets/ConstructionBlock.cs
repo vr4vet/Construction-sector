@@ -82,35 +82,35 @@ public class ConstructionBlock : MonoBehaviour
     }
     public void OnInteraction()
     {
-        if (placed)
-        {
-            return;
-        }
-        bool allplaced = true;
-        foreach (var item in prerequisite)
-        {
-            if (!item.placed)
-            {
+        //if (placed)
+        //{
+        //    return;
+        //}
+        //bool allplaced = true;
+        //foreach (var item in prerequisite)
+        //{
+        //    if (!item.placed)
+        //    {
                
-                allplaced = false;
-            }
-        }
+        //        allplaced = false;
+        //    }
+        //}
 
-        if (!placed && allplaced)
-        {
-            placed = true;
-            ChangeMaterialByState();
-        }
+        //if (!placed && allplaced)
+        //{
+        //    placed = true;
+        //    ChangeMaterialByState();
+        //}
        
     }
 
     void ChangeMaterialByState()
     {
-        if (placed)
-        {
-            mRend.material = managerRef.m_Normal;
-        }
-        else mRend.material = managerRef.m_Transparent;
+        //if (placed)
+        //{
+        //    mRend.material = managerRef.m_Normal;
+        //}
+        //else mRend.material = managerRef.m_Transparent;
     }
 
     public void ChangeMat(Material m)
