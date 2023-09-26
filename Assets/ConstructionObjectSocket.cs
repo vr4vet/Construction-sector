@@ -15,13 +15,13 @@ public class ConstructionObjectSocket : MonoBehaviour
     }
 
     [HideInInspector] public blockState _state = blockState.placeable;
-    [HideInInspector] public MeshRenderer _rend;
+    [SerializeField] public MeshRenderer _rend;
     [SerializeField] public ConstructionObjectType _requiredType;
     //[SerializeField] public Material m_Transparent;
     GameObject heldObject = null;
     bool hoveredOn;
 
-    [HideInInspector] public ConstructionBlockManager managerRef;
+    [SerializeField] public ConstructionBlockManager managerRef;
     MeshRenderer mRend;
     [SerializeReference] List<ConstructionObjectSocket> prerequisites = new();
     [HideInInspector] List<ConstructionObjectSocket> prerequisiteOf = new();
@@ -30,7 +30,7 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     void Start()
     {
-        _rend = GetComponent<MeshRenderer>();
+       
     }
 
 
@@ -91,16 +91,20 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     bool TryPlace()
     {
-        InitiateStructuralCompletionCheck();
-
-        foreach (var item in prerequisites)
+        
+        if (prerequisites.Count > 0)
         {
-            if (item._state != blockState.placed)
+            foreach (var item in prerequisites)
             {
-                return false;
+                if (item._state != blockState.placed)
+                {
+                    return false;
+                }
             }
         }
+       
         _state = blockState.placed;
+        InitiateStructuralCompletionCheck();
         return true;
     }
 

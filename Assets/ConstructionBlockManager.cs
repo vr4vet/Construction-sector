@@ -13,19 +13,28 @@ public class ConstructionBlockManager : MonoBehaviour
     /// <summary>
     /// checks whether we have completed the first construction subtask
     /// </summary>
+    /// 
+
+    void Start()
+    {
+        InitiateCheck();
+    }
     public void InitiateCheck()
     {
         bool complete = true;
         foreach (var item in blocks)
         {
+
+
             if (!item.StructuralCompletionCheck())
             {
+
                 complete = false;
             }
         }
         if (complete)
         {
-
+            Debug.LogError("Task 1, Subtask 1 has been completed.");
         }
     }
 
