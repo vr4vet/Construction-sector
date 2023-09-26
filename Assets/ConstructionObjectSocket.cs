@@ -15,7 +15,9 @@ public class ConstructionObjectSocket : MonoBehaviour
     }
 
     [HideInInspector] public blockState _state = blockState.placeable;
+    [HideInInspector] public MeshRenderer _rend;
     [SerializeField] public ConstructionObjectType _requiredType;
+    //[SerializeField] public Material m_Transparent;
     GameObject heldObject = null;
     bool hoveredOn;
 
@@ -23,6 +25,15 @@ public class ConstructionObjectSocket : MonoBehaviour
     MeshRenderer mRend;
     [SerializeReference] List<ConstructionObjectSocket> prerequisites = new();
     [HideInInspector] List<ConstructionObjectSocket> prerequisiteOf = new();
+
+
+
+    void Start()
+    {
+        _rend = GetComponent<MeshRenderer>();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -80,6 +91,8 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     bool TryPlace()
     {
+        InitiateStructuralCompletionCheck();
+
         foreach (var item in prerequisites)
         {
             if (item._state != blockState.placed)
@@ -89,6 +102,31 @@ public class ConstructionObjectSocket : MonoBehaviour
         }
         _state = blockState.placed;
         return true;
+    }
+
+    void RefreshVisibility()
+    {
+        bool visible = true; //wether we can see this socket
+        foreach (var item in prerequisites)
+        {
+            if (item._state != blockState.placed)
+            {
+                visible = false;
+            }
+        }
+        if (visible)
+        {
+            _rend.enabled = true;
+        }
+        else
+        {
+            _rend.enabled = false;
+        }
+
+        if (_state == blockState.placed)
+        {
+            _rend.enabled = false;
+        }
     }
 
     void SnapTargetToPlace(GameObject b)
@@ -106,13 +144,30 @@ public class ConstructionObjectSocket : MonoBehaviour
         b.transform.position = this.transform.position;
         b.transform.rotation = this.transform.rotation;
     }
+
+
+
+    public void InitiateStructuralCompletionCheck()
+    {
+        managerRef.InitiateCheck();
+    }
+
+    public bool StructuralCompletionCheck()
+    {
+        RefreshVisibility();
+        if (_state == blockState.placed)
+        {
+            return true;
+        }
+        else return false;
+    }
 }
 
 public enum ConstructionObjectType
 {
-    PLANK1,
-    PLANK2,
-    PLANK3,
-    SHEET,
-    MISC,
+    stillbeam,
+    stud,
+    brace,
+    wallbeam,
+    sheet,
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ConstructionBlockManager : MonoBehaviour
 {
 
@@ -9,8 +10,24 @@ public class ConstructionBlockManager : MonoBehaviour
     [SerializeField] public Material m_Transparent;
     [SerializeField] public Material m_Normal;
 
+    /// <summary>
+    /// checks whether we have completed the first construction subtask
+    /// </summary>
+    public void InitiateCheck()
+    {
+        bool complete = true;
+        foreach (var item in blocks)
+        {
+            if (!item.StructuralCompletionCheck())
+            {
+                complete = false;
+            }
+        }
+        if (complete)
+        {
 
-
+        }
+    }
 
    
 }
