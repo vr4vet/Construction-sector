@@ -8,6 +8,8 @@ TagManager:
   - OcupationName
   - Title
   - Plank
+  - ThermalWrap
+  - Stapler
   layers:
   - Default
   - TransparentFX

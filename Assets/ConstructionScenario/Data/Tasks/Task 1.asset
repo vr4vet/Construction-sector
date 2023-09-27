@@ -10,11 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bde12d0a8b818546a8e6a31e7c4d19f, type: 3}
-  m_Name: New Task
+  m_Name: Task 1
   m_EditorClassIdentifier: 
   _taskName: prefabricating walls for an eco-friendly home
   _description: 
   _autocompleate: 0
-  _subtasks: []
+  _subtasks:
+  - {fileID: 11400000, guid: ec6f06e7270af9848949a48d460640f7, type: 2}
+  - {fileID: 11400000, guid: 5d19369413ac7db4daecfeccfb70a507, type: 2}
+  - {fileID: 11400000, guid: 995528eda58169b409c6a1d598dcbf93, type: 2}
+  - {fileID: 11400000, guid: 6da326f22f85e504fbba5078b4c6808d, type: 2}
+  - {fileID: 11400000, guid: 41ed7af0e0169bd45a9799296e9f1321, type: 2}
   prerequisite: {fileID: 0}
   target: {fileID: 0}

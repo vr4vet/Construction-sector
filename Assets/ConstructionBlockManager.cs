@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ConstructionBlockManager : MonoBehaviour
 {
-
+    [SerializeField] public ConstructionManager.SubTaskEnum RelatedSubTask;
     [SerializeField] List<ConstructionObjectSocket> blocks = new();
-    [SerializeField] public Material m_Transparent;
-    [SerializeField] public Material m_Normal;
+    [SerializeField] public ConstructionManager _manager;
+    [SerializeField] public bool FinishesSubtaskWhenDone = true;
+
 
     /// <summary>
     /// checks whether we have completed the first construction subtask
@@ -32,9 +33,9 @@ public class ConstructionBlockManager : MonoBehaviour
                 complete = false;
             }
         }
-        if (complete)
+        if (complete && FinishesSubtaskWhenDone)
         {
-            Debug.LogError("Task 1, Subtask 1 has been completed.");
+            _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }
 
