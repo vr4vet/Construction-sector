@@ -7,6 +7,10 @@ TagManager:
   - YrkesTitle
   - OcupationName
   - Title
+  - Plank
+  - ThermalWrap
+  - Stapler
+  - Duct Tape
   layers:
   - Default
   - TransparentFX
