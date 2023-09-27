@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WrappingTear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public StapleTracker _tracker;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _tracker.tears.Add(this);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Duct Tape")
+        {
+            _tracker.tears.Remove(this);
+            Destroy(gameObject);
+        }
     }
 }

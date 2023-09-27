@@ -5,7 +5,7 @@ using UnityEngine;
 public class StapleTracker : MonoBehaviour
 {
     [SerializeField] List<StapleSpot> stapleSpots = new();
-    [SerializeField] List<WrappingTear> tears = new();
+    [SerializeField] public List<WrappingTear> tears = new();
     [SerializeField] ConstructionManager _manager;
 
 

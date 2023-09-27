@@ -44,6 +44,9 @@ public class ConstructionManager : MonoBehaviour
     public SubTaskEnum _subtask = SubTaskEnum.ONE;
     public GameObject S2_Prefab_WrapRipDecal;
     public GameObject S2_Prefab_Staple;
+    public int max_rips;
+
+    
 
 
     public GameObject S1_VisibleElements;
