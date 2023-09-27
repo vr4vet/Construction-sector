@@ -15,31 +15,49 @@ public class ConstructionObjectSocket : MonoBehaviour
     }
 
     [HideInInspector] public blockState _state = blockState.placeable;
+    [SerializeField] public MeshRenderer _rend;
+    [SerializeField] public bool AssumeBlockShape; //if yes, we just snap the used block to the location. otherwise, we enable a FinishedBlock illusory uninteractible graphical object
+    [SerializeField] public GameObject FinishedBlock;
     [SerializeField] public ConstructionObjectType _requiredType;
+    //[SerializeField] public Material m_Transparent;
     GameObject heldObject = null;
     bool hoveredOn;
 
-    [HideInInspector] public ConstructionBlockManager managerRef;
+    [SerializeField] public ConstructionBlockManager managerRef;
     MeshRenderer mRend;
     [SerializeReference] List<ConstructionObjectSocket> prerequisites = new();
     [HideInInspector] List<ConstructionObjectSocket> prerequisiteOf = new();
+
+
+    [SerializeField] string RequiredTag;
+
+    void Start()
+    {
+        if (FinishedBlock!= null)
+        {
+            FinishedBlock.SetActive(false);
+
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.tag == "Plank")
+       
+        if (other.tag == RequiredTag && _state != blockState.placed)
         {
             Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
-            Grabbable otherGrab = other.GetComponent<Grabbable>();
-            ConstructionObject otherObjectData = other.GetComponent<ConstructionObject>();
-            if (otherGrab == null)
+            Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
+            ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
+            if (other_GRABBABLE == null)
             {
-                Debug.Log("otherGrab was null on item frame enter, this should not happen, wrong object is tagged with Plank");
+                Debug.Log("otherGrab was null on item frame enter, this should not happen, wrong object is tagged with" + RequiredTag);
 
                 return;
             }
-            if (otherObjectData == null)
+            if (other_CONSTRUCTIONOBJECT == null)
             {
-                Debug.Log("otherObjectData was null on item frame enter, this should not happen, wrong object is tagged with Plank");
+                Debug.Log("otherObjectData was null on item frame enter, this should not happen, wrong object is tagged with" + RequiredTag);
                 return;
             }
 
@@ -54,24 +72,40 @@ public class ConstructionObjectSocket : MonoBehaviour
             }
            
             
-            if ( otherObjectData._ObjectType == _requiredType && heldObject == null)
+            if ( other_CONSTRUCTIONOBJECT._ObjectType == _requiredType && heldObject == null)
             {
-                if (otherObjectData._heldby != null)
+                if (other_CONSTRUCTIONOBJECT._heldby != null)
                 {
-                    otherObjectData._heldby.heldObject = null; //clears previous holder
-                    otherObjectData._heldby = null;
+                    other_CONSTRUCTIONOBJECT._heldby.heldObject = null; //clears previous holder
+                    other_CONSTRUCTIONOBJECT._heldby = null;
                     return;
                 }
                 if (TryPlace())
                 {
-                    if (otherGrab.BeingHeld)
+                    if (  other_GRABBABLE != null)
                     {
-                        otherGrab.DropItem(otherGrab.GetPrimaryGrabber());
+                        if (other_GRABBABLE.BeingHeld)
+                        {
+                            other_GRABBABLE.DropItem(other_GRABBABLE.GetPrimaryGrabber());
+                            other_GRABBABLE.enabled = false;
+                        }
+
                     }
-                    otherObjectData._heldby = this;
-                    SnapTargetToPlace(other.gameObject);
-                    heldObject = other.gameObject;
-                    otherGrab.enabled = false;
+
+
+                    if (AssumeBlockShape)
+                    {
+                        other_CONSTRUCTIONOBJECT._heldby = this;
+                        heldObject = other.gameObject;
+                        SnapTargetToPlace(other.gameObject);
+                    }
+                    else
+                    {
+                        Destroy(other.gameObject);
+                        FinishedBlock.SetActive(true);
+                    }
+
+
                 }
 
             }
@@ -80,15 +114,62 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     bool TryPlace()
     {
+        if (prerequisites == null)
+        {
+            Debug.Log("prerequisites were null ");
+            return true;
+        }
+        
+        if (prerequisites.Count > 0)
+        {
+            foreach (var item in prerequisites)
+            {
+                if (item._state != blockState.placed)
+                {
+                    return false;
+                }
+            }
+        }
+       
+        _state = blockState.placed;
+        InitiateStructuralCompletionCheck();
+        return true;
+    }
+
+    void RefreshVisibility()
+    {
+        bool visible = true; //wether we can see this socket
         foreach (var item in prerequisites)
         {
             if (item._state != blockState.placed)
             {
-                return false;
+                visible = false;
             }
         }
-        _state = blockState.placed;
-        return true;
+        if (!AssumeBlockShape && _state==blockState.placed)
+        {
+
+            FinishedBlock.SetActive(visible);
+
+            return;
+        }
+        if (_rend == null)
+        {
+            return;
+        }
+        if (visible )
+        {
+            _rend.enabled = true;
+        }
+        else
+        {
+            _rend.enabled = false;
+        }
+
+        if (_state == blockState.placed)
+        {
+            _rend.enabled = false;
+        }
     }
 
     void SnapTargetToPlace(GameObject b)
@@ -106,13 +187,30 @@ public class ConstructionObjectSocket : MonoBehaviour
         b.transform.position = this.transform.position;
         b.transform.rotation = this.transform.rotation;
     }
+
+
+
+    public void InitiateStructuralCompletionCheck()
+    {
+        managerRef.InitiateCheck();
+    }
+
+    public bool StructuralCompletionCheck()
+    {
+        RefreshVisibility();
+        if (_state == blockState.placed)
+        {
+            return true;
+        }
+        else return false;
+    }
 }
 
 public enum ConstructionObjectType
 {
-    PLANK1,
-    PLANK2,
-    PLANK3,
-    SHEET,
-    MISC,
+    stillbeam,
+    stud,
+    brace,
+    wallbeam,
+    sheet,
 }
