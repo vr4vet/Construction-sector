@@ -39,6 +39,11 @@ public class ConstructionManager : MonoBehaviour
             _subtask = SubTaskEnum.FOUR;
             S4_ToggleElementVisibility(true);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            _subtask = SubTaskEnum.THREE;
+            S3_ToggleElementVisibility(true);
+        }
         if (Input.GetKeyDown(KeyCode.K))
         {
             _subtask = SubTaskEnum.FOUR;
