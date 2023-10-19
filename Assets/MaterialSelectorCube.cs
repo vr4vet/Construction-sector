@@ -17,7 +17,7 @@ public class MaterialSelectorCube : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
 
-            _manref.SetRoof(_mat);
+           // _manref.SetRoof(_mat);
         }
     }
 }
