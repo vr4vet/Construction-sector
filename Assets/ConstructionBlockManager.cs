@@ -10,6 +10,7 @@ public class ConstructionBlockManager : MonoBehaviour
     [SerializeField] public ConstructionManager _manager;
     [SerializeField] public bool FinishesSubtaskWhenDone = true;
 
+   
 
     /// <summary>
     /// checks whether we have completed the first construction subtask
@@ -23,18 +24,29 @@ public class ConstructionBlockManager : MonoBehaviour
     public void InitiateCheck()
     {
         bool complete = true;
+        Debug.Log("Initiating completion check for " + gameObject.name);
+        string s = "checking the following blocks:\n";
+
         foreach (var item in blocks)
         {
-
-
-            if (!item.StructuralCompletionCheck())
+            
+           
+            if (item._complete)
             {
-
+                s += item.gameObject.name + " was checked. it is complete \n";
+                
+            }
+            else
+            {
+                s += item.gameObject.name + " was checked. it is incomplete \n";
                 complete = false;
             }
+            item.RefreshVisibility();
         }
+        Debug.Log(s);
         if (complete && FinishesSubtaskWhenDone)
         {
+            Debug.LogWarning("We finished the subtask.");
             _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }
