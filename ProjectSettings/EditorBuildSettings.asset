@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/VR4VET/Scenes/Lobby.unity
     guid: b0e6281ca7be6674ba2d58089943bb52
   - enabled: 0
@@ -29,9 +29,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VR4VET/Scenes/BigScreenTablet.unity
     guid: afab9c9b1f9646146ac883a63d480f98
-  - enabled: 1
+  - enabled: 0
     path: Assets/VR4VET/Scenes/multiplayer scene 1.unity
     guid: 2b716528ea6b22647b18b093cfa50789
+  - enabled: 1
+    path: Assets/ConstructionScenario/ConstructionTest_migration.unity
+    guid: d7552d2c68e7e5a4f883461764c28214
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 95738646979e66347937d1a88ead7f33,
       type: 2}

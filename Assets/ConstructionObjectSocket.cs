@@ -19,6 +19,20 @@ public class ConstructionObjectSocket : MonoBehaviour
     [SerializeField] public bool AssumeBlockShape; //if yes, we just snap the used block to the location. otherwise, we enable a FinishedBlock illusory uninteractible graphical object
     [SerializeField] public GameObject FinishedBlock;
     [SerializeField] public ConstructionObjectType _requiredType;
+    Material originalMat;
+    public bool _complete
+    {
+        get
+        {
+            if (_state == blockState.placed)
+            {
+                return true;
+            }
+            else return false;
+        }
+    }
+
+
     //[SerializeField] public Material m_Transparent;
     GameObject heldObject = null;
     bool hoveredOn;
@@ -33,9 +47,16 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     void Start()
     {
-        if (FinishedBlock!= null)
+        if (FinishedBlock != null)
         {
             FinishedBlock.SetActive(false);
+           
+        }
+        InitiateStructuralCompletionCheck();
+        RefreshVisibility();
+        if (_rend != null)
+        {
+            originalMat = _rend.material;
 
         }
     }
@@ -43,7 +64,7 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
+
         if (other.tag == RequiredTag && _state != blockState.placed)
         {
             Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
@@ -60,7 +81,6 @@ public class ConstructionObjectSocket : MonoBehaviour
                 Debug.Log("otherObjectData was null on item frame enter, this should not happen, wrong object is tagged with" + RequiredTag);
                 return;
             }
-
             if (heldObject == null)
             {
                 Debug.LogWarning("heldObject was null. we can hold the item.");
@@ -70,30 +90,15 @@ public class ConstructionObjectSocket : MonoBehaviour
                 Debug.LogWarning("heldObject occuppied. we cannt hold the item. held item name is " + heldObject.name);
 
             }
-           
-            
-            if ( other_CONSTRUCTIONOBJECT._ObjectType == _requiredType && heldObject == null)
+
+
+            if (other_CONSTRUCTIONOBJECT._ObjectType == _requiredType && heldObject == null)
             {
-                if (other_CONSTRUCTIONOBJECT._heldby != null)
+
+                if (HasNoUnmetPrerequisites())
                 {
-                    other_CONSTRUCTIONOBJECT._heldby.heldObject = null; //clears previous holder
-                    other_CONSTRUCTIONOBJECT._heldby = null;
-                    return;
-                }
-                if (TryPlace())
-                {
-                    if (  other_GRABBABLE != null)
-                    {
-                        if (other_GRABBABLE.BeingHeld)
-                        {
-                            other_GRABBABLE.DropItem(other_GRABBABLE.GetPrimaryGrabber());
-                            other_GRABBABLE.enabled = false;
-                        }
-
-                    }
-
-
-                    if (AssumeBlockShape)
+                    ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
+                    if (AssumeBlockShape) //wether we can just lock the object to the slot. alternatively, we destroy the placed object and just activate a preset static overlay object
                     {
                         other_CONSTRUCTIONOBJECT._heldby = this;
                         heldObject = other.gameObject;
@@ -104,22 +109,45 @@ public class ConstructionObjectSocket : MonoBehaviour
                         Destroy(other.gameObject);
                         FinishedBlock.SetActive(true);
                     }
-
-
+                    _state = blockState.placed;
+                    InitiateStructuralCompletionCheck();
+                    
                 }
 
             }
+
+          void ClearInhandObject(ConstructionObject cobj, Grabbable cobjGrabbable)
+            {
+                if (cobj._heldby != null)  //removes the item from player hand
+                {
+                    cobj._heldby.heldObject = null; //clears previous holder
+                    cobj._heldby = null;
+                    return;
+                }
+                if (cobjGrabbable != null)
+                {
+                    if (cobjGrabbable.BeingHeld)
+                    {
+                        cobjGrabbable.DropItem(cobjGrabbable.GetPrimaryGrabber());
+                        cobjGrabbable.enabled = false;
+                    }
+
+                }
+            }
         }
     }
-
-    bool TryPlace()
+    /// <summary>
+    /// Returns true if the player can place this block (there are no unmet prerequisites)
+    /// </summary>
+    /// <returns></returns>
+    bool HasNoUnmetPrerequisites()
     {
         if (prerequisites == null)
         {
             Debug.Log("prerequisites were null ");
             return true;
         }
-        
+
         if (prerequisites.Count > 0)
         {
             foreach (var item in prerequisites)
@@ -130,46 +158,63 @@ public class ConstructionObjectSocket : MonoBehaviour
                 }
             }
         }
-       
-        _state = blockState.placed;
-        InitiateStructuralCompletionCheck();
+        
         return true;
     }
 
-    void RefreshVisibility()
+   public void RefreshVisibility()
     {
-        bool visible = true; //wether we can see this socket
-        foreach (var item in prerequisites)
-        {
-            if (item._state != blockState.placed)
-            {
-                visible = false;
-            }
-        }
-        if (!AssumeBlockShape && _state==blockState.placed)
-        {
-
-            FinishedBlock.SetActive(visible);
-
-            return;
-        }
         if (_rend == null)
         {
+            //Debug.LogError("No renderer detected for ConstructionobjectSocket " + gameObject.name);
             return;
         }
-        if (visible )
-        {
-            _rend.enabled = true;
+        if (!AssumeBlockShape && _state == blockState.placed)
+        {//if we don't use another block that snaps to this socket, we simply turn the completed block "illusion" active
+
+            FinishedBlock.SetActive(true);
+            return;
         }
-        else
+        switch (_state)
         {
-            _rend.enabled = false;
+            
+            case blockState.placeable:
+                bool visible = true; //wether we can see this socket
+                foreach (var item in prerequisites)
+                {
+                    if (item._state != blockState.placed)
+                    {//check all prerequisites and if even one isnt full we cant place anything here.
+                        visible = false;
+                    }
+                }
+
+                if (visible)
+                {
+                    _rend.enabled = true;
+                    _rend.material = ConstructionManager.Instance.placeableMat;
+                }
+                else
+                {
+                    _rend.material = ConstructionManager.Instance.unplaceableMat;
+                }
+                break;
+            case blockState.hovered:
+                //highlight TODO
+                break;
+            case blockState.placed:
+                if (AssumeBlockShape)
+                {
+                    _rend.enabled = false;
+                }
+                _rend.material = originalMat;
+                return;
+            default:
+                break;
         }
 
-        if (_state == blockState.placed)
-        {
-            _rend.enabled = false;
-        }
+       
+
+        
     }
 
     void SnapTargetToPlace(GameObject b)
@@ -195,15 +240,7 @@ public class ConstructionObjectSocket : MonoBehaviour
         managerRef.InitiateCheck();
     }
 
-    public bool StructuralCompletionCheck()
-    {
-        RefreshVisibility();
-        if (_state == blockState.placed)
-        {
-            return true;
-        }
-        else return false;
-    }
+   
 }
 
 public enum ConstructionObjectType
@@ -213,4 +250,6 @@ public enum ConstructionObjectType
     brace,
     wallbeam,
     sheet,
+    woodFibre,
+    vaporFoil
 }
