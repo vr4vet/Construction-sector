@@ -17,7 +17,7 @@ public class ConstructionObjectSocket : MonoBehaviour
     [HideInInspector] public blockState _state = blockState.placeable;
     [SerializeField] public MeshRenderer _rend;
     [SerializeField] public bool AssumeBlockShape; //if yes, we just snap the used block to the location. otherwise, we enable a FinishedBlock illusory uninteractible graphical object
-    [SerializeField] public GameObject FinishedBlock;
+    [SerializeField] public GameObject FinishedBlock; //we place this when the block is placed.
     [SerializeField] public ConstructionObjectType _requiredType;
     Material originalMat;
     public bool _complete
@@ -52,6 +52,7 @@ public class ConstructionObjectSocket : MonoBehaviour
             FinishedBlock.SetActive(false);
            
         }
+
         InitiateStructuralCompletionCheck();
         RefreshVisibility();
         if (_rend != null)
@@ -98,8 +99,10 @@ public class ConstructionObjectSocket : MonoBehaviour
                 if (HasNoUnmetPrerequisites())
                 {
                     ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
+                    _rend.enabled = false;
                     if (AssumeBlockShape) //wether we can just lock the object to the slot. alternatively, we destroy the placed object and just activate a preset static overlay object
                     {
+                       
                         other_CONSTRUCTIONOBJECT._heldby = this;
                         heldObject = other.gameObject;
                         SnapTargetToPlace(other.gameObject);
@@ -179,6 +182,7 @@ public class ConstructionObjectSocket : MonoBehaviour
         {
             
             case blockState.placeable:
+                _rend.enabled = true;
                 bool visible = true; //wether we can see this socket
                 foreach (var item in prerequisites)
                 {
@@ -190,7 +194,6 @@ public class ConstructionObjectSocket : MonoBehaviour
 
                 if (visible)
                 {
-                    _rend.enabled = true;
                     _rend.material = ConstructionManager.Instance.placeableMat;
                 }
                 else
@@ -198,18 +201,26 @@ public class ConstructionObjectSocket : MonoBehaviour
                     _rend.material = ConstructionManager.Instance.unplaceableMat;
                 }
                 break;
-            case blockState.hovered:
-                //highlight TODO
-                break;
             case blockState.placed:
                 _rend.enabled = false;
-                FinishedBlock.SetActive(false);
-                if (AssumeBlockShape)
+                if (!AssumeBlockShape) //assume shape of used block
                 {
                     _rend.enabled = false;
+                    //the block gets fixed in place on TryPlace, so no need to do anything else.
                 }
-                _rend.material = originalMat;
-                return;
+                else //or not. then we use the premade FinishedBlock
+                {
+                    
+                    if (FinishedBlock == null)
+                    {
+
+                        Debug.LogError(gameObject.name + " - Nullref - FInishedBLock was null but AssumeBlockShape was false, which is a contradiction as you need a block shape to use if you're not going to use the plank you're slotting in.");
+                    }
+                    FinishedBlock.SetActive(true);
+                    _rend.enabled = false;
+                }
+                
+                break;
             default:
                 break;
         }
