@@ -202,6 +202,8 @@ public class ConstructionObjectSocket : MonoBehaviour
                 //highlight TODO
                 break;
             case blockState.placed:
+                _rend.enabled = false;
+                FinishedBlock.SetActive(false);
                 if (AssumeBlockShape)
                 {
                     _rend.enabled = false;
