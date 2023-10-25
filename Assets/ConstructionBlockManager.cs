@@ -31,7 +31,7 @@ public class ConstructionBlockManager : MonoBehaviour
         {
             
            
-            if (item._complete)
+            if (item._complete || item.isActuallyFinished)
             {
                 s += item.gameObject.name + " was checked. it is complete \n";
                 

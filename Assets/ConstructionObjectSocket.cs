@@ -16,9 +16,12 @@ public class ConstructionObjectSocket : MonoBehaviour
 
     [HideInInspector] public blockState _state = blockState.placeable;
     [SerializeField] public MeshRenderer _rend;
-    [SerializeField] public bool AssumeBlockShape; //if yes, we just snap the used block to the location. otherwise, we enable a FinishedBlock illusory uninteractible graphical object
+    [SerializeField] public bool assumeBlockShape; //if yes, we just snap the used block to the location. otherwise, we enable a FinishedBlock illusory uninteractible graphical object
     [SerializeField] public GameObject FinishedBlock; //we place this when the block is placed.
     [SerializeField] public ConstructionObjectType _requiredType;
+    [SerializeField] public bool needsExtraStep;
+    [HideInInspector] public bool isActuallyFinished;
+
     Material originalMat;
     public bool _complete
     {
@@ -26,6 +29,10 @@ public class ConstructionObjectSocket : MonoBehaviour
         {
             if (_state == blockState.placed)
             {
+                if (needsExtraStep && !isActuallyFinished)
+                {
+                    return false;
+                }
                 return true;
             }
             else return false;
@@ -68,7 +75,7 @@ public class ConstructionObjectSocket : MonoBehaviour
 
         if (other.tag == RequiredTag && _state != blockState.placed)
         {
-            Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
+            //Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
             Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
             ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
             if (other_GRABBABLE == null)
@@ -100,7 +107,7 @@ public class ConstructionObjectSocket : MonoBehaviour
                 {
                     ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
                     _rend.enabled = false;
-                    if (AssumeBlockShape) //wether we can just lock the object to the slot. alternatively, we destroy the placed object and just activate a preset static overlay object
+                    if (assumeBlockShape) //wether we can just lock the object to the slot. alternatively, we destroy the placed object and just activate a preset static overlay object
                     {
                        
                         other_CONSTRUCTIONOBJECT._heldby = this;
@@ -112,9 +119,14 @@ public class ConstructionObjectSocket : MonoBehaviour
                         Destroy(other.gameObject);
                         FinishedBlock.SetActive(true);
                     }
-                    _state = blockState.placed;
-                    InitiateStructuralCompletionCheck();
                     
+                    if (!needsExtraStep) //in case we need to do something else after placing the block before it can be considered completed (like in the case of Wood Fiber insulation.)
+                    {
+                        _state = blockState.placed;
+                        InitiateStructuralCompletionCheck();
+                        isActuallyFinished = true;
+                    }
+
                 }
 
             }
@@ -138,6 +150,14 @@ public class ConstructionObjectSocket : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Finished()
+    {
+        isActuallyFinished = true;
+        _state = blockState.placed;
+        Debug.Log("Finished a wood fibre socketing + adjustment."); //only one that uses this for now.
+        managerRef.InitiateCheck();
     }
     /// <summary>
     /// Returns true if the player can place this block (there are no unmet prerequisites)
@@ -172,7 +192,7 @@ public class ConstructionObjectSocket : MonoBehaviour
             //Debug.LogError("No renderer detected for ConstructionobjectSocket " + gameObject.name);
             return;
         }
-        if (!AssumeBlockShape && _state == blockState.placed)
+        if (!assumeBlockShape && _state == blockState.placed)
         {//if we don't use another block that snaps to this socket, we simply turn the completed block "illusion" active
 
             FinishedBlock.SetActive(true);
@@ -203,7 +223,7 @@ public class ConstructionObjectSocket : MonoBehaviour
                 break;
             case blockState.placed:
                 _rend.enabled = false;
-                if (!AssumeBlockShape) //assume shape of used block
+                if (!assumeBlockShape) //assume shape of used block
                 {
                     _rend.enabled = false;
                     //the block gets fixed in place on TryPlace, so no need to do anything else.
