@@ -223,7 +223,7 @@ public class ConstructionObjectSocket : MonoBehaviour
                 break;
             case blockState.placed:
                 _rend.enabled = false;
-                if (!assumeBlockShape) //assume shape of used block
+                if (assumeBlockShape) //assume shape of used block
                 {
                     _rend.enabled = false;
                     //the block gets fixed in place on TryPlace, so no need to do anything else.
@@ -237,7 +237,7 @@ public class ConstructionObjectSocket : MonoBehaviour
                         Debug.LogError(gameObject.name + " - Nullref - FInishedBLock was null but AssumeBlockShape was false, which is a contradiction as you need a block shape to use if you're not going to use the plank you're slotting in.");
                     }
                     FinishedBlock.SetActive(true);
-                    _rend.enabled = false;
+                    _rend.enabled = false;  
                 }
                 
                 break;
