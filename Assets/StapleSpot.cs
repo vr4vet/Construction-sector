@@ -24,10 +24,10 @@ public class StapleSpot : MonoBehaviour
                 return;
             }
             stapled = true;
-            _tracker.CheckForCompletion();
+           
             GameObject staple = Instantiate(ConstructionManager.Instance.S2_Prefab_Staple, collisionPoint, gameObject.transform.rotation);
             ConstructionManager.Instance.currentSubtaskObjects.Add(staple);
-
+            _tracker.CheckForCompletion();
             //detect skill step here
         }
     }

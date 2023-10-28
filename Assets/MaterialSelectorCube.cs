@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MaterialSelectorCube : MonoBehaviour
 {
-    public RoofMaterialSelectionManager _manref;
+    public Material _mat;
+    public List<Renderer> _rend;
+    public BNG.Grabbable grab;
 
     public enum SelectorMaterialTypeRoof
     {
@@ -11,13 +14,27 @@ public class MaterialSelectorCube : MonoBehaviour
         tiles
     }
 
-    public SelectorMaterialTypeRoof _mat;
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (grab.BeingHeld)
         {
-
-           // _manref.SetRoof(_mat);
+            foreach (var item in _rend)
+            {
+                item.enabled = true;
+                item.material = _mat;
+            }
+            
         }
     }
+
+
+    // public SelectorMaterialTypeRoof _mat;
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+    //    {
+
+    //       // _manref.SetRoof(_mat);
+    //    }
+    //}
 }
