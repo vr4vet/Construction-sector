@@ -530,7 +530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &18266125
 Transform:
   m_ObjectHideFlags: 0
@@ -11877,10 +11877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c350f6522244c014aa6e809e3fb68660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RelatedSubTask: 4
-  blocks: []
+  RelatedSubTask: 3
+  blocks:
+  - {fileID: 864750875}
   _manager: {fileID: 1974952946}
-  FinishesSubtaskWhenDone: 0
+  FinishesSubtaskWhenDone: 1
 --- !u!1 &503331632
 GameObject:
   m_ObjectHideFlags: 0
@@ -13179,7 +13180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &550591662
 Transform:
   m_ObjectHideFlags: 0
@@ -22964,7 +22965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &958776314
 Transform:
   m_ObjectHideFlags: 0
@@ -28124,6 +28125,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: -4030774284942010544, guid: c212d219f46436a47a9dbf74442ea296,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3270834789232462163, guid: c212d219f46436a47a9dbf74442ea296,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -28183,6 +28189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414102660947356361, guid: c212d219f46436a47a9dbf74442ea296,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7329677607213194142, guid: c212d219f46436a47a9dbf74442ea296,
         type: 3}
@@ -71866,7 +71877,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306253061655194334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
