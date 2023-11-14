@@ -24,26 +24,38 @@ public class ConstructionManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _subtask = SubTaskEnum.FOUR;
             S3_ToggleElementVisibility(true);
         }   
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _subtask = SubTaskEnum.TWO;
             S2_ToggleElementVisibility(true);
         }
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _subtask = SubTaskEnum.FOUR;
             S4_ToggleElementVisibility(true);
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            _subtask = SubTaskEnum.THREE;
+            S3_ToggleElementVisibility(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             _subtask = SubTaskEnum.FOUR;
             T2S1_ToggleElementVisibility(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            _subtask = SubTaskEnum.FOUR;
+            T2S1_ToggleElementVisibility(true);
+        }
+
     }
     
     public enum SubTaskEnum
@@ -52,7 +64,8 @@ public class ConstructionManager : MonoBehaviour
         TWO,
         THREE,
         FOUR,
-        FIVE //technically t1s1
+        FIVE, //technically t2s1
+        SIX//technically t2s2
     }
 
    

@@ -15,6 +15,7 @@ public class WrappingTear : MonoBehaviour
         if (other.tag == "Duct Tape")
         {
             _tracker.tears.Remove(this);
+            _tracker.CheckForCompletion();
             Destroy(gameObject);
         }
     }
