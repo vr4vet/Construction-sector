@@ -284,5 +284,6 @@ public enum ConstructionObjectType
     wallbeam,
     sheet,
     woodFibre,
-    vaporFoil
+    vaporFoil,
+    t2s2_RoofTileClamp
 }
