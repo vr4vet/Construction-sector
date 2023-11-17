@@ -11,6 +11,8 @@ TagManager:
   - ThermalWrap
   - Stapler
   - Duct Tape
+  - VaporBarrier
+  - Yes, this is not optimal, i will rework this later.
   layers:
   - Default
   - TransparentFX
