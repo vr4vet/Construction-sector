@@ -108,7 +108,7 @@ public class VaporBarrierSegment : MonoBehaviour
             {
                 return true;
             }
-            else return false;
+            else return true;
         }
     }
 
@@ -126,7 +126,7 @@ public class VaporBarrierSegment : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("VaporBarrier")) //when we drag the foil on the thing
+        if (other.gameObject.CompareTag("VaporBarrier") && !_rend.enabled) //when we drag the foil on the thing
         {
             TryAdvance();
         }

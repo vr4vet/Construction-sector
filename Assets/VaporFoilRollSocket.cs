@@ -32,15 +32,21 @@ public class VaporFoilRollSocket : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("VaporBarrier") && !placed)
+        if (other.CompareTag("Plank") && !placed)
         {
             //Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
             Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
             ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
 
-            ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
-            Destroy(other.gameObject);
-            foil_segments_parent.SetActive(true);
+            if (other_CONSTRUCTIONOBJECT._ObjectType == ConstructionObjectType.vaporFoil)
+            {
+                ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
+                Destroy(other.gameObject);
+                foil_segments_parent.SetActive(true);
+                _manager.ActivateFoilDragging();
+            }
+
+          
            
           
         }
@@ -52,6 +58,7 @@ public class VaporFoilRollSocket : MonoBehaviour
             {
                 cobj._heldby.heldObject = null; //clears previous holder
                 cobj._heldby = null;
+                _manager.ActivateFoilDragging();
                 return;
             }
             if (cobjGrabbable != null)
@@ -63,7 +70,7 @@ public class VaporFoilRollSocket : MonoBehaviour
                 }
 
             }
-            _manager.ActivateFoilDragging();
+           
         }
     }
 

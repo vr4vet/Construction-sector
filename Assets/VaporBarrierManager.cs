@@ -1,3 +1,4 @@
+using BNG;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,13 @@ public class VaporBarrierManager : MonoBehaviour
     [SerializeField] public float _RollRadiusDecrementPerSegment = 0.1f;
 
 
-    [SerializeReference] public GameObject DraggableFoilObject; //we enable this when we put the foil on the frame 
+    [SerializeReference] public Rigidbody DraggableFoilObject; //we enable this when we put the foil on the frame 
+    [SerializeReference] public Grabbable fixedFoilObject_Grab;
+
+    public GameObject pos_Start, pos_End;
+    public float movementIncrement = 0.01f;
+    private float currentMovementStatus = 0;
+
     int segmentsTotal
     {
         get { return segmentObjects.Count; }
@@ -42,7 +49,6 @@ public class VaporBarrierManager : MonoBehaviour
             return b;
         }
     }
-
     int segmentsRolled
     {
         get
@@ -57,7 +63,6 @@ public class VaporBarrierManager : MonoBehaviour
             return b;
         }
     }
-
     int staplesTarget
     {
         get
@@ -74,7 +79,7 @@ public class VaporBarrierManager : MonoBehaviour
 
     [SerializeField] List<VaporBarrierSegment> segmentObjects = new();
 
-    [SerializeField] List<T1S4_StapleArea> stapleAreas = new();
+    [SerializeField] List<VaporBarrierStapleSpot> stapleAreas = new();
     int tapes = 0;
     int tapesTarget;
 
@@ -102,7 +107,25 @@ public class VaporBarrierManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Mouse0) && DraggableFoilObject.gameObject.activeInHierarchy)
+        {
 
+
+            if (DraggableFoilObject.transform.position.x <= 0.0926857)
+            {
+                Debug.LogWarning("PRESSED");
+                DraggableFoilObject.transform.position = new Vector3((DraggableFoilObject.transform.position.x + movementIncrement), DraggableFoilObject.transform.position.y, DraggableFoilObject.transform.position.z);
+            }
+
+        }
+    }
+
+    void Start()
+    {
+        DraggableFoilObject.gameObject.SetActive(false);
+    }
     public void OnDrag(VaporBarrierSegment segment)
     {
         //nothing happens here. 
@@ -119,7 +142,7 @@ public class VaporBarrierManager : MonoBehaviour
 
     public void ActivateFoilDragging()
     {
-        DraggableFoilObject.SetActive(true);
+        DraggableFoilObject.gameObject.SetActive(true);
     }
     public void CheckIfDone()
     {
