@@ -113,7 +113,7 @@ public class VaporBarrierManager : MonoBehaviour
         {
 
 
-            if (DraggableFoilObject.transform.position.x <= 0.0926857)
+            if (DraggableFoilObject.transform.position.x <= 2.250002)
             {
                 Debug.LogWarning("PRESSED");
                 DraggableFoilObject.transform.position = new Vector3((DraggableFoilObject.transform.position.x + movementIncrement), DraggableFoilObject.transform.position.y, DraggableFoilObject.transform.position.z);
