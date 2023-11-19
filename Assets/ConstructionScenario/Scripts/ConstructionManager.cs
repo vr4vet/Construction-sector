@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,166 +25,177 @@ public class ConstructionManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            _subtask = SubTaskEnum.ZERO;
-            S0_ToggleElementVisibility(true);
+            _subtask = SubTaskEnum.T1S0;
+            T1S0_ToggleElementVisibility(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _subtask = SubTaskEnum.FOUR;
-            S3_ToggleElementVisibility(true);
-        }   
+            _subtask = SubTaskEnum.T1S1;
+            T1S3_ToggleElementVisibility(true);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _subtask = SubTaskEnum.TWO;
-            S2_ToggleElementVisibility(true);
+            _subtask = SubTaskEnum.T1S2;
+            T1S2_ToggleElementVisibility(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            _subtask = SubTaskEnum.FOUR;
-            S4_ToggleElementVisibility(true);
+            _subtask = SubTaskEnum.T1S3;
+            T1S4_ToggleElementVisibility(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            _subtask = SubTaskEnum.THREE;
-            S3_ToggleElementVisibility(true);
+            _subtask = SubTaskEnum.T1S4;
+            T1S3_ToggleElementVisibility(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            _subtask = SubTaskEnum.FOUR;
+            _subtask = SubTaskEnum.T2S1;
             T2S1_ToggleElementVisibility(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            _subtask = SubTaskEnum.FOUR;
-            T2S1_ToggleElementVisibility(true);
+            _subtask = SubTaskEnum.T2S2;
+            T2S2_ToggleElementVisibility(true);
         }
 
     }
-    
+
     public enum SubTaskEnum
     {
-        ZERO,
-        ONE,
-        TWO,
-        THREE,
-        FOUR,
-        FIVE, //technically t2s1
-        SIX//technically t2s2
+        T1S0,
+        T1S1,
+        T1S2,
+        T1S3,
+        T1S4,
+        T2S1, //technically t2s1
+        T2S2//technically t2s2
     }
 
-   
-    public SubTaskEnum _subtask = SubTaskEnum.ONE;
+
+    public SubTaskEnum _subtask = SubTaskEnum.T1S0;
     public GameObject S2_Prefab_WrapRipDecal;
     public GameObject S2_Prefab_Staple;
     public int max_rips;
 
 
 
-    public GameObject S0_VisibleElements;
-    public GameObject S1_VisibleElements;
-    public GameObject S2_VisibleElements;
-    public GameObject S3_VisibleElements;
-    public GameObject S4_VisibleElements;
+    public GameObject T1S0_VisibleElements;
+    public GameObject T1S1_VisibleElements;
+    public GameObject T1S2_VisibleElements;
+    public GameObject T1S3_VisibleElements;
+    public GameObject T1S4_VisibleElements;
     public GameObject T2S1_VisibleElements;
+    public GameObject T2S2_VisibleElements;
 
-    public void S2_HasApproachedFrameWithRoll()
+    public void T1S2_HasApproachedFrameWithRoll()
     {//trigger
 
         //tell player to wrap roll on frame
     }
-    void S0_ToggleElementVisibility(bool visible)
+    void T1S0_ToggleElementVisibility(bool visible)
     {
-        S0_VisibleElements.SetActive(visible);
-        S1_VisibleElements.SetActive(!visible);
-        S2_VisibleElements.SetActive(!visible);
-        S3_VisibleElements.SetActive(!visible);
-        S4_VisibleElements.SetActive(!visible);
+        T1S0_VisibleElements.SetActive(visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(!visible);
+        T1S4_VisibleElements.SetActive(!visible);
         T2S1_VisibleElements.SetActive(!visible);
     }
-    void S1_ToggleElementVisibility(bool visible)
+    void T1S1_ToggleElementVisibility(bool visible)
     {
-        S0_VisibleElements.SetActive(!visible);
-        S1_VisibleElements.SetActive(visible);
-        S2_VisibleElements.SetActive(!visible);
-        S3_VisibleElements.SetActive(!visible);
-        S4_VisibleElements.SetActive(!visible);
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(!visible);
+        T1S4_VisibleElements.SetActive(!visible);
         T2S1_VisibleElements.SetActive(!visible);
     }
 
-     void S2_ToggleElementVisibility(bool visible)
+    void T1S2_ToggleElementVisibility(bool visible)
     {
-        S0_VisibleElements.SetActive(!visible);
-        S1_VisibleElements.SetActive(!visible);
-        S2_VisibleElements.SetActive(visible);
-        S3_VisibleElements.SetActive(!visible);
-        S4_VisibleElements.SetActive(!visible);
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(visible);
+        T1S3_VisibleElements.SetActive(!visible);
+        T1S4_VisibleElements.SetActive(!visible);
         T2S1_VisibleElements.SetActive(!visible);
     }
-     void S3_ToggleElementVisibility(bool visible)
+    void T1S3_ToggleElementVisibility(bool visible)
     {
-        S0_VisibleElements.SetActive(!visible);
-        S1_VisibleElements.SetActive(!visible);
-        S2_VisibleElements.SetActive(!visible);
-        S3_VisibleElements.SetActive(visible);
-        S4_VisibleElements.SetActive(!visible);
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(visible);
+        T1S4_VisibleElements.SetActive(!visible);
         T2S1_VisibleElements.SetActive(!visible);
     }
-     void S4_ToggleElementVisibility(bool visible)
+    void T1S4_ToggleElementVisibility(bool visible)
     {
-        S0_VisibleElements.SetActive(!visible);
-        S1_VisibleElements.SetActive(!visible);
-        S2_VisibleElements.SetActive(!visible);
-        S3_VisibleElements.SetActive(!visible);
-        S4_VisibleElements.SetActive(visible);
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(!visible);
+        T1S4_VisibleElements.SetActive(visible);
         T2S1_VisibleElements.SetActive(!visible);
     }
     void T2S1_ToggleElementVisibility(bool visible)
     {
-         S0_VisibleElements.SetActive(!visible);
-        S1_VisibleElements.SetActive(!visible);
-        S2_VisibleElements.SetActive(!visible);
-        S3_VisibleElements.SetActive(!visible);
-        S4_VisibleElements.SetActive(!visible);
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(!visible);
         T2S1_VisibleElements.SetActive(visible);
+        T2S2_VisibleElements.SetActive(!visible);
+    }
+    void T2S2_ToggleElementVisibility(bool visible)
+    {
+        T1S0_VisibleElements.SetActive(!visible);
+        T1S1_VisibleElements.SetActive(!visible);
+        T1S2_VisibleElements.SetActive(!visible);
+        T1S3_VisibleElements.SetActive(!visible);
+        T2S1_VisibleElements.SetActive(!visible);
+        T2S2_VisibleElements.SetActive(visible);
     }
 
-    public void HasFinishedSubtask( SubTaskEnum stask)
+
+    public void HasFinishedSubtask(SubTaskEnum stask)
     {
         foreach (var item in currentSubtaskObjects)
         {
             Destroy(item);
         }
         currentSubtaskObjects.Clear();
-        if (stask != SubTaskEnum.FOUR)
-        {
-            Debug.LogWarning("Player has finished subtask" + stask);
-            _subtask = stask + 1;
-            switch (_subtask)
-            {
-                case SubTaskEnum.ZERO:
-                    S0_ToggleElementVisibility(true);
-                    break;
-                case SubTaskEnum.ONE:
-                    S1_ToggleElementVisibility(true);
-                    break;
-                case SubTaskEnum.TWO:
-                    S2_ToggleElementVisibility(true);
-                    break;
-                case SubTaskEnum.THREE:
-                    S3_ToggleElementVisibility(true);
-                    break;
-                case SubTaskEnum.FOUR:
-                    S4_ToggleElementVisibility(true);
-                    break;
-                default:
-                    break;
-            }
-        }
-        else
-        {
 
-        //end scene or show end construction
+        Debug.LogWarning("Player has finished subtask" + stask);
+        _subtask = stask + 1;
+        switch (_subtask)
+        {
+            case SubTaskEnum.T1S0:
+                T1S0_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T1S1:
+                T1S1_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T1S2:
+                T1S2_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T1S3:
+                T1S3_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T1S4:
+                T1S4_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T2S1:
+                T2S1_ToggleElementVisibility(true);
+                break;
+            case SubTaskEnum.T2S2:
+                T2S2_ToggleElementVisibility(true);
+                break;
+            default:
+                break;
+
         }
     }
 
@@ -193,7 +203,8 @@ public class ConstructionManager : MonoBehaviour
 
     void Start()
     {
-        S0_ToggleElementVisibility(true);
-       // S1_ToggleElementVisibility(true);
+        _subtask = SubTaskEnum.T1S0;
+
+        T1S0_ToggleElementVisibility(true);
     }
 }
