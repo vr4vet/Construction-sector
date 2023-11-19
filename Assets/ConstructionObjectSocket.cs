@@ -41,7 +41,7 @@ public class ConstructionObjectSocket : MonoBehaviour
 
 
     //[SerializeField] public Material m_Transparent;
-    GameObject heldObject = null;
+    [HideInInspector] public GameObject heldObject = null;
     bool hoveredOn;
 
     [SerializeField] public ConstructionBlockManager managerRef;
@@ -284,5 +284,6 @@ public enum ConstructionObjectType
     wallbeam,
     sheet,
     woodFibre,
-    vaporFoil
+    vaporFoil,
+    t2s2_RoofTileClamp
 }
