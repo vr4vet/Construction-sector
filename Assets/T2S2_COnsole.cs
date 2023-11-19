@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class S2T1_Quiz_Console : MonoBehaviour
+public class T2S2_COnsole : MonoBehaviour
 {
 
-    static S2T1_Quiz_Console _instance;
-    public static S2T1_Quiz_Console Instance
+    static T2S2_COnsole _instance;
+    public static T2S2_COnsole Instance
     {
         get
         {
@@ -31,7 +31,7 @@ public class S2T1_Quiz_Console : MonoBehaviour
     #region UnityMethods
     void Awake()
     {
-        if (S2T1_Quiz_Console.Instance != null)
+        if (T2S2_COnsole.Instance != null)
         {
             throw new System.Exception(name + " - FloatingUIManager.Awake() - Tried to initialize duplicate singleton.");
         }
