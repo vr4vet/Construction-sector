@@ -24,6 +24,11 @@ public class ConstructionManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            _subtask = SubTaskEnum.ZERO;
+            S0_ToggleElementVisibility(true);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _subtask = SubTaskEnum.FOUR;
@@ -60,6 +65,7 @@ public class ConstructionManager : MonoBehaviour
     
     public enum SubTaskEnum
     {
+        ZERO,
         ONE,
         TWO,
         THREE,
@@ -74,9 +80,9 @@ public class ConstructionManager : MonoBehaviour
     public GameObject S2_Prefab_Staple;
     public int max_rips;
 
-    
 
 
+    public GameObject S0_VisibleElements;
     public GameObject S1_VisibleElements;
     public GameObject S2_VisibleElements;
     public GameObject S3_VisibleElements;
@@ -88,8 +94,18 @@ public class ConstructionManager : MonoBehaviour
 
         //tell player to wrap roll on frame
     }
-     void S1_ToggleElementVisibility(bool visible)
+    void S0_ToggleElementVisibility(bool visible)
     {
+        S0_VisibleElements.SetActive(visible);
+        S1_VisibleElements.SetActive(!visible);
+        S2_VisibleElements.SetActive(!visible);
+        S3_VisibleElements.SetActive(!visible);
+        S4_VisibleElements.SetActive(!visible);
+        T2S1_VisibleElements.SetActive(!visible);
+    }
+    void S1_ToggleElementVisibility(bool visible)
+    {
+        S0_VisibleElements.SetActive(!visible);
         S1_VisibleElements.SetActive(visible);
         S2_VisibleElements.SetActive(!visible);
         S3_VisibleElements.SetActive(!visible);
@@ -99,6 +115,7 @@ public class ConstructionManager : MonoBehaviour
 
      void S2_ToggleElementVisibility(bool visible)
     {
+        S0_VisibleElements.SetActive(!visible);
         S1_VisibleElements.SetActive(!visible);
         S2_VisibleElements.SetActive(visible);
         S3_VisibleElements.SetActive(!visible);
@@ -107,6 +124,7 @@ public class ConstructionManager : MonoBehaviour
     }
      void S3_ToggleElementVisibility(bool visible)
     {
+        S0_VisibleElements.SetActive(!visible);
         S1_VisibleElements.SetActive(!visible);
         S2_VisibleElements.SetActive(!visible);
         S3_VisibleElements.SetActive(visible);
@@ -115,6 +133,7 @@ public class ConstructionManager : MonoBehaviour
     }
      void S4_ToggleElementVisibility(bool visible)
     {
+        S0_VisibleElements.SetActive(!visible);
         S1_VisibleElements.SetActive(!visible);
         S2_VisibleElements.SetActive(!visible);
         S3_VisibleElements.SetActive(!visible);
@@ -123,6 +142,7 @@ public class ConstructionManager : MonoBehaviour
     }
     void T2S1_ToggleElementVisibility(bool visible)
     {
+         S0_VisibleElements.SetActive(!visible);
         S1_VisibleElements.SetActive(!visible);
         S2_VisibleElements.SetActive(!visible);
         S3_VisibleElements.SetActive(!visible);
@@ -143,6 +163,9 @@ public class ConstructionManager : MonoBehaviour
             _subtask = stask + 1;
             switch (_subtask)
             {
+                case SubTaskEnum.ZERO:
+                    S0_ToggleElementVisibility(true);
+                    break;
                 case SubTaskEnum.ONE:
                     S1_ToggleElementVisibility(true);
                     break;
@@ -170,6 +193,7 @@ public class ConstructionManager : MonoBehaviour
 
     void Start()
     {
-        S1_ToggleElementVisibility(true);
+        S0_ToggleElementVisibility(true);
+       // S1_ToggleElementVisibility(true);
     }
 }
