@@ -24,7 +24,8 @@ public class VaporBarrierManager : MonoBehaviour
     {
         get
         {
-            int b = 0; foreach (var item in segmentObjects)
+            int b = 0; 
+            foreach (var item in segmentObjects)
             {
                 if (item.isStapled && item.isRolled)
                 {
@@ -121,7 +122,10 @@ public class VaporBarrierManager : MonoBehaviour
         if (isFlattening && DraggableFoilObject.gameObject.activeInHierarchy)
         {
 
-
+            if (!canDrag || segmentsStapled < segmentsRolled )
+            {
+                return;
+            }
             if (DraggableFoilObject.transform.position.x <= 2.413)
             {
                 Debug.LogWarning("PRESSED");
