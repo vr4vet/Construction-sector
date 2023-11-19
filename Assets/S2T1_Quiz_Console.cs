@@ -19,7 +19,10 @@ public class S2T1_Quiz_Console : MonoBehaviour
     GameObject DebugPrefab;
     //references
     [Header("Menu references")]
+    [SerializeReference] T2S1_MANAGER _manager;
+
     [SerializeReference] GameObject MainMenu;
+    [SerializeReference] GameObject PleaseWait;
     [SerializeReference] GameObject QuizMenu;
     [SerializeReference] GameObject MaterialChoiceMenu;
 
@@ -39,7 +42,7 @@ public class S2T1_Quiz_Console : MonoBehaviour
     }
     void Start()
     {
-       allMenus.AddRange(new List<GameObject>() { MainMenu, QuizMenu, MaterialChoiceMenu });
+        allMenus.AddRange(new List<GameObject>() { MainMenu, QuizMenu, MaterialChoiceMenu });
 
         foreach (var item in allMenus)
         {
@@ -51,7 +54,7 @@ public class S2T1_Quiz_Console : MonoBehaviour
     #endregion
 
     #region Navigation Methods
-    void SwitchToMenu()
+   public void SwitchToMenu()
     {
         foreach (var item in allMenus)
         {
@@ -59,7 +62,7 @@ public class S2T1_Quiz_Console : MonoBehaviour
         }
         MainMenu.SetActive(true);
     }
-    void SwitchToQuiz()
+    public void SwitchToQuiz()
     {
         foreach (var item in allMenus)
         {
@@ -76,7 +79,7 @@ public class S2T1_Quiz_Console : MonoBehaviour
         }
         MaterialChoiceMenu.SetActive(true);
     }
-  
+
     void PermitQuiz()
     {
 
@@ -84,6 +87,24 @@ public class S2T1_Quiz_Console : MonoBehaviour
 
 
 
+    #endregion
 
 
+    #region Misc
+
+    void MakePlayerWait()
+    {
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+
+        PleaseWait.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(5f);
+
+        PleaseWait.SetActive(false);
+    }
+
+    #endregion
 }

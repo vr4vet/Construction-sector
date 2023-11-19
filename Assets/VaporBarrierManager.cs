@@ -11,7 +11,6 @@ public class VaporBarrierManager : MonoBehaviour
 
 
     [SerializeReference] public Rigidbody DraggableFoilObject; //we enable this when we put the foil on the frame 
-    [SerializeReference] public Grabbable fixedFoilObject_Grab;
 
     public GameObject pos_Start, pos_End;
     public float movementIncrement = 0.01f;
@@ -107,13 +106,23 @@ public class VaporBarrierManager : MonoBehaviour
         }
     }
 
+    bool isFlattening;
+    public void StartedFlattening()
+    {
+        isFlattening = true;
+    }
+
+    public void StoppedFlattening()
+    {
+        isFlattening = false;
+    }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && DraggableFoilObject.gameObject.activeInHierarchy)
+        if (isFlattening && DraggableFoilObject.gameObject.activeInHierarchy)
         {
 
 
-            if (DraggableFoilObject.transform.position.x <= 2.250002)
+            if (DraggableFoilObject.transform.position.x <= 2.413)
             {
                 Debug.LogWarning("PRESSED");
                 DraggableFoilObject.transform.position = new Vector3((DraggableFoilObject.transform.position.x + movementIncrement), DraggableFoilObject.transform.position.y, DraggableFoilObject.transform.position.z);
