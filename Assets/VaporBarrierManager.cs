@@ -117,15 +117,20 @@ public class VaporBarrierManager : MonoBehaviour
     {
         isFlattening = false;
     }
+
+    void ReduceRollSize()
+    {
+        DraggableFoilObject.transform.localScale = new Vector3(DraggableFoilObject.transform.localScale.x, DraggableFoilObject.transform.localScale.y, DraggableFoilObject.transform.localScale.z);
+    }
     void Update()
     {
         if (isFlattening && DraggableFoilObject.gameObject.activeInHierarchy)
         {
 
-            if (!canDrag || segmentsStapled < segmentsRolled )
-            {
-                return;
-            }
+            //if (!canDrag || segmentsStapled < segmentsRolled )
+            //{
+            //    return;
+            //}
             if (DraggableFoilObject.transform.position.x <= 2.413)
             {
                 Debug.LogWarning("PRESSED");

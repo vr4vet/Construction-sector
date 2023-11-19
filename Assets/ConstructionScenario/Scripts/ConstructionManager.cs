@@ -152,8 +152,7 @@ public class ConstructionManager : MonoBehaviour
             Destroy(item);
         }
         currentSubtaskObjects.Clear();
-        if (stask != SubTaskEnum.FOUR)
-        {
+       
             Debug.LogWarning("Player has finished subtask" + stask);
             _subtask = stask + 1;
             switch (_subtask)
@@ -181,12 +180,7 @@ public class ConstructionManager : MonoBehaviour
                 default:
                     break;
             }
-        }
-        else
-        {
-
-        //end scene or show end construction
-        }
+       
     }
 
 
