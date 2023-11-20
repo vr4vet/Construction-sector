@@ -8987,8 +8987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &282853487
 GameObject:
@@ -9037,13 +9036,25 @@ PrefabInstance:
     - target: {fileID: 2281686386275440643, guid: f590497235ba9ad4280987c205335075,
         type: 3}
       propertyPath: taskList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2281686386275440643, guid: f590497235ba9ad4280987c205335075,
         type: 3}
       propertyPath: skillList.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2281686386275440643, guid: f590497235ba9ad4280987c205335075,
+        type: 3}
+      propertyPath: taskList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fdc534bbf58abf48a6cee594256d394,
+        type: 2}
+    - target: {fileID: 2281686386275440643, guid: f590497235ba9ad4280987c205335075,
+        type: 3}
+      propertyPath: taskList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 07096b1fa47b96540bb01300e2b05cdb,
+        type: 2}
     - target: {fileID: 2281686386275440644, guid: f590497235ba9ad4280987c205335075,
         type: 3}
       propertyPath: m_RootOrder
@@ -12022,6 +12033,7 @@ MonoBehaviour:
   _requiredType: 2
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -13220,8 +13232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &449665103
 GameObject:
@@ -14721,10 +14732,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RelatedSubTask: 3
-  blocks:
-  - {fileID: 864750875}
   _manager: {fileID: 1974952946}
-  FinishesSubtaskWhenDone: 1
+  _RollRadiusDecrementPerSegment: 0.1
+  DraggableFoilObject: {fileID: 0}
+  pos_Start: {fileID: 0}
+  pos_End: {fileID: 0}
+  movementIncrement: 0.01
+  segmentObjects: []
+  stapleAreas: []
 --- !u!1 &503331632
 GameObject:
   m_ObjectHideFlags: 0
@@ -21084,8 +21099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &690427901
 GameObject:
@@ -22463,8 +22477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &759025190
 GameObject:
@@ -22877,6 +22890,7 @@ MonoBehaviour:
   _requiredType: 0
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites: []
   RequiredTag: Plank
@@ -24443,6 +24457,7 @@ MonoBehaviour:
   _requiredType: 6
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
   prerequisites: []
   RequiredTag: Plank
@@ -25117,6 +25132,7 @@ MonoBehaviour:
   _requiredType: 1
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -29526,6 +29542,7 @@ MonoBehaviour:
   _requiredType: 5
   needsExtraStep: 1
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1608636202}
   prerequisites: []
   RequiredTag: Plank
@@ -29749,6 +29766,7 @@ MonoBehaviour:
   _requiredType: 1
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -30349,6 +30367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stapled: 0
+  Taped: 0
+  objStaple: {fileID: 0}
+  objTape: {fileID: 0}
+  greenViableStaplingAreaObject: {fileID: 0}
+  _manager: {fileID: 0}
 --- !u!1 &1016464762
 GameObject:
   m_ObjectHideFlags: 0
@@ -31661,6 +31684,7 @@ MonoBehaviour:
   _requiredType: 2
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 1004655733}
@@ -32891,8 +32915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &1072484919
 GameObject:
@@ -33542,6 +33565,7 @@ MonoBehaviour:
   _requiredType: 4
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 2008931123}
   prerequisites: []
   RequiredTag: ThermalWrap
@@ -34550,8 +34574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &1133375898
 GameObject:
@@ -37203,8 +37226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &1214799150
 GameObject:
@@ -40533,6 +40555,7 @@ MonoBehaviour:
   _requiredType: 3
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 1511826644}
@@ -55716,6 +55739,7 @@ MonoBehaviour:
   _requiredType: 1
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -55968,6 +55992,7 @@ MonoBehaviour:
   _requiredType: 1
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -56614,6 +56639,7 @@ MonoBehaviour:
   _requiredType: 5
   needsExtraStep: 1
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1608636202}
   prerequisites: []
   RequiredTag: Plank
@@ -59357,8 +59383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staples: []
-  mat_uncovered: {fileID: 0}
-  mat_covered: {fileID: 0}
+  _manager: {fileID: 0}
   _rend: {fileID: 0}
 --- !u!1 &1640238013
 GameObject:
@@ -61228,6 +61253,7 @@ MonoBehaviour:
   _requiredType: 1
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1625183167}
   prerequisites:
   - {fileID: 779032890}
@@ -65405,6 +65431,7 @@ MonoBehaviour:
   _requiredType: 4
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 2008931123}
   prerequisites: []
   RequiredTag: ThermalWrap
@@ -66323,6 +66350,7 @@ MonoBehaviour:
   _requiredType: 4
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 2008931123}
   prerequisites: []
   RequiredTag: ThermalWrap
@@ -69908,12 +69936,13 @@ MonoBehaviour:
   S2_Prefab_Staple: {fileID: 7248994895189067167, guid: c755939297a6f854fa6c5fc9cbfd8305,
     type: 3}
   max_rips: 3
-  S0_VisibleElements: {fileID: 1518498802}
-  S1_VisibleElements: {fileID: 1966218928}
-  S2_VisibleElements: {fileID: 2008931121}
-  S3_VisibleElements: {fileID: 282853487}
-  S4_VisibleElements: {fileID: 958776313}
+  T1S0_VisibleElements: {fileID: 0}
+  T1S1_VisibleElements: {fileID: 0}
+  T1S2_VisibleElements: {fileID: 0}
+  T1S3_VisibleElements: {fileID: 0}
+  T1S4_VisibleElements: {fileID: 0}
   T2S1_VisibleElements: {fileID: 550591661}
+  T2S2_VisibleElements: {fileID: 0}
 --- !u!1 &1982754844
 GameObject:
   m_ObjectHideFlags: 0
@@ -73014,6 +73043,7 @@ MonoBehaviour:
   _requiredType: 4
   needsExtraStep: 0
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 2008931123}
   prerequisites: []
   RequiredTag: ThermalWrap
@@ -73804,6 +73834,7 @@ MonoBehaviour:
   _requiredType: 5
   needsExtraStep: 1
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1608636202}
   prerequisites: []
   RequiredTag: Plank
@@ -74703,6 +74734,7 @@ MonoBehaviour:
   _requiredType: 5
   needsExtraStep: 1
   isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 1608636202}
   prerequisites: []
   RequiredTag: Plank
