@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +12,148 @@ public class T2S1_MANAGER : MonoBehaviour
     public List<MeshRenderer> _rend;
     public Material roof_slate, roof_tiles, roof_metal;
 
+
+    #region QuizElements
+
+    public GameObject btn_rafters, btn_underlayment, btn_battens, btn_tiles, quizCorrect, quizWrong;
+    public bool Clickedrafters, Clickedunderlayment, Clickedbattens, Clickedtiles;
+    public bool quizCanProceed;
+    public List<GameObject> Picked_btns;
+
+    Vector3 startPos_btn_rafters, startPos_btn_underlayment, startPos_btn_battens, startPos_btn_tiles;
+    Vector3 endPos_btn_rafters, endPos_btn_underlayment, endPos_btn_battens, endPos_btn_tiles;
+
+    public GameObject endPos_obj_rafters, endPos_obj_underlayment, endPos_obj_battens, endPos_obj_tiles;
+
+    public void ClickRaftersobj()
+    {
+        if (Clickedrafters)
+        {//if this has already been clicked, we remove it and move it back.
+            btn_rafters.transform.position = startPos_btn_rafters;
+            Picked_btns.Remove(btn_rafters);
+            Clickedrafters = false;
+        }
+        else //we select it
+        {
+            Clickedrafters = true;
+            btn_rafters.transform.position = endPos_btn_rafters;
+            Picked_btns.Add(btn_rafters);
+            CheckIfQuizIsCorrect();
+        }
+
+    }
+    public void ClickBattenssobj()
+    {
+        if (Clickedbattens)
+        {//if this has already been clicked, we remove it and move it back.
+            btn_battens.transform.position = startPos_btn_battens;
+            Picked_btns.Remove(btn_battens);
+            Clickedbattens = false;
+
+        }
+        else //we select it
+        {
+            Clickedbattens = true;
+
+            btn_battens.transform.position = endPos_btn_battens;
+            Picked_btns.Add(btn_battens);
+            CheckIfQuizIsCorrect();
+        }
+
+    }
+    public void ClickUnderlaymentsobj()
+    {
+        if (Clickedunderlayment)
+        {//if this has already been clicked, we remove it and move it back.
+            btn_underlayment.transform.position = startPos_btn_underlayment;
+            Picked_btns.Remove(btn_underlayment);
+            Clickedunderlayment = false;
+        }
+        else //we select it
+        {
+            Clickedunderlayment = true;
+            btn_underlayment.transform.position = endPos_btn_underlayment;
+            Picked_btns.Add(btn_underlayment);
+            CheckIfQuizIsCorrect();
+        }
+
+    }
+    public void ClickTilessobj()
+    {
+        if (Clickedtiles)
+        {//if this has already been clicked, we remove it and move it back.
+            btn_tiles.transform.position = startPos_btn_tiles;
+            Picked_btns.Remove(btn_tiles);
+            Clickedtiles = false;
+        }
+        else //we select it
+        {
+            Clickedtiles = true;
+            btn_tiles.transform.position = endPos_btn_tiles;
+            Picked_btns.Add(btn_tiles);
+            CheckIfQuizIsCorrect();
+        }
+
+    }
+
+    void CheckIfQuizIsCorrect()
+    {
+
+        if (Picked_btns.Count < 4)
+        {
+            quizCorrect.SetActive(false);
+            quizWrong.SetActive(false);
+            return;
+        }
+        bool b = false;
+        if (Picked_btns[0] == btn_rafters && Picked_btns[1] == btn_underlayment && Picked_btns[2] == btn_battens && Picked_btns[3] == btn_tiles)
+        {
+            b = true;
+        }
+
+
+
+        if (b)
+        {
+            quizCanProceed = true;
+            quizCorrect.SetActive(true);
+            quizWrong.SetActive(false);
+        }
+        else
+        {
+            quizCanProceed = false;
+            quizCorrect.SetActive(false);
+            quizWrong.SetActive(true);
+
+        }
+    }
+
+    void InitializeBtnStartingPos()
+    {
+        startPos_btn_rafters = btn_rafters.transform.position;
+        startPos_btn_underlayment = btn_underlayment.transform.position;
+        startPos_btn_battens = btn_battens.transform.position;
+        startPos_btn_tiles = btn_tiles.transform.position;
+
+
+
+        endPos_btn_rafters = endPos_obj_rafters.transform.position;
+        endPos_btn_underlayment = endPos_obj_underlayment.transform.position;
+        endPos_btn_battens = endPos_obj_battens.transform.position;
+        endPos_btn_tiles = endPos_obj_tiles.transform.position;
+    }
+
+
+
+    #endregion
+
     private void Start()
     {
         foreach (var item in _rend)
         {
             item.enabled = false;
         }
+        InitializeBtnStartingPos();
     }
 
     public void SetRoof(MaterialSelectorCube.SelectorMaterialTypeRoof incoming)
@@ -103,7 +238,7 @@ public class T2S1_MANAGER : MonoBehaviour
     {
         layer1.SetActive(false);
         layer2.SetActive(false);
-        layer3.SetActive(false) ;
+        layer3.SetActive(false);
         layer4.SetActive(true);
 
     }
