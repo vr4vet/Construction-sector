@@ -32,7 +32,7 @@ public class T1S0Manager : MonoBehaviour
         if (gameObject.CompareTag("Shoes"))
         {
             Debug.Log("Correct shoe collided!");
-            ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.T1S0);
+            ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.ZERO);
             // Handle correct shoe collided, proceed to the next task
         }
         else

@@ -105,6 +105,9 @@ public class ConstructionManager : MonoBehaviour
         _subtask = stask + 1;
         switch (_subtask)
         {
+            case SubTaskEnum.ZERO:
+                SwitchElementVisibility(subtaskObjects[0]);
+                break;
             case SubTaskEnum.ONE:
                 SwitchElementVisibility(subtaskObjects[1]);
                 break;
