@@ -12,6 +12,7 @@ TagManager:
   - Stapler
   - Duct Tape
   - Shoes
+  - Tile
   layers:
   - Default
   - TransparentFX
