@@ -285,5 +285,8 @@ public enum ConstructionObjectType
     sheet,
     woodFibre,
     vaporFoil,
-    t2s2_RoofTileClamp
+    t2s2_RoofTileClamp,
+    cornertile,
+    normaltile,
+    stormclip
 }
