@@ -34,7 +34,7 @@ public class StapleTracker : MonoBehaviour
         if (tears.Count < 1 && allStapled)
         {
             Debug.LogWarning("Finished SubTask 2.");
-            _manager.HasFinishedSubtask(ConstructionManager.SubTaskEnum.TWO);
+            _manager.HasFinishedSubtask(ConstructionManager.SubTaskEnum.T1S2);
         }
     }
 }
