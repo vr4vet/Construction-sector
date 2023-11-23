@@ -82,6 +82,7 @@ public class ConstructionManager : MonoBehaviour
 
     public List<GameObject> subtaskObjects = new();
 
+    public GameObject T1S0_VisibleElements;
     public GameObject T1S1_VisibleElements;
     public GameObject T1S2_VisibleElements;
     public GameObject T1S3_VisibleElements;
@@ -133,7 +134,13 @@ public class ConstructionManager : MonoBehaviour
 
     void DefineSubTaskObjects()
     {
-        subtaskObjects = new List<GameObject> { };
+        subtaskObjects = new List<GameObject> { T1S0_VisibleElements ,
+    T1S1_VisibleElements ,
+    T1S2_VisibleElements ,
+    T1S3_VisibleElements ,
+    T1S4_VisibleElements ,
+    T2S1_VisibleElements ,
+    T2S2_VisibleElements };
     }
     void Start()
     {

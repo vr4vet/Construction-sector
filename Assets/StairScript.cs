@@ -11,13 +11,6 @@ public class StairScript : MonoBehaviour
     bool wentUp;
 
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        Teleport();
-    //    }
-    //}
 
     private void Update()
     {
@@ -32,17 +25,11 @@ public class StairScript : MonoBehaviour
     IEnumerator delayNextInteraction()
     {
         canInteract = false;
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
 
         canInteract = true;
     }
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.collider.tag == "Player")
-    //    {
-    //        Teleport();
-    //    }
-    //}
+   
 
 
 
