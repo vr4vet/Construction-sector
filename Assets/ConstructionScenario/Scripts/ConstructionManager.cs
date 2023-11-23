@@ -5,6 +5,27 @@ public class ConstructionManager : MonoBehaviour
 {
 
     public static ConstructionManager Instance { get; private set; }
+    public Narrator _narrator
+    {
+        get
+        {
+            if (Narr!= null)
+            {
+                return Narr;
+            }
+            else
+            {
+                Narr = gameObject.GetComponent<Narrator>();
+                if (Narr == null)
+                {
+                    Debug.LogError("Error - Missing Narrator on the ConstructionManager object.");
+                    return null;
+                }
+                else return _narrator;
+            }
+        }
+    }
+    private Narrator Narr;
     public Material placeableMat, unplaceableMat;
     public List<GameObject> _temporarySubtaskObjects = new();//to wipe when we switch subtask
     private void Awake()
@@ -107,26 +128,33 @@ public class ConstructionManager : MonoBehaviour
         {
             case SubTaskEnum.ZERO:
                 SwitchElementVisibility(subtaskObjects[0]);
+                _narrator.Narrate("Task 1, Subtask 0 - Safety equipment!<br>Pick up the correct protective equipment.");
                 break;
             case SubTaskEnum.ONE:
                 SwitchElementVisibility(subtaskObjects[1]);
+                _narrator.Narrate("Task 1, Subtask 1 - Create a wooden frame wall \n Pick up a beam from the table and attach it to the corresponding spot at one of the green outlines.");
                 break;
             case SubTaskEnum.TWO:
                 SwitchElementVisibility(subtaskObjects[2]);
+                _narrator.Narrate("Task 1, Subtask 2 - Attach the housewrap for the outer layer, then staple it. Tape the holes, if any.");
                 break;
             case SubTaskEnum.THREE:
                 SwitchElementVisibility(subtaskObjects[3]);
+                _narrator.Narrate("Task 1, Subtask 3 - Insert wood fiber insulation into the frame, then arrange it neatly into place.");
                 break;
             case SubTaskEnum.FOUR:
                 SwitchElementVisibility(subtaskObjects[4]);
+                _narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
                 break;
 
             case SubTaskEnum.FIVE:
                 SwitchElementVisibility(subtaskObjects[5]);
+                _narrator.Narrate("Task 2, Subtask 1 - Learn the layers of a roof, then fill out a short quiz.");
                 break;
 
             case SubTaskEnum.SIX:
                 SwitchElementVisibility(subtaskObjects[6]);
+                _narrator.Narrate("Task 2, Subtask 2 - Assemble the tiling of a roof.");
                 break;
             default:
                 break;
