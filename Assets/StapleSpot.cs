@@ -19,15 +19,14 @@ public class StapleSpot : MonoBehaviour
             {
                 WrappingTear newTear = Instantiate(ConstructionManager.Instance.S2_Prefab_WrapRipDecal, collisionPoint, Quaternion.identity).GetComponent<WrappingTear>();
                 newTear._tracker = _tracker;
-                ConstructionManager.Instance._temporarySubtaskObjects.Add(newTear.gameObject);
+                ConstructionManager.Instance.currentSubtaskObjects.Add(newTear.gameObject);
 
                 return;
             }
             stapled = true;
            
             GameObject staple = Instantiate(ConstructionManager.Instance.S2_Prefab_Staple, collisionPoint, gameObject.transform.rotation);
-            ConstructionManager.Instance._temporarySubtaskObjects.Add(staple);
-            
+            ConstructionManager.Instance.currentSubtaskObjects.Add(staple);
             _tracker.CheckForCompletion();
             //detect skill step here
         }

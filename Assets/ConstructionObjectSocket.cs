@@ -41,7 +41,7 @@ public class ConstructionObjectSocket : MonoBehaviour
 
 
     //[SerializeField] public Material m_Transparent;
-    [HideInInspector] public GameObject heldObject = null;
+    GameObject heldObject = null;
     bool hoveredOn;
 
     [SerializeField] public ConstructionBlockManager managerRef;
