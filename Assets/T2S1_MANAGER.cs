@@ -5,6 +5,7 @@ public class T2S1_MANAGER : MonoBehaviour
 {
 
     public GameObject layer1, layer2, layer3, layer4;
+    [SerializeReference] GameObject DemonstrationMenu;
     [SerializeReference] GameObject QuizMenu;
     [SerializeReference] GameObject MaterialChoiceMenu;
 
@@ -20,8 +21,10 @@ public class T2S1_MANAGER : MonoBehaviour
     public bool quizCanProceed;
     public List<GameObject> Picked_btns;
 
+    private float buttonVerticalIncrement = -35;
+
     Vector3 startPos_btn_rafters, startPos_btn_underlayment, startPos_btn_battens, startPos_btn_tiles;
-    Vector3 endPos_btn_rafters, endPos_btn_underlayment, endPos_btn_battens, endPos_btn_tiles;
+    Vector3 endPos_start;
 
     public GameObject endPos_obj_rafters, endPos_obj_underlayment, endPos_obj_battens, endPos_obj_tiles;
 
@@ -36,7 +39,9 @@ public class T2S1_MANAGER : MonoBehaviour
         else //we select it
         {
             Clickedrafters = true;
-            btn_rafters.transform.position = endPos_btn_rafters;
+            btn_rafters.transform.position = new Vector3(endPos_start.x, endPos_start.y + (buttonVerticalIncrement * Picked_btns.Count), endPos_start.z);
+
+
             Picked_btns.Add(btn_rafters);
             CheckIfQuizIsCorrect();
         }
@@ -54,8 +59,7 @@ public class T2S1_MANAGER : MonoBehaviour
         else //we select it
         {
             Clickedbattens = true;
-
-            btn_battens.transform.position = endPos_btn_battens;
+           btn_battens.transform.position = new Vector3(endPos_start.x, endPos_start.y + (buttonVerticalIncrement * Picked_btns.Count), endPos_start.z);
             Picked_btns.Add(btn_battens);
             CheckIfQuizIsCorrect();
         }
@@ -72,7 +76,7 @@ public class T2S1_MANAGER : MonoBehaviour
         else //we select it
         {
             Clickedunderlayment = true;
-            btn_underlayment.transform.position = endPos_btn_underlayment;
+            btn_underlayment.transform.position = new Vector3(endPos_start.x, endPos_start.y + (buttonVerticalIncrement * Picked_btns.Count), endPos_start.z);
             Picked_btns.Add(btn_underlayment);
             CheckIfQuizIsCorrect();
         }
@@ -89,7 +93,7 @@ public class T2S1_MANAGER : MonoBehaviour
         else //we select it
         {
             Clickedtiles = true;
-            btn_tiles.transform.position = endPos_btn_tiles;
+            btn_tiles.transform.position = new Vector3(endPos_start.x, endPos_start.y + (buttonVerticalIncrement * Picked_btns.Count), endPos_start.z);
             Picked_btns.Add(btn_tiles);
             CheckIfQuizIsCorrect();
         }
@@ -128,19 +132,38 @@ public class T2S1_MANAGER : MonoBehaviour
         }
     }
 
+    public void GoToQuiz()
+    {
+        DemonstrationMenu.SetActive(false);
+        QuizMenu.SetActive(true);
+        MaterialChoiceMenu.SetActive(false);
+    }
+    public void FinishQuiz()
+    {
+        if (quizCanProceed)
+        {
+            DemonstrationMenu.SetActive(false);
+            QuizMenu.SetActive(false);
+            MaterialChoiceMenu.SetActive(true);
+        }
+    }
+    public void GoToNextSubtask()
+    {
+
+        if (hasSelectedMaterial)
+        {
+            ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.FIVE);
+
+        }
+    }
+
+    bool hasSelectedMaterial = false;
     void InitializeBtnStartingPos()
     {
         startPos_btn_rafters = btn_rafters.transform.position;
         startPos_btn_underlayment = btn_underlayment.transform.position;
         startPos_btn_battens = btn_battens.transform.position;
         startPos_btn_tiles = btn_tiles.transform.position;
-
-
-
-        endPos_btn_rafters = endPos_obj_rafters.transform.position;
-        endPos_btn_underlayment = endPos_obj_underlayment.transform.position;
-        endPos_btn_battens = endPos_obj_battens.transform.position;
-        endPos_btn_tiles = endPos_obj_tiles.transform.position;
     }
 
 
@@ -154,6 +177,9 @@ public class T2S1_MANAGER : MonoBehaviour
             item.enabled = false;
         }
         InitializeBtnStartingPos();
+        DemonstrationMenu.SetActive(true);
+        QuizMenu.SetActive(false);
+        MaterialChoiceMenu.SetActive(false);
     }
 
     public void SetRoof(MaterialSelectorCube.SelectorMaterialTypeRoof incoming)
@@ -194,6 +220,7 @@ public class T2S1_MANAGER : MonoBehaviour
 
     public void MatChoice(int i)
     {
+        hasSelectedMaterial = true;
         switch (i)
         {
             case 1:
