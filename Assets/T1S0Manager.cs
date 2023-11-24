@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class T1S0Manager : MonoBehaviour
@@ -27,13 +28,32 @@ public class T1S0Manager : MonoBehaviour
         }
     }
 
+    IEnumerator finishedSubtask()
+    {
+
+        ConstructionManager.Instance._narrator.Narrate("You picked the correct shoes! Good work!");
+       yield return new WaitForSecondsRealtime(3f);
+        ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.ZERO);
+
+
+    }
+    IEnumerator wrongShoes()
+    {
+
+        ConstructionManager.Instance._narrator.Narrate("Incorrect shoes! These are not working shoes! Try again in a few seconds!");
+        yield return new WaitForSecondsRealtime(3f);
+        // Spawn new shoes randomly
+        SpawnShoesRandomly();
+
+
+    }
     internal void CheckIfCorrectShoe(GameObject gameObject)
     {
         if (gameObject.CompareTag("Shoes"))
         {
             Debug.Log("Correct shoe collided!");
-            ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.ZERO);
             // Handle correct shoe collided, proceed to the next task
+            StartCoroutine(finishedSubtask());
         }
         else
         {
@@ -85,7 +105,7 @@ public class T1S0Manager : MonoBehaviour
         Destroy(g);
 
         // Spawn new shoes randomly
-        SpawnShoesRandomly();
+        StartCoroutine(wrongShoes());
     }
 
 
