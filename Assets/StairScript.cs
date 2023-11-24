@@ -7,23 +7,19 @@ public class StairScript : MonoBehaviour
     [SerializeReference]GameObject bottomCoord, topCoord;
     [SerializeReference] CharacterController _charControl;
     [SerializeReference] GameObject _Player;
-    [SerializeReference] BNG.Grabbable _Grabber;
     bool wentUp;
 
 
 
-    private void Update()
-    {
-        if (_Grabber.BeingHeld && canInteract)
-        {
-            _Grabber.DropItem(_Grabber.GetClosestGrabber());
-            StartCoroutine(delayNextInteraction());
-            Teleport(); 
-        }
-    }
+   
     bool canInteract = true;
     IEnumerator delayNextInteraction()
     {
+
+        yield return new WaitForEndOfFrame();
+        Teleport();
+
+
         canInteract = false;
         yield return new WaitForSecondsRealtime(1f);
 
@@ -47,5 +43,11 @@ public class StairScript : MonoBehaviour
         }
         wentUp = !wentUp;
         _charControl.enabled = true;
+    }
+    public void OnTrigger(Collider other)
+    {
+        
+           
+            StartCoroutine(delayNextInteraction());
     }
 }
