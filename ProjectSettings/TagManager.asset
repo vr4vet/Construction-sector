@@ -12,6 +12,8 @@ TagManager:
   - Stapler
   - Duct Tape
   - Shoes
+  - VaporBarrier
+  - Stair
   layers:
   - Default
   - TransparentFX
