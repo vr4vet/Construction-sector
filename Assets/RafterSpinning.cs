@@ -9,6 +9,7 @@ public class RafterSpinning : MonoBehaviour
     public bool left;
     public float speed;
 
+    public RafterSpinning other;
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -18,14 +19,20 @@ public class RafterSpinning : MonoBehaviour
     //    }
     //}
 
+
+    public void Disable()
+    {
+        toggled = false;
+    }
     private void Update()
     {
-        if (_Grabbable.BeingHeld)
+        if (toggled)
         {
             Spin();
         }
     }
-   void Spin()
+    bool toggled;
+    public void Rotate()
     {
         float realSpeed = speed;
         if (left)
@@ -36,8 +43,12 @@ public class RafterSpinning : MonoBehaviour
         {
             realSpeed *= -1f;
         }
-        
-        rafter.transform.Rotate(0.0f,  realSpeed *Time.deltaTime, 0.0f, Space.World);
 
+        rafter.transform.Rotate(0.0f, realSpeed * Time.deltaTime, 0.0f, Space.World);
+    }
+   public void Spin()
+    {
+        other.Disable();
+        toggled = !toggled;
     }
 }
