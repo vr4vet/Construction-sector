@@ -14,7 +14,8 @@ public class ConstructionObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _rbody = GetComponent<Rigidbody>();
+        _grabRef = GetComponent<Grabbable>();
     }
 
     // Update is called once per frame
