@@ -24,7 +24,13 @@ public class T2S1_MANAGER : MonoBehaviour
     private float buttonVerticalIncrement = -35;
 
     Vector3 startPos_btn_rafters, startPos_btn_underlayment, startPos_btn_battens, startPos_btn_tiles;
-    Vector3 endPos_start;
+    Vector3 endPos_start
+    {
+        get
+        {
+            return endPos_obj_rafters.transform.position;
+        }
+    }
 
     public GameObject endPos_obj_rafters, endPos_obj_underlayment, endPos_obj_battens, endPos_obj_tiles;
 
