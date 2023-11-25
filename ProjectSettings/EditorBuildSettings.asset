@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/VR4VET/Scenes/multiplayer scene 1.unity
     guid: 2b716528ea6b22647b18b093cfa50789
   - enabled: 1
-    path: Assets/ConstructionScenario/ConstructionTest_migration.unity
+    path: Assets/ConstructionScenario/ConstructionScenario_MainScene.unity
     guid: d7552d2c68e7e5a4f883461764c28214
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 95738646979e66347937d1a88ead7f33,

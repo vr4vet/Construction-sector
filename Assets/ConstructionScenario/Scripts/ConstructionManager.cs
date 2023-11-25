@@ -49,37 +49,46 @@ public class ConstructionManager : MonoBehaviour
         {
             _subtask = SubTaskEnum.ZERO;
             SwitchElementVisibility(subtaskObjects[0]);
+			 _narrator.Narrate("Task 1, Subtask 0 - Safety equipment!<br>Pick up the correct protective equipment.");
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _subtask = SubTaskEnum.ONE;
             SwitchElementVisibility(subtaskObjects[1]);
+			_narrator.Narrate("Task 1, Subtask 1 - Create a wooden frame wall \n Pick up a beam from the table and attach it to the corresponding spot at one of the green outlines.");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _subtask = SubTaskEnum.TWO;
             SwitchElementVisibility(subtaskObjects[2]);
+			 _narrator.Narrate("Task 1, Subtask 2 - Attach the housewrap for the outer layer, then staple it. Tape the holes, if any.");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _subtask = SubTaskEnum.THREE;
             SwitchElementVisibility(subtaskObjects[3]);
+			 _narrator.Narrate("Task 1, Subtask 3 - Insert wood fiber insulation into the frame, then arrange it neatly into place.");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             _subtask = SubTaskEnum.FOUR;
             SwitchElementVisibility(subtaskObjects[4]);
+			_narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
+                
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             _subtask = SubTaskEnum.FIVE;
             SwitchElementVisibility(subtaskObjects[5]);
+			_narrator.Narrate("Task 2, Subtask 1 - Learn the layers of a roof, then fill out a short quiz.");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             _subtask = SubTaskEnum.SIX;
+
             SwitchElementVisibility(subtaskObjects[6]);
+			_narrator.Narrate("Task 2, Subtask 2 - Assemble the tiling of a roof.");
         }
 
     }
