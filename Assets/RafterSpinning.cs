@@ -5,22 +5,15 @@ using UnityEngine;
 public class RafterSpinning : MonoBehaviour
 {
     [SerializeReference] GameObject rafter;
-    [SerializeReference] BNG.Grabbable _Grabbable;
+    [SerializeReference] RafterSpinning _otherSide;
     public bool left;
     public float speed;
+    bool spinning;
 
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        Teleport();
-    //    }
-    //}
 
     private void Update()
     {
-        if (_Grabbable.BeingHeld)
+        if (spinning)
         {
             Spin();
         }
@@ -39,5 +32,15 @@ public class RafterSpinning : MonoBehaviour
         
         rafter.transform.Rotate(0.0f,  realSpeed *Time.deltaTime, 0.0f, Space.World);
 
+    }
+
+    public void Deactivate()
+    {
+        spinning = false;
+    }
+    public void toggleSpin()
+    {
+        _otherSide.Deactivate();
+        spinning = !spinning;
     }
 }
