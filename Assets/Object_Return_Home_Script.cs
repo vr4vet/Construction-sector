@@ -1,13 +1,11 @@
 using BNG;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Object_Return_Home_Script : MonoBehaviour
 {
     private Vector3 startPos;
     private Rigidbody rbody;
-   public enum ReturningScriptType
+    public enum ReturningScriptType
     {
         returningPlane,
         objectInstance
@@ -26,15 +24,25 @@ public class Object_Return_Home_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (type != ReturningScriptType.returningPlane) return;
         Object_Return_Home_Script g = other.gameObject.GetComponent<Object_Return_Home_Script>();
+        Grabbable gr = other.gameObject.GetComponent<Grabbable>();
         if (g != null)
         {
-            if (g.enabled)
+            if (gr != null)
+            {
+                if (gr.BeingHeld)
+                {
+                    return;
+                }
+            }
+
+            if (g.type == ReturningScriptType.objectInstance && g.enabled)
             {
                 g.ResetPosition();
 
             }
+
         }
     }
 
@@ -63,6 +71,6 @@ public class Object_Return_Home_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
