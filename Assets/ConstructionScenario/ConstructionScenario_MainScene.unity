@@ -7579,8 +7579,9 @@ GameObject:
   - component: {fileID: 144761744}
   - component: {fileID: 144761748}
   - component: {fileID: 144761749}
+  - component: {fileID: 144761750}
   m_Layer: 0
-  m_Name: plank_brace (1)
+  m_Name: plank_brace
   m_TagString: Plank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7735,6 +7736,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &144761750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144761742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &148219420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12565,7 +12579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &258707438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25806,8 +25820,9 @@ GameObject:
   - component: {fileID: 600667455}
   - component: {fileID: 600667459}
   - component: {fileID: 600667460}
+  - component: {fileID: 600667461}
   m_Layer: 0
-  m_Name: plank_stud (2)
+  m_Name: plank_stud
   m_TagString: Plank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25962,6 +25977,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &600667461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600667453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &602920300
 GameObject:
   m_ObjectHideFlags: 0
@@ -33150,6 +33178,7 @@ GameObject:
   - component: {fileID: 786783968}
   - component: {fileID: 786783973}
   - component: {fileID: 786783974}
+  - component: {fileID: 786783975}
   m_Layer: 0
   m_Name: plank_wallbeam
   m_TagString: Plank
@@ -33306,6 +33335,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &786783975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786783967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &786801816
 GameObject:
   m_ObjectHideFlags: 0
@@ -37113,6 +37155,7 @@ GameObject:
   - component: {fileID: 899741264}
   - component: {fileID: 899741265}
   - component: {fileID: 899741266}
+  - component: {fileID: 899741267}
   m_Layer: 0
   m_Name: plank_stillbeam
   m_TagString: Plank
@@ -37269,6 +37312,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &899741267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899741259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &900554231
 GameObject:
   m_ObjectHideFlags: 0
@@ -46233,6 +46289,118 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057026780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1063311112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063311113}
+  - component: {fileID: 1063311117}
+  - component: {fileID: 1063311116}
+  - component: {fileID: 1063311115}
+  - component: {fileID: 1063311114}
+  m_Layer: 0
+  m_Name: obj_ObjectRetrievalOnDrop_Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1063311113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063311112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.24, z: 0}
+  m_LocalScale: {x: 2.56, y: 4.22, z: 6.13}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1864611749}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063311114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063311112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+--- !u!64 &1063311115
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063311112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1063311116
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063311112}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1063311117
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063311112}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1063559184
 GameObject:
   m_ObjectHideFlags: 0
@@ -55682,8 +55850,9 @@ GameObject:
   - component: {fileID: 1281227923}
   - component: {fileID: 1281227927}
   - component: {fileID: 1281227928}
+  - component: {fileID: 1281227929}
   m_Layer: 0
-  m_Name: plank_stud (4)
+  m_Name: plank_stud
   m_TagString: Plank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55838,6 +56007,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1281227929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281227921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1286971411
 GameObject:
   m_ObjectHideFlags: 0
@@ -60755,6 +60937,7 @@ GameObject:
   - component: {fileID: 1419979448}
   - component: {fileID: 1419979453}
   - component: {fileID: 1419979454}
+  - component: {fileID: 1419979455}
   m_Layer: 0
   m_Name: plank_brace
   m_TagString: Plank
@@ -60911,6 +61094,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1419979455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419979447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1426548208
 GameObject:
   m_ObjectHideFlags: 0
@@ -60928,7 +61124,7 @@ GameObject:
   - component: {fileID: 1426548210}
   - component: {fileID: 1426548217}
   m_Layer: 0
-  m_Name: grabbable_ThermalWrap (3)
+  m_Name: grabbable_ThermalWrap
   m_TagString: ThermalWrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62994,8 +63190,9 @@ GameObject:
   - component: {fileID: 1473144816}
   - component: {fileID: 1473144820}
   - component: {fileID: 1473144821}
+  - component: {fileID: 1473144822}
   m_Layer: 0
-  m_Name: plank_stud (1)
+  m_Name: plank_stud
   m_TagString: Plank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63150,6 +63347,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1473144822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473144814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1474196268
 GameObject:
   m_ObjectHideFlags: 0
@@ -68037,7 +68247,7 @@ PrefabInstance:
     - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: ExcludeTransformNames.Array.size
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -68068,6 +68278,51 @@ PrefabInstance:
         type: 3}
       propertyPath: ExcludeTransformNames.Array.data[5]
       value: ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[6]
+      value: plank_stillbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[7]
+      value: plank_stud
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[8]
+      value: plank_wallbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[9]
+      value: plank_brace
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[10]
+      value: P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[11]
+      value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[12]
+      value: P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[13]
+      value: Shoes 1 (C)(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561733894627218667, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[14]
+      value: grabbable_ThermalWrap
       objectReference: {fileID: 0}
     - target: {fileID: 2565285970244107679, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -75012,7 +75267,7 @@ PrefabInstance:
     - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: ExcludeTransformNames.Array.size
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -75043,6 +75298,51 @@ PrefabInstance:
         type: 3}
       propertyPath: ExcludeTransformNames.Array.data[5]
       value: ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[6]
+      value: plank_stillbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[7]
+      value: plank_stud
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[8]
+      value: plank_wallbeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[9]
+      value: plank_brace
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[10]
+      value: P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[11]
+      value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[12]
+      value: P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[13]
+      value: Shoes 1 (C)(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045774559201997781, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: ExcludeTransformNames.Array.data[14]
+      value: grabbable_ThermalWrap
       objectReference: {fileID: 0}
     - target: {fileID: 9054604882104688652, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -81338,8 +81638,9 @@ GameObject:
   - component: {fileID: 1642080303}
   - component: {fileID: 1642080307}
   - component: {fileID: 1642080308}
+  - component: {fileID: 1642080309}
   m_Layer: 0
-  m_Name: plank_stud (3)
+  m_Name: plank_stud
   m_TagString: Plank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81494,6 +81795,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1642080309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642080301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1642907037
 GameObject:
   m_ObjectHideFlags: 0
@@ -89490,6 +89804,7 @@ Transform:
   - {fileID: 359329117}
   - {fileID: 2127066551}
   - {fileID: 259025182}
+  - {fileID: 1063311113}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94769,6 +95084,7 @@ GameObject:
   - component: {fileID: 1965922012}
   - component: {fileID: 1965922017}
   - component: {fileID: 1965922018}
+  - component: {fileID: 1965922019}
   m_Layer: 0
   m_Name: plank_stud
   m_TagString: Plank
@@ -94925,6 +95241,19 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1965922019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965922011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74057c7127f5b489babaa5d084806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1966218928
 GameObject:
   m_ObjectHideFlags: 0
@@ -94940,7 +95269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1966218929
 Transform:
   m_ObjectHideFlags: 0
@@ -95664,7 +95993,7 @@ GameObject:
   - component: {fileID: 1997109356}
   - component: {fileID: 1997109363}
   m_Layer: 0
-  m_Name: grabbable_ThermalWrap (1)
+  m_Name: grabbable_ThermalWrap
   m_TagString: ThermalWrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98694,7 +99023,7 @@ GameObject:
   - component: {fileID: 2046748989}
   - component: {fileID: 2046748996}
   m_Layer: 0
-  m_Name: grabbable_ThermalWrap (2)
+  m_Name: grabbable_ThermalWrap
   m_TagString: ThermalWrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

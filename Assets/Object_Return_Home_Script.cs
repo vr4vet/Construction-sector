@@ -1,3 +1,4 @@
+using BNG;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,14 +26,28 @@ public class Object_Return_Home_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Object_Return_Home_Script>() != null)
+
+        Object_Return_Home_Script g = other.gameObject.GetComponent<Object_Return_Home_Script>();
+        if (g != null)
         {
-            other.gameObject.GetComponent<Object_Return_Home_Script>().ResetPosition();
+            if (g.enabled)
+            {
+                g.ResetPosition();
+
+            }
         }
     }
 
     public void ResetPosition()
     {
+        Grabbable b = gameObject.GetComponent<Grabbable>();
+        if (b != null)
+        {
+            if (b.BeingHeld)
+            {
+                return;
+            }
+        }
         if (rbody != null)
         {
             rbody.velocity = Vector3.zero;
