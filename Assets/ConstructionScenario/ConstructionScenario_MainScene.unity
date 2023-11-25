@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rafter: {fileID: 1651021264}
-  _Grabbable: {fileID: 21369948}
+  _otherSide: {fileID: 0}
   left: 0
   speed: 25
 --- !u!114 &21369948
@@ -16355,6 +16355,7 @@ GameObject:
   - component: {fileID: 350765808}
   - component: {fileID: 350765810}
   - component: {fileID: 350765809}
+  - component: {fileID: 350765811}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -16420,6 +16421,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350765807}
   m_CullTransparentMesh: 1
+--- !u!225 &350765811
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350765807}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &353063651
 GameObject:
   m_ObjectHideFlags: 0
@@ -27726,6 +27739,7 @@ GameObject:
   - component: {fileID: 612636697}
   - component: {fileID: 612636699}
   - component: {fileID: 612636698}
+  - component: {fileID: 612636700}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -27850,6 +27864,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612636696}
   m_CullTransparentMesh: 1
+--- !u!225 &612636700
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612636696}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &616300438
 GameObject:
   m_ObjectHideFlags: 0
@@ -29650,7 +29676,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -120}
-  m_SizeDelta: {x: 175, y: 181}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &641395194
 GameObject:
@@ -35548,7 +35574,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1927034028}
         m_TargetAssemblyTypeName: RafterSpinning, Assembly-CSharp
-        m_MethodName: Spin
+        m_MethodName: toggleSpin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40381,7 +40407,6 @@ GameObject:
   - component: {fileID: 927321156}
   - component: {fileID: 927321155}
   - component: {fileID: 927321153}
-  - component: {fileID: 927321159}
   - component: {fileID: 927321158}
   m_Layer: 11
   m_Name: left
@@ -40497,78 +40522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rafter: {fileID: 639386681}
-  _Grabbable: {fileID: 927321159}
+  _otherSide: {fileID: 1927034028}
   left: 1
   speed: 25
---- !u!114 &927321159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927321151}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdea428d48e2bb488d33d5f75c39bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BeingHeld: 0
-  GrabButton: 0
-  Grabtype: 2
-  GrabPhysics: 2
-  GrabMechanic: 1
-  GrabSpeed: 15
-  RemoteGrabbable: 0
-  RemoteGrabMechanic: 0
-  RemoteGrabDistance: 2
-  ThrowForceMultiplier: 0
-  ThrowForceMultiplierAngular: 0
-  BreakDistance: 0
-  HideHandGraphics: 0
-  ParentToHands: 0
-  ParentHandModel: 1
-  SnapHandModel: 1
-  CanBeDropped: 1
-  CanBeSnappedToSnapZone: 1
-  ForceDisableKinematicOnDrop: 0
-  InstantMovement: 0
-  MakeChildCollidersGrabbable: 0
-  handPoseType: 1
-  SelectedHandPose: {fileID: 0}
-  CustomHandPose: 0
-  SecondaryGrabBehavior: 0
-  TwoHandedPosition: 0
-  TwoHandedPostionLerpAmount: 0.5
-  TwoHandedRotation: 1
-  TwoHandedRotationLerpAmount: 0.5
-  TwoHandedDropBehavior: 0
-  TwoHandedLookVector: 0
-  SecondHandLookSpeed: 40
-  SecondaryGrabbable: {fileID: 0}
-  OtherGrabbableMustBeGrabbed: {fileID: 0}
-  CollisionSpring: 3000
-  CollisionSlerp: 500
-  CollisionLinearMotionX: 2
-  CollisionLinearMotionY: 2
-  CollisionLinearMotionZ: 2
-  CollisionAngularMotionX: 2
-  CollisionAngularMotionY: 2
-  CollisionAngularMotionZ: 2
-  ApplyCorrectiveForce: 1
-  MoveVelocityForce: 0
-  MoveAngularVelocityForce: 0
-  LastGrabTime: 0
-  LastDropTime: 0
-  AddControllerVelocityOnDrop: 1
-  collisions: []
-  ActiveGrabPoint: {fileID: 0}
-  SecondaryLookOffset: {x: 0, y: 0, z: 0}
-  SecondaryLookAtTransform: {fileID: 0}
-  LocalOffsetTransform: {fileID: 0}
-  GrabPoints: []
-  UseCustomInspector: 1
-  lastFlickTime: 0
-  FlickForce: 1
 --- !u!1 &929531645
 GameObject:
   m_ObjectHideFlags: 0
@@ -43476,7 +43432,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 927321158}
         m_TargetAssemblyTypeName: RafterSpinning, Assembly-CSharp
-        m_MethodName: Spin
+        m_MethodName: toggleSpin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -78441,6 +78397,7 @@ GameObject:
   - component: {fileID: 1529466808}
   - component: {fileID: 1529466810}
   - component: {fileID: 1529466809}
+  - component: {fileID: 1529466811}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -78565,6 +78522,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529466807}
   m_CullTransparentMesh: 1
+--- !u!225 &1529466811
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529466807}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1530379528
 GameObject:
   m_ObjectHideFlags: 0
@@ -85102,7 +85071,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1672620522
 GameObject:
@@ -94276,6 +94245,7 @@ GameObject:
   - component: {fileID: 1915601801}
   - component: {fileID: 1915601803}
   - component: {fileID: 1915601802}
+  - component: {fileID: 1915601804}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -94341,6 +94311,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915601800}
   m_CullTransparentMesh: 1
+--- !u!225 &1915601804
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915601800}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1919152355
 GameObject:
   m_ObjectHideFlags: 0
@@ -94820,7 +94802,6 @@ GameObject:
   - component: {fileID: 1927034024}
   - component: {fileID: 1927034023}
   - component: {fileID: 1927034021}
-  - component: {fileID: 1927034029}
   - component: {fileID: 1927034028}
   m_Layer: 11
   m_Name: right
@@ -94936,78 +94917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rafter: {fileID: 639386681}
-  _Grabbable: {fileID: 1927034029}
+  _otherSide: {fileID: 927321158}
   left: 0
   speed: 25
---- !u!114 &1927034029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927034019}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdea428d48e2bb488d33d5f75c39bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BeingHeld: 0
-  GrabButton: 0
-  Grabtype: 2
-  GrabPhysics: 2
-  GrabMechanic: 1
-  GrabSpeed: 15
-  RemoteGrabbable: 0
-  RemoteGrabMechanic: 0
-  RemoteGrabDistance: 2
-  ThrowForceMultiplier: 0
-  ThrowForceMultiplierAngular: 0
-  BreakDistance: 0
-  HideHandGraphics: 0
-  ParentToHands: 0
-  ParentHandModel: 1
-  SnapHandModel: 1
-  CanBeDropped: 1
-  CanBeSnappedToSnapZone: 1
-  ForceDisableKinematicOnDrop: 0
-  InstantMovement: 0
-  MakeChildCollidersGrabbable: 0
-  handPoseType: 1
-  SelectedHandPose: {fileID: 0}
-  CustomHandPose: 0
-  SecondaryGrabBehavior: 0
-  TwoHandedPosition: 0
-  TwoHandedPostionLerpAmount: 0.5
-  TwoHandedRotation: 1
-  TwoHandedRotationLerpAmount: 0.5
-  TwoHandedDropBehavior: 0
-  TwoHandedLookVector: 0
-  SecondHandLookSpeed: 40
-  SecondaryGrabbable: {fileID: 0}
-  OtherGrabbableMustBeGrabbed: {fileID: 0}
-  CollisionSpring: 3000
-  CollisionSlerp: 500
-  CollisionLinearMotionX: 2
-  CollisionLinearMotionY: 2
-  CollisionLinearMotionZ: 2
-  CollisionAngularMotionX: 2
-  CollisionAngularMotionY: 2
-  CollisionAngularMotionZ: 2
-  ApplyCorrectiveForce: 1
-  MoveVelocityForce: 0
-  MoveAngularVelocityForce: 0
-  LastGrabTime: 0
-  LastDropTime: 0
-  AddControllerVelocityOnDrop: 1
-  collisions: []
-  ActiveGrabPoint: {fileID: 0}
-  SecondaryLookOffset: {x: 0, y: 0, z: 0}
-  SecondaryLookAtTransform: {fileID: 0}
-  LocalOffsetTransform: {fileID: 0}
-  GrabPoints: []
-  UseCustomInspector: 1
-  lastFlickTime: 0
-  FlickForce: 1
 --- !u!1 &1927070263
 GameObject:
   m_ObjectHideFlags: 0
@@ -96996,7 +96908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rafter: {fileID: 1651021264}
-  _Grabbable: {fileID: 1961880879}
+  _otherSide: {fileID: 0}
   left: 1
   speed: 25
 --- !u!114 &1961880879
