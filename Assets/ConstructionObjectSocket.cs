@@ -77,6 +77,11 @@ public class ConstructionObjectSocket : MonoBehaviour
         {
             //Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
             Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
+            Object_Return_Home_Script returner = other.GetComponent<Object_Return_Home_Script>();
+            if (returner != null)
+            {
+                returner.enabled = false;
+            }
             ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
             if (other_GRABBABLE == null)
             {
@@ -285,5 +290,8 @@ public enum ConstructionObjectType
     sheet,
     woodFibre,
     vaporFoil,
-    t2s2_RoofTileClamp
+    t2s2_RoofTileClamp,
+    cornertile,
+    normaltile,
+    stormclip
 }

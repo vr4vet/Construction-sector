@@ -5,6 +5,7 @@ public class T2S1_MANAGER : MonoBehaviour
 {
 
     public GameObject layer1, layer2, layer3, layer4;
+    [SerializeReference] GameObject DemonstrationMenu;
     [SerializeReference] GameObject QuizMenu;
     [SerializeReference] GameObject MaterialChoiceMenu;
 
@@ -16,46 +17,93 @@ public class T2S1_MANAGER : MonoBehaviour
     #region QuizElements
 
     public GameObject btn_rafters, btn_underlayment, btn_battens, btn_tiles, quizCorrect, quizWrong;
-    public bool Clickedrafters, Clickedunderlayment, Clickedbattens, Clickedtiles;
+    public bool isPicked_Rafters, isPicked_Underlayment, isPicked_Battens, isPicked_Tiles;
     public bool quizCanProceed;
     public List<GameObject> Picked_btns;
+    List<GameObject> btn_spots;
+
+
+    
 
     Vector3 startPos_btn_rafters, startPos_btn_underlayment, startPos_btn_battens, startPos_btn_tiles;
-    Vector3 endPos_btn_rafters, endPos_btn_underlayment, endPos_btn_battens, endPos_btn_tiles;
+    Vector3 endPos_start
+    {
+        get
+        {
+            return endPos_obj_rafters.transform.position;
+        }
+    }
 
     public GameObject endPos_obj_rafters, endPos_obj_underlayment, endPos_obj_battens, endPos_obj_tiles;
 
     public void ClickRaftersobj()
     {
-        if (Clickedrafters)
+        if (isPicked_Rafters)
         {//if this has already been clicked, we remove it and move it back.
-            btn_rafters.transform.position = startPos_btn_rafters;
-            Picked_btns.Remove(btn_rafters);
-            Clickedrafters = false;
+            ResetButtons();
+
         }
         else //we select it
         {
-            Clickedrafters = true;
-            btn_rafters.transform.position = endPos_btn_rafters;
+            isPicked_Rafters = true;
+            btn_rafters.transform.position = btn_spots[Picked_btns.Count].transform.position;
+
             Picked_btns.Add(btn_rafters);
             CheckIfQuizIsCorrect();
         }
 
     }
-    public void ClickBattenssobj()
+
+    public void ResetButtons()
     {
-        if (Clickedbattens)
-        {//if this has already been clicked, we remove it and move it back.
+
+        quizCorrect.SetActive(false);
+        quizWrong.SetActive(false);
+
+        if (isPicked_Rafters)
+        {
+            btn_rafters.transform.position = startPos_btn_rafters;
+            Picked_btns.Remove(btn_rafters);
+            isPicked_Rafters = false;
+        }
+        
+
+        if (isPicked_Battens)
+        {
             btn_battens.transform.position = startPos_btn_battens;
             Picked_btns.Remove(btn_battens);
-            Clickedbattens = false;
+            isPicked_Battens = false;
+        }
+        
+
+        if (isPicked_Underlayment)
+        {
+            btn_underlayment.transform.position = startPos_btn_underlayment;
+            Picked_btns.Remove(btn_underlayment);
+            isPicked_Underlayment = false;
+        }
+
+        if (isPicked_Tiles)
+        {
+            btn_tiles.transform.position = startPos_btn_tiles;
+            Picked_btns.Remove(btn_tiles);
+            isPicked_Tiles = false;
+        }
+       
+    }
+    public void ClickBattenssobj()
+    {
+        if (isPicked_Battens)
+        {//if this has already been clicked, we remove it and move it back.
+            ResetButtons();
 
         }
         else //we select it
         {
-            Clickedbattens = true;
+            isPicked_Battens = true;
+            btn_battens.transform.position = btn_spots[Picked_btns.Count].transform.position;
+           
 
-            btn_battens.transform.position = endPos_btn_battens;
             Picked_btns.Add(btn_battens);
             CheckIfQuizIsCorrect();
         }
@@ -63,16 +111,15 @@ public class T2S1_MANAGER : MonoBehaviour
     }
     public void ClickUnderlaymentsobj()
     {
-        if (Clickedunderlayment)
+        if (isPicked_Underlayment)
         {//if this has already been clicked, we remove it and move it back.
-            btn_underlayment.transform.position = startPos_btn_underlayment;
-            Picked_btns.Remove(btn_underlayment);
-            Clickedunderlayment = false;
+            ResetButtons();
+
         }
         else //we select it
         {
-            Clickedunderlayment = true;
-            btn_underlayment.transform.position = endPos_btn_underlayment;
+            isPicked_Underlayment = true;
+            btn_underlayment.transform.position = btn_spots[Picked_btns.Count].transform.position;
             Picked_btns.Add(btn_underlayment);
             CheckIfQuizIsCorrect();
         }
@@ -80,16 +127,15 @@ public class T2S1_MANAGER : MonoBehaviour
     }
     public void ClickTilessobj()
     {
-        if (Clickedtiles)
+        if (isPicked_Tiles)
         {//if this has already been clicked, we remove it and move it back.
-            btn_tiles.transform.position = startPos_btn_tiles;
-            Picked_btns.Remove(btn_tiles);
-            Clickedtiles = false;
+            ResetButtons();
+
         }
         else //we select it
         {
-            Clickedtiles = true;
-            btn_tiles.transform.position = endPos_btn_tiles;
+            isPicked_Tiles = true;
+            btn_tiles.transform.position = btn_spots[Picked_btns.Count].transform.position;
             Picked_btns.Add(btn_tiles);
             CheckIfQuizIsCorrect();
         }
@@ -128,19 +174,47 @@ public class T2S1_MANAGER : MonoBehaviour
         }
     }
 
+    public void GoToQuiz()
+    {
+        DemonstrationMenu.SetActive(false);
+        QuizMenu.SetActive(true);
+        MaterialChoiceMenu.SetActive(false);
+    }
+
+    public void ReturnToOrder()
+    {
+        DemonstrationMenu.SetActive(true);
+        QuizMenu.SetActive(false);
+        MaterialChoiceMenu.SetActive(false);
+    }
+    public void FinishQuiz()
+    {
+        if (quizCanProceed)
+        {
+
+            GoToNextSubtask();
+            //DemonstrationMenu.SetActive(false);
+            //QuizMenu.SetActive(false);
+            //MaterialChoiceMenu.SetActive(true);
+        }
+    }
+    public void GoToNextSubtask()
+    {
+
+        //if (hasSelectedMaterial)
+        //{
+            ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.FIVE);
+
+        //}
+    }
+
+    bool hasSelectedMaterial = false;
     void InitializeBtnStartingPos()
     {
         startPos_btn_rafters = btn_rafters.transform.position;
         startPos_btn_underlayment = btn_underlayment.transform.position;
         startPos_btn_battens = btn_battens.transform.position;
         startPos_btn_tiles = btn_tiles.transform.position;
-
-
-
-        endPos_btn_rafters = endPos_obj_rafters.transform.position;
-        endPos_btn_underlayment = endPos_obj_underlayment.transform.position;
-        endPos_btn_battens = endPos_obj_battens.transform.position;
-        endPos_btn_tiles = endPos_obj_tiles.transform.position;
     }
 
 
@@ -154,6 +228,10 @@ public class T2S1_MANAGER : MonoBehaviour
             item.enabled = false;
         }
         InitializeBtnStartingPos();
+        btn_spots = new List<GameObject> { endPos_obj_rafters, endPos_obj_underlayment, endPos_obj_battens, endPos_obj_tiles };
+        DemonstrationMenu.SetActive(true);
+        QuizMenu.SetActive(false);
+        MaterialChoiceMenu.SetActive(false);
     }
 
     public void SetRoof(MaterialSelectorCube.SelectorMaterialTypeRoof incoming)
@@ -194,6 +272,7 @@ public class T2S1_MANAGER : MonoBehaviour
 
     public void MatChoice(int i)
     {
+        hasSelectedMaterial = true;
         switch (i)
         {
             case 1:

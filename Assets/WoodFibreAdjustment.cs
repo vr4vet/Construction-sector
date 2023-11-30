@@ -9,6 +9,19 @@ public class WoodFibreAdjustment : MonoBehaviour
     [SerializeReference] WoodFibreSocket _socket;
     [SerializeReference] GameObject _text, _textDone, _plankDone;
     bool finished = false;
+    bool playerNear;
+
+
+    public void PlayerEntered()
+    {
+
+        playerNear = true;
+    }
+
+    public void PlayerLeft()
+    {
+        playerNear = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +34,7 @@ public class WoodFibreAdjustment : MonoBehaviour
         //if (!finished)
         //{
         // if (_grab.BeingHeld)
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && playerNear)
         {
             finished = true;
             Finish();

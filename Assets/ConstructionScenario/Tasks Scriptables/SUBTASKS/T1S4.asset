@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
+  m_Name: T1S4
+  m_EditorClassIdentifier: 
+  _subtaskName: Attach vapor barrier film + tape
+  _description: 
+  _autocompleate: 1
+  _stepList:
+  - {fileID: 11400000, guid: 54a238152a4b7a7468e585a74b78baea, type: 2}
+  - {fileID: 11400000, guid: 4c2b5fdf5a9b42b4ba9c9ccbc7f7aa0a, type: 2}
+  - {fileID: 11400000, guid: d5000335c2db33747b5f875ca4057389, type: 2}

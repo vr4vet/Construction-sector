@@ -12,6 +12,9 @@ TagManager:
   - Stapler
   - Duct Tape
   - Shoes
+  - VaporBarrier
+  - Stair
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Cursor
+    uniqueID: 265833001
     locked: 0

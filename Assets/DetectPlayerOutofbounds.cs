@@ -9,12 +9,15 @@ public class DetectPlayerOutofbounds : MonoBehaviour
     public CharacterController controller;
     void OnTriggerEnter(Collider colli)
     {
-        
-            
+
+        if (colli.tag == "Player")
+        {
             controller.enabled = false;
 
             controller.transform.position = teleportLocation.transform.position;
 
             controller.enabled = true;
+        }
+            
     }
 }
