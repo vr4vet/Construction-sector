@@ -32,19 +32,14 @@ public class WoodFibreAdjustment : MonoBehaviour
         //if (!finished)
         //{
         // if (_grab.BeingHeld)
-        if ((Input.GetKeyDown(KeyCode.JoystickButton11) || Input.GetKeyDown(KeyCode.JoystickButton12)) && playerNear)
-        {
-          
-            finished = true;
-            Finish();
-        }
+       
 
 
         // }
     }
 
 
-    void Finish()
+   public void Finish()
     {
         _grab.enabled = false;
         _text.SetActive(false);

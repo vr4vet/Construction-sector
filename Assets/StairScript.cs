@@ -5,7 +5,6 @@ using UnityEngine;
 public class StairScript : MonoBehaviour
 {
     [SerializeReference] GameObject bottomCoord, topCoord;
-    [SerializeReference] CharacterController _charControl;
     [SerializeReference] PlayerTeleport _Player;
     bool wentUp;
 
@@ -18,7 +17,9 @@ public class StairScript : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         Teleport();
-        yield return new WaitForSecondsRealtime(2f);
+        canInteract = false;
+
+        yield return new WaitForSecondsRealtime(4f);
 
         canInteract = true;
     }
@@ -28,7 +29,6 @@ public class StairScript : MonoBehaviour
 
     void Teleport()
     {
-        _charControl.enabled = false;
         if (wentUp)
         {
             _Player.TeleportPlayerToTransform(bottomCoord.transform);
@@ -41,8 +41,6 @@ public class StairScript : MonoBehaviour
 
         }
         wentUp = !wentUp;
-        _charControl.enabled = true;
-        canInteract = false;
 
     }
     public void OnTrigger(Collider other)

@@ -24,6 +24,10 @@ public class WoodFiberPlayerDetector : MonoBehaviour
         }
     }
 
+    public void TriggerManually()
+    {
+        adj.Finish();
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player" && firsthandin == other.gameObject)

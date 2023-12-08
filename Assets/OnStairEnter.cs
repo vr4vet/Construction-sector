@@ -21,5 +21,9 @@ public class OnStairEnter : MonoBehaviour
         {
             stairs.OnTrigger(other);
         }
+        if (other.tag == "WoodFiber")
+        {
+            other.GetComponent<WoodFiberPlayerDetector>().TriggerManually();
+        }
     }
 }
