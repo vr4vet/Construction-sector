@@ -1,6 +1,4 @@
 using BNG;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WoodFibreAdjustment : MonoBehaviour
@@ -25,7 +23,7 @@ public class WoodFibreAdjustment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -34,22 +32,18 @@ public class WoodFibreAdjustment : MonoBehaviour
         //if (!finished)
         //{
         // if (_grab.BeingHeld)
-        if (Input.GetKeyDown(KeyCode.X) && playerNear)
-        {
-            finished = true;
-            Finish();
-        }
-           
-            
-       // }
+       
+
+
+        // }
     }
 
 
-    void Finish()
+   public void Finish()
     {
         _grab.enabled = false;
         _text.SetActive(false);
-        _textDone.SetActive(true); 
+        _textDone.SetActive(true);
         _plankDone.SetActive(true);
         _socket.Finished();
         gameObject.SetActive(false);
