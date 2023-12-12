@@ -171,6 +171,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: eca02971ffee3a04d94e8c70ca441417, type: 2}
+  - {fileID: -5390960229356129618, guid: 8dbb7755b900c4a4f88d3b3a572c20a9, type: 2}
+  - {fileID: 7166573660266573035, guid: efc564812903f744da3d5ca8621eb950, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -191,7 +195,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Ntnu.VR4VETConstructionscenario
-    Standalone: com.Ntnu.VR4VET-Template
+    Standalone: com.Ntnu.VR4VET-Construction-scenario
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -766,7 +770,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
-    Standalone: 0
+    Standalone: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
