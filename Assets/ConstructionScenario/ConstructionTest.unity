@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -233,9 +233,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite: []
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &123193445
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,9 +387,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite: []
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1001 &288920872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,10 +690,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 1265241328}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &746288756
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,10 +811,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 1401606452}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &1050237666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,10 +1060,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 86075713}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &1381459445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,11 +1278,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 1560983992}
-  - {fileID: 86075713}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &1560983987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,9 +1399,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite: []
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &1625183165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c350f6522244c014aa6e809e3fb68660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RelatedSubTask: 0
   blocks:
   - {fileID: 86075713}
   - {fileID: 1560983992}
@@ -1422,8 +1474,8 @@ MonoBehaviour:
   - {fileID: 746100093}
   - {fileID: 746288761}
   - {fileID: 1633160729}
-  m_Transparent: {fileID: 2100000, guid: c30ff73f88220d14bb03c6660d35693e, type: 2}
-  m_Normal: {fileID: 2100000, guid: 7e31715ba78d8604db4ce587d44e7451, type: 2}
+  _manager: {fileID: 0}
+  FinishesSubtaskWhenDone: 1
 --- !u!1 &1633160724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,10 +1586,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 1912822234}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &1657244766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,7 +1653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2111,10 +2170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb69cf77a6e140458024f80c75f42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 1
+  _rend: {fileID: 0}
+  assumeBlockShape: 0
+  FinishedBlock: {fileID: 0}
+  _requiredType: 0
+  needsExtraStep: 0
+  isActuallyFinished: 0
+  heldObject: {fileID: 0}
   managerRef: {fileID: 0}
-  prerequisite:
-  - {fileID: 281875262}
-  placed: 0
+  prerequisites: []
+  RequiredTag: 
 --- !u!1 &2126006184
 GameObject:
   m_ObjectHideFlags: 0
