@@ -1,0 +1,3121 @@
+fileFormatVersion: 2
+guid: f637687a8e088d9e5180a62641827669
+timeCreated: 1524934514
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BeamConnector
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: Box004
+    100010: Box005
+    100012: Box006
+    100014: Box007
+    100016: Box008
+    100018: Box009
+    100020: Box010
+    100022: Box011
+    100024: Box012
+    100026: Box013
+    100028: Box016
+    100030: Box017
+    100032: Box018
+    100034: Box019
+    100036: Box020
+    100038: Box025
+    100040: Box026
+    100042: Box027
+    100044: Box028
+    100046: Box029
+    100048: Box030
+    100050: Box031
+    100052: Box032
+    100054: Box033
+    100056: Box034
+    100058: Box035
+    100060: Box036
+    100062: Box037
+    100064: Box038
+    100066: Box039
+    100068: Box040
+    100070: CenterBeam_Big
+    100072: CenterBeam_Huge
+    100074: CenterBeam_Medium
+    100076: CenterBeam_Small
+    100078: Cylinder004
+    100080: Cylinder006
+    100082: Cylinder008
+    100084: Cylinder010
+    100086: Cylinder013
+    100088: Cylinder014
+    100090: Cylinder015
+    100092: Cylinder016
+    100094: Cylinder017
+    100096: Cylinder018
+    100098: Cylinder019
+    100100: Cylinder020
+    100102: Cylinder021
+    100104: Cylinder022
+    100106: Cylinder023
+    100108: Cylinder024
+    100110: Cylinder025
+    100112: Cylinder026
+    100114: Cylinder027
+    100116: Cylinder028
+    100118: Cylinder029
+    100120: Cylinder030
+    100122: Cylinder031
+    100124: Cylinder032
+    100126: Cylinder033
+    100128: Cylinder034
+    100130: Cylinder035
+    100132: Cylinder036
+    100134: Cylinder037
+    100136: Cylinder038
+    100138: Cylinder039
+    100140: Cylinder040
+    100142: Cylinder041
+    100144: Cylinder042
+    100146: Cylinder043
+    100148: Cylinder044
+    100150: Cylinder045
+    100152: Cylinder046
+    100154: Cylinder047
+    100156: Cylinder048
+    100158: Cylinder049
+    100160: Cylinder050
+    100162: Cylinder051
+    100164: Cylinder052
+    100166: Cylinder053
+    100168: Cylinder054
+    100170: Cylinder055
+    100172: Cylinder056
+    100174: Cylinder057
+    100176: Cylinder058
+    100178: Cylinder059
+    100180: Cylinder060
+    100182: Cylinder061
+    100184: Cylinder062
+    100186: Cylinder063
+    100188: Cylinder064
+    100190: Cylinder065
+    100192: Cylinder066
+    100194: Cylinder069
+    100196: Cylinder070
+    100198: Cylinder071
+    100200: Cylinder072
+    100202: Cylinder075
+    100204: Cylinder076
+    100206: Cylinder077
+    100208: Cylinder078
+    100210: Cylinder081
+    100212: Cylinder082
+    100214: Cylinder083
+    100216: Cylinder084
+    100218: Cylinder087
+    100220: Cylinder088
+    100222: Cylinder089
+    100224: Cylinder090
+    100226: Cylinder095
+    100228: Cylinder097
+    100230: Cylinder098
+    100232: Cylinder100
+    100234: Cylinder101
+    100236: Cylinder102
+    100238: Cylinder103
+    100240: Cylinder104
+    100242: Cylinder105
+    100244: Cylinder106
+    100246: Cylinder107
+    100248: Cylinder108
+    100250: Cylinder109
+    100252: Cylinder110
+    100254: Cylinder111
+    100256: Cylinder112
+    100258: Cylinder113
+    100260: Cylinder114
+    100262: Cylinder115
+    100264: Cylinder116
+    100266: Cylinder117
+    100268: Cylinder118
+    100270: Cylinder119
+    100272: Cylinder120
+    100274: Cylinder121
+    100276: Cylinder122
+    100278: Cylinder123
+    100280: Cylinder124
+    100282: Cylinder125
+    100284: Cylinder126
+    100286: Cylinder127
+    100288: Cylinder128
+    100290: DoubleFloorPiece
+    100292: FloorPiece
+    100294: FootPiece
+    100296: Line001
+    100298: Line002
+    100300: Line016
+    100302: Line017
+    100304: Line018
+    100306: Line019
+    100308: Line020
+    100310: Line021
+    100312: Line022
+    100314: Line023
+    100316: Line024
+    100318: Line025
+    100320: Line026
+    100322: Line027
+    100324: Line028
+    100326: Line029
+    100328: Line030
+    100330: Line031
+    100332: Line032
+    100334: Line033
+    100336: Line034
+    100338: Line035
+    100340: Line036
+    100342: Line037
+    100344: Line038
+    100346: Line039
+    100348: Line040
+    100350: Line041
+    100352: Line042
+    100354: Line043
+    100356: Line044
+    100358: Line045
+    100360: Line046
+    100362: Line047
+    100364: Line048
+    100366: Line049
+    100368: Line050
+    100370: Line051
+    100372: Line052
+    100374: Line053
+    100376: Line054
+    100378: Line055
+    100380: Line056
+    100382: Line057
+    100384: Line058
+    100386: Line059
+    100388: Line060
+    100390: Line061
+    100392: Line062
+    100394: Line063
+    100396: Line078
+    100398: Line079
+    100400: Line080
+    100402: Line081
+    100404: Line082
+    100406: Line086
+    100408: Line088
+    100410: Line095
+    100412: Line096
+    100414: Line097
+    100416: Line098
+    100418: Line099
+    100420: Line100
+    100422: Line101
+    100424: Line103
+    100426: Line104
+    100428: Line105
+    100430: Line106
+    100432: Line107
+    100434: Line108
+    100436: Line109
+    100438: Line110
+    100440: Line111
+    100442: Line115
+    100444: Line116
+    100446: Line117
+    100448: Line118
+    100450: Line119
+    100452: Line120
+    100454: Line121
+    100456: Line122
+    100458: Line123
+    100460: Main Camera
+    100462: Metal
+    100464: Metal 1
+    100466: Metal 10
+    100468: Metal 100
+    100470: Metal 101
+    100472: Metal 102
+    100474: Metal 103
+    100476: Metal 104
+    100478: Metal 105
+    100480: Metal 106
+    100482: Metal 107
+    100484: Metal 108
+    100486: Metal 109
+    100488: Metal 11
+    100490: Metal 110
+    100492: Metal 111
+    100494: Metal 112
+    100496: Metal 113
+    100498: Metal 114
+    100500: Metal 115
+    100502: Metal 116
+    100504: Metal 117
+    100506: Metal 118
+    100508: Metal 119
+    100510: Metal 12
+    100512: Metal 120
+    100514: Metal 121
+    100516: Metal 122
+    100518: Metal 123
+    100520: Metal 124
+    100522: Metal 125
+    100524: Metal 126
+    100526: Metal 127
+    100528: Metal 128
+    100530: Metal 129
+    100532: Metal 13
+    100534: Metal 130
+    100536: Metal 131
+    100538: Metal 132
+    100540: Metal 133
+    100542: Metal 134
+    100544: Metal 135
+    100546: Metal 136
+    100548: Metal 137
+    100550: Metal 138
+    100552: Metal 139
+    100554: Metal 14
+    100556: Metal 140
+    100558: Metal 141
+    100560: Metal 142
+    100562: Metal 143
+    100564: Metal 144
+    100566: Metal 145
+    100568: Metal 146
+    100570: Metal 147
+    100572: Metal 148
+    100574: Metal 149
+    100576: Metal 15
+    100578: Metal 150
+    100580: Metal 151
+    100582: Metal 152
+    100584: Metal 153
+    100586: Metal 154
+    100588: Metal 155
+    100590: Metal 156
+    100592: Metal 157
+    100594: Metal 158
+    100596: Metal 159
+    100598: Metal 16
+    100600: Metal 160
+    100602: Metal 161
+    100604: Metal 162
+    100606: Metal 163
+    100608: Metal 164
+    100610: Metal 165
+    100612: Metal 166
+    100614: Metal 167
+    100616: Metal 168
+    100618: Metal 169
+    100620: Metal 17
+    100622: Metal 170
+    100624: Metal 171
+    100626: Metal 172
+    100628: Metal 173
+    100630: Metal 174
+    100632: Metal 175
+    100634: Metal 176
+    100636: Metal 177
+    100638: Metal 178
+    100640: Metal 179
+    100642: Metal 18
+    100644: Metal 180
+    100646: Metal 181
+    100648: Metal 182
+    100650: Metal 183
+    100652: Metal 184
+    100654: Metal 185
+    100656: Metal 186
+    100658: Metal 187
+    100660: Metal 188
+    100662: Metal 189
+    100664: Metal 19
+    100666: Metal 190
+    100668: Metal 191
+    100670: Metal 192
+    100672: Metal 193
+    100674: Metal 194
+    100676: Metal 195
+    100678: Metal 196
+    100680: Metal 197
+    100682: Metal 198
+    100684: Metal 199
+    100686: Metal 2
+    100688: Metal 20
+    100690: Metal 200
+    100692: Metal 201
+    100694: Metal 202
+    100696: Metal 203
+    100698: Metal 204
+    100700: Metal 205
+    100702: Metal 206
+    100704: Metal 207
+    100706: Metal 208
+    100708: Metal 209
+    100710: Metal 21
+    100712: Metal 210
+    100714: Metal 211
+    100716: Metal 212
+    100718: Metal 213
+    100720: Metal 214
+    100722: Metal 215
+    100724: Metal 216
+    100726: Metal 217
+    100728: Metal 218
+    100730: Metal 219
+    100732: Metal 22
+    100734: Metal 220
+    100736: Metal 221
+    100738: Metal 222
+    100740: Metal 223
+    100742: Metal 224
+    100744: Metal 225
+    100746: Metal 226
+    100748: Metal 227
+    100750: Metal 228
+    100752: Metal 229
+    100754: Metal 23
+    100756: Metal 230
+    100758: Metal 231
+    100760: Metal 232
+    100762: Metal 233
+    100764: Metal 234
+    100766: Metal 235
+    100768: Metal 236
+    100770: Metal 237
+    100772: Metal 238
+    100774: Metal 239
+    100776: Metal 24
+    100778: Metal 240
+    100780: Metal 241
+    100782: Metal 242
+    100784: Metal 243
+    100786: Metal 244
+    100788: Metal 245
+    100790: Metal 246
+    100792: Metal 247
+    100794: Metal 248
+    100796: Metal 249
+    100798: Metal 25
+    100800: Metal 250
+    100802: Metal 251
+    100804: Metal 252
+    100806: Metal 253
+    100808: Metal 254
+    100810: Metal 255
+    100812: Metal 256
+    100814: Metal 257
+    100816: Metal 258
+    100818: Metal 259
+    100820: Metal 26
+    100822: Metal 260
+    100824: Metal 261
+    100826: Metal 262
+    100828: Metal 263
+    100830: Metal 264
+    100832: Metal 265
+    100834: Metal 266
+    100836: Metal 267
+    100838: Metal 268
+    100840: Metal 269
+    100842: Metal 27
+    100844: Metal 270
+    100846: Metal 271
+    100848: Metal 272
+    100850: Metal 273
+    100852: Metal 274
+    100854: Metal 275
+    100856: Metal 276
+    100858: Metal 277
+    100860: Metal 278
+    100862: Metal 279
+    100864: Metal 28
+    100866: Metal 280
+    100868: Metal 281
+    100870: Metal 282
+    100872: Metal 283
+    100874: Metal 284
+    100876: Metal 285
+    100878: Metal 286
+    100880: Metal 287
+    100882: Metal 288
+    100884: Metal 289
+    100886: Metal 29
+    100888: Metal 290
+    100890: Metal 291
+    100892: Metal 292
+    100894: Metal 293
+    100896: Metal 294
+    100898: Metal 295
+    100900: Metal 296
+    100902: Metal 297
+    100904: Metal 298
+    100906: Metal 299
+    100908: Metal 3
+    100910: Metal 30
+    100912: Metal 300
+    100914: Metal 301
+    100916: Metal 302
+    100918: Metal 303
+    100920: Metal 304
+    100922: Metal 305
+    100924: Metal 306
+    100926: Metal 307
+    100928: Metal 308
+    100930: Metal 309
+    100932: Metal 31
+    100934: Metal 310
+    100936: Metal 311
+    100938: Metal 312
+    100940: Metal 313
+    100942: Metal 314
+    100944: Metal 315
+    100946: Metal 316
+    100948: Metal 317
+    100950: Metal 318
+    100952: Metal 319
+    100954: Metal 32
+    100956: Metal 320
+    100958: Metal 321
+    100960: Metal 33
+    100962: Metal 34
+    100964: Metal 35
+    100966: Metal 36
+    100968: Metal 37
+    100970: Metal 38
+    100972: Metal 39
+    100974: Metal 4
+    100976: Metal 40
+    100978: Metal 41
+    100980: Metal 42
+    100982: Metal 43
+    100984: Metal 44
+    100986: Metal 45
+    100988: Metal 46
+    100990: Metal 47
+    100992: Metal 48
+    100994: Metal 49
+    100996: Metal 5
+    100998: Metal 50
+    101000: Metal 51
+    101002: Metal 52
+    101004: Metal 53
+    101006: Metal 54
+    101008: Metal 55
+    101010: Metal 56
+    101012: Metal 57
+    101014: Metal 58
+    101016: Metal 59
+    101018: Metal 6
+    101020: Metal 60
+    101022: Metal 61
+    101024: Metal 62
+    101026: Metal 63
+    101028: Metal 64
+    101030: Metal 65
+    101032: Metal 66
+    101034: Metal 67
+    101036: Metal 68
+    101038: Metal 69
+    101040: Metal 7
+    101042: Metal 70
+    101044: Metal 71
+    101046: Metal 72
+    101048: Metal 73
+    101050: Metal 74
+    101052: Metal 75
+    101054: Metal 76
+    101056: Metal 77
+    101058: Metal 78
+    101060: Metal 79
+    101062: Metal 8
+    101064: Metal 80
+    101066: Metal 81
+    101068: Metal 82
+    101070: Metal 83
+    101072: Metal 84
+    101074: Metal 85
+    101076: Metal 86
+    101078: Metal 87
+    101080: Metal 88
+    101082: Metal 89
+    101084: Metal 9
+    101086: Metal 90
+    101088: Metal 91
+    101090: Metal 92
+    101092: Metal 93
+    101094: Metal 94
+    101096: Metal 95
+    101098: Metal 96
+    101100: Metal 97
+    101102: Metal 98
+    101104: Metal 99
+    101106: Metal_Colored
+    101108: Metal_Colored 1
+    101110: Metal_Colored 10
+    101112: Metal_Colored 100
+    101114: Metal_Colored 101
+    101116: Metal_Colored 102
+    101118: Metal_Colored 103
+    101120: Metal_Colored 104
+    101122: Metal_Colored 105
+    101124: Metal_Colored 106
+    101126: Metal_Colored 107
+    101128: Metal_Colored 108
+    101130: Metal_Colored 109
+    101132: Metal_Colored 11
+    101134: Metal_Colored 110
+    101136: Metal_Colored 12
+    101138: Metal_Colored 13
+    101140: Metal_Colored 14
+    101142: Metal_Colored 15
+    101144: Metal_Colored 16
+    101146: Metal_Colored 17
+    101148: Metal_Colored 18
+    101150: Metal_Colored 19
+    101152: Metal_Colored 2
+    101154: Metal_Colored 20
+    101156: Metal_Colored 21
+    101158: Metal_Colored 22
+    101160: Metal_Colored 23
+    101162: Metal_Colored 24
+    101164: Metal_Colored 25
+    101166: Metal_Colored 26
+    101168: Metal_Colored 27
+    101170: Metal_Colored 28
+    101172: Metal_Colored 29
+    101174: Metal_Colored 3
+    101176: Metal_Colored 30
+    101178: Metal_Colored 31
+    101180: Metal_Colored 32
+    101182: Metal_Colored 33
+    101184: Metal_Colored 34
+    101186: Metal_Colored 35
+    101188: Metal_Colored 36
+    101190: Metal_Colored 37
+    101192: Metal_Colored 38
+    101194: Metal_Colored 39
+    101196: Metal_Colored 4
+    101198: Metal_Colored 40
+    101200: Metal_Colored 41
+    101202: Metal_Colored 42
+    101204: Metal_Colored 43
+    101206: Metal_Colored 44
+    101208: Metal_Colored 45
+    101210: Metal_Colored 46
+    101212: Metal_Colored 47
+    101214: Metal_Colored 48
+    101216: Metal_Colored 49
+    101218: Metal_Colored 5
+    101220: Metal_Colored 50
+    101222: Metal_Colored 51
+    101224: Metal_Colored 52
+    101226: Metal_Colored 53
+    101228: Metal_Colored 54
+    101230: Metal_Colored 55
+    101232: Metal_Colored 56
+    101234: Metal_Colored 57
+    101236: Metal_Colored 58
+    101238: Metal_Colored 59
+    101240: Metal_Colored 6
+    101242: Metal_Colored 60
+    101244: Metal_Colored 61
+    101246: Metal_Colored 62
+    101248: Metal_Colored 63
+    101250: Metal_Colored 64
+    101252: Metal_Colored 65
+    101254: Metal_Colored 66
+    101256: Metal_Colored 67
+    101258: Metal_Colored 68
+    101260: Metal_Colored 69
+    101262: Metal_Colored 7
+    101264: Metal_Colored 70
+    101266: Metal_Colored 71
+    101268: Metal_Colored 72
+    101270: Metal_Colored 73
+    101272: Metal_Colored 74
+    101274: Metal_Colored 75
+    101276: Metal_Colored 76
+    101278: Metal_Colored 77
+    101280: Metal_Colored 78
+    101282: Metal_Colored 79
+    101284: Metal_Colored 8
+    101286: Metal_Colored 80
+    101288: Metal_Colored 81
+    101290: Metal_Colored 82
+    101292: Metal_Colored 83
+    101294: Metal_Colored 84
+    101296: Metal_Colored 85
+    101298: Metal_Colored 86
+    101300: Metal_Colored 87
+    101302: Metal_Colored 88
+    101304: Metal_Colored 89
+    101306: Metal_Colored 9
+    101308: Metal_Colored 90
+    101310: Metal_Colored 91
+    101312: Metal_Colored 92
+    101314: Metal_Colored 93
+    101316: Metal_Colored 94
+    101318: Metal_Colored 95
+    101320: Metal_Colored 96
+    101322: Metal_Colored 97
+    101324: Metal_Colored 98
+    101326: Metal_Colored 99
+    101328: MetalCenterBeamA
+    101330: MetalCenterBeamB
+    101332: MetalFrame
+    101334: MetalFrame 1
+    101336: MetalFrame 10
+    101338: MetalFrame 11
+    101340: MetalFrame 12
+    101342: MetalFrame 13
+    101344: MetalFrame 14
+    101346: MetalFrame 15
+    101348: MetalFrame 16
+    101350: MetalFrame 17
+    101352: MetalFrame 18
+    101354: MetalFrame 19
+    101356: MetalFrame 2
+    101358: MetalFrame 20
+    101360: MetalFrame 21
+    101362: MetalFrame 22
+    101364: MetalFrame 23
+    101366: MetalFrame 24
+    101368: MetalFrame 25
+    101370: MetalFrame 26
+    101372: MetalFrame 27
+    101374: MetalFrame 28
+    101376: MetalFrame 29
+    101378: MetalFrame 3
+    101380: MetalFrame 30
+    101382: MetalFrame 31
+    101384: MetalFrame 32
+    101386: MetalFrame 33
+    101388: MetalFrame 34
+    101390: MetalFrame 35
+    101392: MetalFrame 36
+    101394: MetalFrame 37
+    101396: MetalFrame 38
+    101398: MetalFrame 39
+    101400: MetalFrame 4
+    101402: MetalFrame 40
+    101404: MetalFrame 41
+    101406: MetalFrame 42
+    101408: MetalFrame 43
+    101410: MetalFrame 44
+    101412: MetalFrame 45
+    101414: MetalFrame 46
+    101416: MetalFrame 5
+    101418: MetalFrame 6
+    101420: MetalFrame 7
+    101422: MetalFrame 8
+    101424: MetalFrame 9
+    101426: Object011
+    101428: Object012
+    101430: Object015
+    101432: Object016
+    101434: Object017
+    101436: Object018
+    101438: Object019
+    101440: Object020
+    101442: Object021
+    101444: Object022
+    101446: Object023
+    101448: Object024
+    101450: Object025
+    101452: Object026
+    101454: Object027
+    101456: Object028
+    101458: Object029
+    101460: Object030
+    101462: Object031
+    101464: Object032
+    101466: Object033
+    101468: Object034
+    101470: Object035
+    101472: Object036
+    101474: Object037
+    101476: Object038
+    101478: Object039
+    101480: Object040
+    101482: Object041
+    101484: Object042
+    101486: Object043
+    101488: Object044
+    101490: Object045
+    101492: Object046
+    101494: Object047
+    101496: Object048
+    101498: Object049
+    101500: Object050
+    101502: Object051
+    101504: Object052
+    101506: Object053
+    101508: Object054
+    101510: Object055
+    101512: Object056
+    101514: Object057
+    101516: Object058
+    101518: Object059
+    101520: Object060
+    101522: Object061
+    101524: Object062
+    101526: Object063
+    101528: Object064
+    101530: Object065
+    101532: Object066
+    101534: Object067
+    101536: Object068
+    101538: Object069
+    101540: Object070
+    101542: Object071
+    101544: Object072
+    101546: Object073
+    101548: Object074
+    101550: Object075
+    101552: Object076
+    101554: Object077
+    101556: Object078
+    101558: Object079
+    101560: Object080
+    101562: Object082
+    101564: Object083
+    101566: Object084
+    101568: Object085
+    101570: Object089
+    101572: Object090
+    101574: Object091
+    101576: Object092
+    101578: Object095
+    101580: Object097
+    101582: Object099
+    101584: Object101
+    101586: Object104
+    101588: Object105
+    101590: Object106
+    101592: Object107
+    101594: Object110
+    101596: Object111
+    101598: Object114
+    101600: Object117
+    101602: Object118
+    101604: Object119
+    101606: Object120
+    101608: Object121
+    101610: Object122
+    101612: Object123
+    101614: Object125
+    101616: Object126
+    101618: Object127
+    101620: Object131
+    101622: Object132
+    101624: Object133
+    101626: Object134
+    101628: Object136
+    101630: Object137
+    101632: Object138
+    101634: Object140
+    101636: Object141
+    101638: Object142
+    101640: Object143
+    101642: Render
+    101644: Scaffolding_Double_High
+    101646: Scaffolding_Double_Low
+    101648: Scaffolding_Double_wStair
+    101650: Scaffolding_Single_High
+    101652: Scaffolding_Single_Low
+    101654: //RootNode
+    101656: ScaffoldingLow_Floor
+    101658: ScaffoldingLow_Floor_GroundLevel
+    101660: SingleFloorPiece
+    101662: Sky
+    101664: StraightBeam_Big
+    101666: StraightBeam_Medium
+    101668: Straightbeam_Small
+    101670: StraightStair001
+    101672: Wood
+    101674: Wood 1
+    101676: Wood 2
+    101678: Wood 3
+    101680: Wood 4
+    101682: Wood 5
+    101684: Wood 6
+    101686: Wood 7
+    101688: Wood 8
+    101690: WoodPiece
+    400000: BeamConnector
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: Box004
+    400010: Box005
+    400012: Box006
+    400014: Box007
+    400016: Box008
+    400018: Box009
+    400020: Box010
+    400022: Box011
+    400024: Box012
+    400026: Box013
+    400028: Box016
+    400030: Box017
+    400032: Box018
+    400034: Box019
+    400036: Box020
+    400038: Box025
+    400040: Box026
+    400042: Box027
+    400044: Box028
+    400046: Box029
+    400048: Box030
+    400050: Box031
+    400052: Box032
+    400054: Box033
+    400056: Box034
+    400058: Box035
+    400060: Box036
+    400062: Box037
+    400064: Box038
+    400066: Box039
+    400068: Box040
+    400070: CenterBeam_Big
+    400072: CenterBeam_Huge
+    400074: CenterBeam_Medium
+    400076: CenterBeam_Small
+    400078: Cylinder004
+    400080: Cylinder006
+    400082: Cylinder008
+    400084: Cylinder010
+    400086: Cylinder013
+    400088: Cylinder014
+    400090: Cylinder015
+    400092: Cylinder016
+    400094: Cylinder017
+    400096: Cylinder018
+    400098: Cylinder019
+    400100: Cylinder020
+    400102: Cylinder021
+    400104: Cylinder022
+    400106: Cylinder023
+    400108: Cylinder024
+    400110: Cylinder025
+    400112: Cylinder026
+    400114: Cylinder027
+    400116: Cylinder028
+    400118: Cylinder029
+    400120: Cylinder030
+    400122: Cylinder031
+    400124: Cylinder032
+    400126: Cylinder033
+    400128: Cylinder034
+    400130: Cylinder035
+    400132: Cylinder036
+    400134: Cylinder037
+    400136: Cylinder038
+    400138: Cylinder039
+    400140: Cylinder040
+    400142: Cylinder041
+    400144: Cylinder042
+    400146: Cylinder043
+    400148: Cylinder044
+    400150: Cylinder045
+    400152: Cylinder046
+    400154: Cylinder047
+    400156: Cylinder048
+    400158: Cylinder049
+    400160: Cylinder050
+    400162: Cylinder051
+    400164: Cylinder052
+    400166: Cylinder053
+    400168: Cylinder054
+    400170: Cylinder055
+    400172: Cylinder056
+    400174: Cylinder057
+    400176: Cylinder058
+    400178: Cylinder059
+    400180: Cylinder060
+    400182: Cylinder061
+    400184: Cylinder062
+    400186: Cylinder063
+    400188: Cylinder064
+    400190: Cylinder065
+    400192: Cylinder066
+    400194: Cylinder069
+    400196: Cylinder070
+    400198: Cylinder071
+    400200: Cylinder072
+    400202: Cylinder075
+    400204: Cylinder076
+    400206: Cylinder077
+    400208: Cylinder078
+    400210: Cylinder081
+    400212: Cylinder082
+    400214: Cylinder083
+    400216: Cylinder084
+    400218: Cylinder087
+    400220: Cylinder088
+    400222: Cylinder089
+    400224: Cylinder090
+    400226: Cylinder095
+    400228: Cylinder097
+    400230: Cylinder098
+    400232: Cylinder100
+    400234: Cylinder101
+    400236: Cylinder102
+    400238: Cylinder103
+    400240: Cylinder104
+    400242: Cylinder105
+    400244: Cylinder106
+    400246: Cylinder107
+    400248: Cylinder108
+    400250: Cylinder109
+    400252: Cylinder110
+    400254: Cylinder111
+    400256: Cylinder112
+    400258: Cylinder113
+    400260: Cylinder114
+    400262: Cylinder115
+    400264: Cylinder116
+    400266: Cylinder117
+    400268: Cylinder118
+    400270: Cylinder119
+    400272: Cylinder120
+    400274: Cylinder121
+    400276: Cylinder122
+    400278: Cylinder123
+    400280: Cylinder124
+    400282: Cylinder125
+    400284: Cylinder126
+    400286: Cylinder127
+    400288: Cylinder128
+    400290: DoubleFloorPiece
+    400292: FloorPiece
+    400294: FootPiece
+    400296: Line001
+    400298: Line002
+    400300: Line016
+    400302: Line017
+    400304: Line018
+    400306: Line019
+    400308: Line020
+    400310: Line021
+    400312: Line022
+    400314: Line023
+    400316: Line024
+    400318: Line025
+    400320: Line026
+    400322: Line027
+    400324: Line028
+    400326: Line029
+    400328: Line030
+    400330: Line031
+    400332: Line032
+    400334: Line033
+    400336: Line034
+    400338: Line035
+    400340: Line036
+    400342: Line037
+    400344: Line038
+    400346: Line039
+    400348: Line040
+    400350: Line041
+    400352: Line042
+    400354: Line043
+    400356: Line044
+    400358: Line045
+    400360: Line046
+    400362: Line047
+    400364: Line048
+    400366: Line049
+    400368: Line050
+    400370: Line051
+    400372: Line052
+    400374: Line053
+    400376: Line054
+    400378: Line055
+    400380: Line056
+    400382: Line057
+    400384: Line058
+    400386: Line059
+    400388: Line060
+    400390: Line061
+    400392: Line062
+    400394: Line063
+    400396: Line078
+    400398: Line079
+    400400: Line080
+    400402: Line081
+    400404: Line082
+    400406: Line086
+    400408: Line088
+    400410: Line095
+    400412: Line096
+    400414: Line097
+    400416: Line098
+    400418: Line099
+    400420: Line100
+    400422: Line101
+    400424: Line103
+    400426: Line104
+    400428: Line105
+    400430: Line106
+    400432: Line107
+    400434: Line108
+    400436: Line109
+    400438: Line110
+    400440: Line111
+    400442: Line115
+    400444: Line116
+    400446: Line117
+    400448: Line118
+    400450: Line119
+    400452: Line120
+    400454: Line121
+    400456: Line122
+    400458: Line123
+    400460: Main Camera
+    400462: Metal
+    400464: Metal 1
+    400466: Metal 10
+    400468: Metal 100
+    400470: Metal 101
+    400472: Metal 102
+    400474: Metal 103
+    400476: Metal 104
+    400478: Metal 105
+    400480: Metal 106
+    400482: Metal 107
+    400484: Metal 108
+    400486: Metal 109
+    400488: Metal 11
+    400490: Metal 110
+    400492: Metal 111
+    400494: Metal 112
+    400496: Metal 113
+    400498: Metal 114
+    400500: Metal 115
+    400502: Metal 116
+    400504: Metal 117
+    400506: Metal 118
+    400508: Metal 119
+    400510: Metal 12
+    400512: Metal 120
+    400514: Metal 121
+    400516: Metal 122
+    400518: Metal 123
+    400520: Metal 124
+    400522: Metal 125
+    400524: Metal 126
+    400526: Metal 127
+    400528: Metal 128
+    400530: Metal 129
+    400532: Metal 13
+    400534: Metal 130
+    400536: Metal 131
+    400538: Metal 132
+    400540: Metal 133
+    400542: Metal 134
+    400544: Metal 135
+    400546: Metal 136
+    400548: Metal 137
+    400550: Metal 138
+    400552: Metal 139
+    400554: Metal 14
+    400556: Metal 140
+    400558: Metal 141
+    400560: Metal 142
+    400562: Metal 143
+    400564: Metal 144
+    400566: Metal 145
+    400568: Metal 146
+    400570: Metal 147
+    400572: Metal 148
+    400574: Metal 149
+    400576: Metal 15
+    400578: Metal 150
+    400580: Metal 151
+    400582: Metal 152
+    400584: Metal 153
+    400586: Metal 154
+    400588: Metal 155
+    400590: Metal 156
+    400592: Metal 157
+    400594: Metal 158
+    400596: Metal 159
+    400598: Metal 16
+    400600: Metal 160
+    400602: Metal 161
+    400604: Metal 162
+    400606: Metal 163
+    400608: Metal 164
+    400610: Metal 165
+    400612: Metal 166
+    400614: Metal 167
+    400616: Metal 168
+    400618: Metal 169
+    400620: Metal 17
+    400622: Metal 170
+    400624: Metal 171
+    400626: Metal 172
+    400628: Metal 173
+    400630: Metal 174
+    400632: Metal 175
+    400634: Metal 176
+    400636: Metal 177
+    400638: Metal 178
+    400640: Metal 179
+    400642: Metal 18
+    400644: Metal 180
+    400646: Metal 181
+    400648: Metal 182
+    400650: Metal 183
+    400652: Metal 184
+    400654: Metal 185
+    400656: Metal 186
+    400658: Metal 187
+    400660: Metal 188
+    400662: Metal 189
+    400664: Metal 19
+    400666: Metal 190
+    400668: Metal 191
+    400670: Metal 192
+    400672: Metal 193
+    400674: Metal 194
+    400676: Metal 195
+    400678: Metal 196
+    400680: Metal 197
+    400682: Metal 198
+    400684: Metal 199
+    400686: Metal 2
+    400688: Metal 20
+    400690: Metal 200
+    400692: Metal 201
+    400694: Metal 202
+    400696: Metal 203
+    400698: Metal 204
+    400700: Metal 205
+    400702: Metal 206
+    400704: Metal 207
+    400706: Metal 208
+    400708: Metal 209
+    400710: Metal 21
+    400712: Metal 210
+    400714: Metal 211
+    400716: Metal 212
+    400718: Metal 213
+    400720: Metal 214
+    400722: Metal 215
+    400724: Metal 216
+    400726: Metal 217
+    400728: Metal 218
+    400730: Metal 219
+    400732: Metal 22
+    400734: Metal 220
+    400736: Metal 221
+    400738: Metal 222
+    400740: Metal 223
+    400742: Metal 224
+    400744: Metal 225
+    400746: Metal 226
+    400748: Metal 227
+    400750: Metal 228
+    400752: Metal 229
+    400754: Metal 23
+    400756: Metal 230
+    400758: Metal 231
+    400760: Metal 232
+    400762: Metal 233
+    400764: Metal 234
+    400766: Metal 235
+    400768: Metal 236
+    400770: Metal 237
+    400772: Metal 238
+    400774: Metal 239
+    400776: Metal 24
+    400778: Metal 240
+    400780: Metal 241
+    400782: Metal 242
+    400784: Metal 243
+    400786: Metal 244
+    400788: Metal 245
+    400790: Metal 246
+    400792: Metal 247
+    400794: Metal 248
+    400796: Metal 249
+    400798: Metal 25
+    400800: Metal 250
+    400802: Metal 251
+    400804: Metal 252
+    400806: Metal 253
+    400808: Metal 254
+    400810: Metal 255
+    400812: Metal 256
+    400814: Metal 257
+    400816: Metal 258
+    400818: Metal 259
+    400820: Metal 26
+    400822: Metal 260
+    400824: Metal 261
+    400826: Metal 262
+    400828: Metal 263
+    400830: Metal 264
+    400832: Metal 265
+    400834: Metal 266
+    400836: Metal 267
+    400838: Metal 268
+    400840: Metal 269
+    400842: Metal 27
+    400844: Metal 270
+    400846: Metal 271
+    400848: Metal 272
+    400850: Metal 273
+    400852: Metal 274
+    400854: Metal 275
+    400856: Metal 276
+    400858: Metal 277
+    400860: Metal 278
+    400862: Metal 279
+    400864: Metal 28
+    400866: Metal 280
+    400868: Metal 281
+    400870: Metal 282
+    400872: Metal 283
+    400874: Metal 284
+    400876: Metal 285
+    400878: Metal 286
+    400880: Metal 287
+    400882: Metal 288
+    400884: Metal 289
+    400886: Metal 29
+    400888: Metal 290
+    400890: Metal 291
+    400892: Metal 292
+    400894: Metal 293
+    400896: Metal 294
+    400898: Metal 295
+    400900: Metal 296
+    400902: Metal 297
+    400904: Metal 298
+    400906: Metal 299
+    400908: Metal 3
+    400910: Metal 30
+    400912: Metal 300
+    400914: Metal 301
+    400916: Metal 302
+    400918: Metal 303
+    400920: Metal 304
+    400922: Metal 305
+    400924: Metal 306
+    400926: Metal 307
+    400928: Metal 308
+    400930: Metal 309
+    400932: Metal 31
+    400934: Metal 310
+    400936: Metal 311
+    400938: Metal 312
+    400940: Metal 313
+    400942: Metal 314
+    400944: Metal 315
+    400946: Metal 316
+    400948: Metal 317
+    400950: Metal 318
+    400952: Metal 319
+    400954: Metal 32
+    400956: Metal 320
+    400958: Metal 321
+    400960: Metal 33
+    400962: Metal 34
+    400964: Metal 35
+    400966: Metal 36
+    400968: Metal 37
+    400970: Metal 38
+    400972: Metal 39
+    400974: Metal 4
+    400976: Metal 40
+    400978: Metal 41
+    400980: Metal 42
+    400982: Metal 43
+    400984: Metal 44
+    400986: Metal 45
+    400988: Metal 46
+    400990: Metal 47
+    400992: Metal 48
+    400994: Metal 49
+    400996: Metal 5
+    400998: Metal 50
+    401000: Metal 51
+    401002: Metal 52
+    401004: Metal 53
+    401006: Metal 54
+    401008: Metal 55
+    401010: Metal 56
+    401012: Metal 57
+    401014: Metal 58
+    401016: Metal 59
+    401018: Metal 6
+    401020: Metal 60
+    401022: Metal 61
+    401024: Metal 62
+    401026: Metal 63
+    401028: Metal 64
+    401030: Metal 65
+    401032: Metal 66
+    401034: Metal 67
+    401036: Metal 68
+    401038: Metal 69
+    401040: Metal 7
+    401042: Metal 70
+    401044: Metal 71
+    401046: Metal 72
+    401048: Metal 73
+    401050: Metal 74
+    401052: Metal 75
+    401054: Metal 76
+    401056: Metal 77
+    401058: Metal 78
+    401060: Metal 79
+    401062: Metal 8
+    401064: Metal 80
+    401066: Metal 81
+    401068: Metal 82
+    401070: Metal 83
+    401072: Metal 84
+    401074: Metal 85
+    401076: Metal 86
+    401078: Metal 87
+    401080: Metal 88
+    401082: Metal 89
+    401084: Metal 9
+    401086: Metal 90
+    401088: Metal 91
+    401090: Metal 92
+    401092: Metal 93
+    401094: Metal 94
+    401096: Metal 95
+    401098: Metal 96
+    401100: Metal 97
+    401102: Metal 98
+    401104: Metal 99
+    401106: Metal_Colored
+    401108: Metal_Colored 1
+    401110: Metal_Colored 10
+    401112: Metal_Colored 100
+    401114: Metal_Colored 101
+    401116: Metal_Colored 102
+    401118: Metal_Colored 103
+    401120: Metal_Colored 104
+    401122: Metal_Colored 105
+    401124: Metal_Colored 106
+    401126: Metal_Colored 107
+    401128: Metal_Colored 108
+    401130: Metal_Colored 109
+    401132: Metal_Colored 11
+    401134: Metal_Colored 110
+    401136: Metal_Colored 12
+    401138: Metal_Colored 13
+    401140: Metal_Colored 14
+    401142: Metal_Colored 15
+    401144: Metal_Colored 16
+    401146: Metal_Colored 17
+    401148: Metal_Colored 18
+    401150: Metal_Colored 19
+    401152: Metal_Colored 2
+    401154: Metal_Colored 20
+    401156: Metal_Colored 21
+    401158: Metal_Colored 22
+    401160: Metal_Colored 23
+    401162: Metal_Colored 24
+    401164: Metal_Colored 25
+    401166: Metal_Colored 26
+    401168: Metal_Colored 27
+    401170: Metal_Colored 28
+    401172: Metal_Colored 29
+    401174: Metal_Colored 3
+    401176: Metal_Colored 30
+    401178: Metal_Colored 31
+    401180: Metal_Colored 32
+    401182: Metal_Colored 33
+    401184: Metal_Colored 34
+    401186: Metal_Colored 35
+    401188: Metal_Colored 36
+    401190: Metal_Colored 37
+    401192: Metal_Colored 38
+    401194: Metal_Colored 39
+    401196: Metal_Colored 4
+    401198: Metal_Colored 40
+    401200: Metal_Colored 41
+    401202: Metal_Colored 42
+    401204: Metal_Colored 43
+    401206: Metal_Colored 44
+    401208: Metal_Colored 45
+    401210: Metal_Colored 46
+    401212: Metal_Colored 47
+    401214: Metal_Colored 48
+    401216: Metal_Colored 49
+    401218: Metal_Colored 5
+    401220: Metal_Colored 50
+    401222: Metal_Colored 51
+    401224: Metal_Colored 52
+    401226: Metal_Colored 53
+    401228: Metal_Colored 54
+    401230: Metal_Colored 55
+    401232: Metal_Colored 56
+    401234: Metal_Colored 57
+    401236: Metal_Colored 58
+    401238: Metal_Colored 59
+    401240: Metal_Colored 6
+    401242: Metal_Colored 60
+    401244: Metal_Colored 61
+    401246: Metal_Colored 62
+    401248: Metal_Colored 63
+    401250: Metal_Colored 64
+    401252: Metal_Colored 65
+    401254: Metal_Colored 66
+    401256: Metal_Colored 67
+    401258: Metal_Colored 68
+    401260: Metal_Colored 69
+    401262: Metal_Colored 7
+    401264: Metal_Colored 70
+    401266: Metal_Colored 71
+    401268: Metal_Colored 72
+    401270: Metal_Colored 73
+    401272: Metal_Colored 74
+    401274: Metal_Colored 75
+    401276: Metal_Colored 76
+    401278: Metal_Colored 77
+    401280: Metal_Colored 78
+    401282: Metal_Colored 79
+    401284: Metal_Colored 8
+    401286: Metal_Colored 80
+    401288: Metal_Colored 81
+    401290: Metal_Colored 82
+    401292: Metal_Colored 83
+    401294: Metal_Colored 84
+    401296: Metal_Colored 85
+    401298: Metal_Colored 86
+    401300: Metal_Colored 87
+    401302: Metal_Colored 88
+    401304: Metal_Colored 89
+    401306: Metal_Colored 9
+    401308: Metal_Colored 90
+    401310: Metal_Colored 91
+    401312: Metal_Colored 92
+    401314: Metal_Colored 93
+    401316: Metal_Colored 94
+    401318: Metal_Colored 95
+    401320: Metal_Colored 96
+    401322: Metal_Colored 97
+    401324: Metal_Colored 98
+    401326: Metal_Colored 99
+    401328: MetalCenterBeamA
+    401330: MetalCenterBeamB
+    401332: MetalFrame
+    401334: MetalFrame 1
+    401336: MetalFrame 10
+    401338: MetalFrame 11
+    401340: MetalFrame 12
+    401342: MetalFrame 13
+    401344: MetalFrame 14
+    401346: MetalFrame 15
+    401348: MetalFrame 16
+    401350: MetalFrame 17
+    401352: MetalFrame 18
+    401354: MetalFrame 19
+    401356: MetalFrame 2
+    401358: MetalFrame 20
+    401360: MetalFrame 21
+    401362: MetalFrame 22
+    401364: MetalFrame 23
+    401366: MetalFrame 24
+    401368: MetalFrame 25
+    401370: MetalFrame 26
+    401372: MetalFrame 27
+    401374: MetalFrame 28
+    401376: MetalFrame 29
+    401378: MetalFrame 3
+    401380: MetalFrame 30
+    401382: MetalFrame 31
+    401384: MetalFrame 32
+    401386: MetalFrame 33
+    401388: MetalFrame 34
+    401390: MetalFrame 35
+    401392: MetalFrame 36
+    401394: MetalFrame 37
+    401396: MetalFrame 38
+    401398: MetalFrame 39
+    401400: MetalFrame 4
+    401402: MetalFrame 40
+    401404: MetalFrame 41
+    401406: MetalFrame 42
+    401408: MetalFrame 43
+    401410: MetalFrame 44
+    401412: MetalFrame 45
+    401414: MetalFrame 46
+    401416: MetalFrame 5
+    401418: MetalFrame 6
+    401420: MetalFrame 7
+    401422: MetalFrame 8
+    401424: MetalFrame 9
+    401426: Object011
+    401428: Object012
+    401430: Object015
+    401432: Object016
+    401434: Object017
+    401436: Object018
+    401438: Object019
+    401440: Object020
+    401442: Object021
+    401444: Object022
+    401446: Object023
+    401448: Object024
+    401450: Object025
+    401452: Object026
+    401454: Object027
+    401456: Object028
+    401458: Object029
+    401460: Object030
+    401462: Object031
+    401464: Object032
+    401466: Object033
+    401468: Object034
+    401470: Object035
+    401472: Object036
+    401474: Object037
+    401476: Object038
+    401478: Object039
+    401480: Object040
+    401482: Object041
+    401484: Object042
+    401486: Object043
+    401488: Object044
+    401490: Object045
+    401492: Object046
+    401494: Object047
+    401496: Object048
+    401498: Object049
+    401500: Object050
+    401502: Object051
+    401504: Object052
+    401506: Object053
+    401508: Object054
+    401510: Object055
+    401512: Object056
+    401514: Object057
+    401516: Object058
+    401518: Object059
+    401520: Object060
+    401522: Object061
+    401524: Object062
+    401526: Object063
+    401528: Object064
+    401530: Object065
+    401532: Object066
+    401534: Object067
+    401536: Object068
+    401538: Object069
+    401540: Object070
+    401542: Object071
+    401544: Object072
+    401546: Object073
+    401548: Object074
+    401550: Object075
+    401552: Object076
+    401554: Object077
+    401556: Object078
+    401558: Object079
+    401560: Object080
+    401562: Object082
+    401564: Object083
+    401566: Object084
+    401568: Object085
+    401570: Object089
+    401572: Object090
+    401574: Object091
+    401576: Object092
+    401578: Object095
+    401580: Object097
+    401582: Object099
+    401584: Object101
+    401586: Object104
+    401588: Object105
+    401590: Object106
+    401592: Object107
+    401594: Object110
+    401596: Object111
+    401598: Object114
+    401600: Object117
+    401602: Object118
+    401604: Object119
+    401606: Object120
+    401608: Object121
+    401610: Object122
+    401612: Object123
+    401614: Object125
+    401616: Object126
+    401618: Object127
+    401620: Object131
+    401622: Object132
+    401624: Object133
+    401626: Object134
+    401628: Object136
+    401630: Object137
+    401632: Object138
+    401634: Object140
+    401636: Object141
+    401638: Object142
+    401640: Object143
+    401642: Render
+    401644: Scaffolding_Double_High
+    401646: Scaffolding_Double_Low
+    401648: Scaffolding_Double_wStair
+    401650: Scaffolding_Single_High
+    401652: Scaffolding_Single_Low
+    401654: //RootNode
+    401656: ScaffoldingLow_Floor
+    401658: ScaffoldingLow_Floor_GroundLevel
+    401660: SingleFloorPiece
+    401662: Sky
+    401664: StraightBeam_Big
+    401666: StraightBeam_Medium
+    401668: Straightbeam_Small
+    401670: StraightStair001
+    401672: Wood
+    401674: Wood 1
+    401676: Wood 2
+    401678: Wood 3
+    401680: Wood 4
+    401682: Wood 5
+    401684: Wood 6
+    401686: Wood 7
+    401688: Wood 8
+    401690: WoodPiece
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Box005
+    2300010: Box006
+    2300012: Box007
+    2300014: Box008
+    2300016: Box009
+    2300018: Box010
+    2300020: Box011
+    2300022: Box012
+    2300024: Box013
+    2300026: Box016
+    2300028: Box017
+    2300030: Box018
+    2300032: Box019
+    2300034: Box020
+    2300036: Box025
+    2300038: Box026
+    2300040: Box027
+    2300042: Box028
+    2300044: Box029
+    2300046: Box030
+    2300048: Box031
+    2300050: Box032
+    2300052: Box033
+    2300054: Box034
+    2300056: Box035
+    2300058: Box036
+    2300060: Box037
+    2300062: Box038
+    2300064: Box039
+    2300066: Box040
+    2300068: Cylinder004
+    2300070: Cylinder006
+    2300072: Cylinder008
+    2300074: Cylinder010
+    2300076: Cylinder013
+    2300078: Cylinder014
+    2300080: Cylinder015
+    2300082: Cylinder016
+    2300084: Cylinder017
+    2300086: Cylinder018
+    2300088: Cylinder019
+    2300090: Cylinder020
+    2300092: Cylinder021
+    2300094: Cylinder022
+    2300096: Cylinder023
+    2300098: Cylinder024
+    2300100: Cylinder025
+    2300102: Cylinder026
+    2300104: Cylinder027
+    2300106: Cylinder028
+    2300108: Cylinder029
+    2300110: Cylinder030
+    2300112: Cylinder031
+    2300114: Cylinder032
+    2300116: Cylinder033
+    2300118: Cylinder034
+    2300120: Cylinder035
+    2300122: Cylinder036
+    2300124: Cylinder037
+    2300126: Cylinder038
+    2300128: Cylinder039
+    2300130: Cylinder040
+    2300132: Cylinder041
+    2300134: Cylinder042
+    2300136: Cylinder043
+    2300138: Cylinder044
+    2300140: Cylinder045
+    2300142: Cylinder046
+    2300144: Cylinder047
+    2300146: Cylinder048
+    2300148: Cylinder049
+    2300150: Cylinder050
+    2300152: Cylinder051
+    2300154: Cylinder052
+    2300156: Cylinder053
+    2300158: Cylinder054
+    2300160: Cylinder055
+    2300162: Cylinder056
+    2300164: Cylinder057
+    2300166: Cylinder058
+    2300168: Cylinder059
+    2300170: Cylinder060
+    2300172: Cylinder061
+    2300174: Cylinder062
+    2300176: Cylinder063
+    2300178: Cylinder064
+    2300180: Cylinder065
+    2300182: Cylinder066
+    2300184: Cylinder069
+    2300186: Cylinder070
+    2300188: Cylinder071
+    2300190: Cylinder072
+    2300192: Cylinder075
+    2300194: Cylinder076
+    2300196: Cylinder077
+    2300198: Cylinder078
+    2300200: Cylinder081
+    2300202: Cylinder082
+    2300204: Cylinder083
+    2300206: Cylinder084
+    2300208: Cylinder087
+    2300210: Cylinder088
+    2300212: Cylinder089
+    2300214: Cylinder090
+    2300216: Cylinder095
+    2300218: Cylinder097
+    2300220: Cylinder098
+    2300222: Cylinder100
+    2300224: Cylinder101
+    2300226: Cylinder102
+    2300228: Cylinder103
+    2300230: Cylinder104
+    2300232: Cylinder105
+    2300234: Cylinder106
+    2300236: Cylinder107
+    2300238: Cylinder108
+    2300240: Cylinder109
+    2300242: Cylinder110
+    2300244: Cylinder111
+    2300246: Cylinder112
+    2300248: Cylinder113
+    2300250: Cylinder114
+    2300252: Cylinder115
+    2300254: Cylinder116
+    2300256: Cylinder117
+    2300258: Cylinder118
+    2300260: Cylinder119
+    2300262: Cylinder120
+    2300264: Cylinder121
+    2300266: Cylinder122
+    2300268: Cylinder123
+    2300270: Cylinder124
+    2300272: Cylinder125
+    2300274: Cylinder126
+    2300276: Cylinder127
+    2300278: Cylinder128
+    2300280: Line001
+    2300282: Line002
+    2300284: Line016
+    2300286: Line017
+    2300288: Line018
+    2300290: Line019
+    2300292: Line020
+    2300294: Line021
+    2300296: Line022
+    2300298: Line023
+    2300300: Line024
+    2300302: Line025
+    2300304: Line026
+    2300306: Line027
+    2300308: Line028
+    2300310: Line029
+    2300312: Line030
+    2300314: Line031
+    2300316: Line032
+    2300318: Line033
+    2300320: Line034
+    2300322: Line035
+    2300324: Line036
+    2300326: Line037
+    2300328: Line038
+    2300330: Line039
+    2300332: Line040
+    2300334: Line041
+    2300336: Line042
+    2300338: Line043
+    2300340: Line044
+    2300342: Line045
+    2300344: Line046
+    2300346: Line047
+    2300348: Line048
+    2300350: Line049
+    2300352: Line050
+    2300354: Line051
+    2300356: Line052
+    2300358: Line053
+    2300360: Line054
+    2300362: Line055
+    2300364: Line056
+    2300366: Line057
+    2300368: Line058
+    2300370: Line059
+    2300372: Line060
+    2300374: Line061
+    2300376: Line062
+    2300378: Line063
+    2300380: Line078
+    2300382: Line079
+    2300384: Line080
+    2300386: Line081
+    2300388: Line082
+    2300390: Line086
+    2300392: Line088
+    2300394: Line095
+    2300396: Line096
+    2300398: Line097
+    2300400: Line098
+    2300402: Line099
+    2300404: Line100
+    2300406: Line101
+    2300408: Line103
+    2300410: Line104
+    2300412: Line105
+    2300414: Line106
+    2300416: Line107
+    2300418: Line108
+    2300420: Line109
+    2300422: Line110
+    2300424: Line111
+    2300426: Line115
+    2300428: Line116
+    2300430: Line117
+    2300432: Line118
+    2300434: Line119
+    2300436: Line120
+    2300438: Line121
+    2300440: Line122
+    2300442: Line123
+    2300444: Object011
+    2300446: Object012
+    2300448: Object015
+    2300450: Object016
+    2300452: Object017
+    2300454: Object018
+    2300456: Object019
+    2300458: Object020
+    2300460: Object021
+    2300462: Object022
+    2300464: Object023
+    2300466: Object024
+    2300468: Object025
+    2300470: Object026
+    2300472: Object027
+    2300474: Object028
+    2300476: Object029
+    2300478: Object030
+    2300480: Object031
+    2300482: Object032
+    2300484: Object033
+    2300486: Object034
+    2300488: Object035
+    2300490: Object036
+    2300492: Object037
+    2300494: Object038
+    2300496: Object039
+    2300498: Object040
+    2300500: Object041
+    2300502: Object042
+    2300504: Object043
+    2300506: Object044
+    2300508: Object045
+    2300510: Object046
+    2300512: Object047
+    2300514: Object048
+    2300516: Object049
+    2300518: Object050
+    2300520: Object051
+    2300522: Object052
+    2300524: Object053
+    2300526: Object054
+    2300528: Object055
+    2300530: Object056
+    2300532: Object057
+    2300534: Object058
+    2300536: Object059
+    2300538: Object060
+    2300540: Object061
+    2300542: Object062
+    2300544: Object063
+    2300546: Object064
+    2300548: Object065
+    2300550: Object066
+    2300552: Object067
+    2300554: Object068
+    2300556: Object069
+    2300558: Object070
+    2300560: Object071
+    2300562: Object072
+    2300564: Object073
+    2300566: Object074
+    2300568: Object075
+    2300570: Object076
+    2300572: Object077
+    2300574: Object078
+    2300576: Object079
+    2300578: Object080
+    2300580: Object082
+    2300582: Object083
+    2300584: Object084
+    2300586: Object085
+    2300588: Object089
+    2300590: Object090
+    2300592: Object091
+    2300594: Object092
+    2300596: Object095
+    2300598: Object097
+    2300600: Object099
+    2300602: Object101
+    2300604: Object104
+    2300606: Object105
+    2300608: Object106
+    2300610: Object107
+    2300612: Object110
+    2300614: Object111
+    2300616: Object114
+    2300618: Object117
+    2300620: Object118
+    2300622: Object119
+    2300624: Object120
+    2300626: Object121
+    2300628: Object122
+    2300630: Object123
+    2300632: Object125
+    2300634: Object126
+    2300636: Object127
+    2300638: Object131
+    2300640: Object132
+    2300642: Object133
+    2300644: Object134
+    2300646: Object136
+    2300648: Object137
+    2300650: Object138
+    2300652: Object140
+    2300654: Object141
+    2300656: Object142
+    2300658: Object143
+    2300660: StraightStair001
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Box005
+    3300010: Box006
+    3300012: Box007
+    3300014: Box008
+    3300016: Box009
+    3300018: Box010
+    3300020: Box011
+    3300022: Box012
+    3300024: Box013
+    3300026: Box016
+    3300028: Box017
+    3300030: Box018
+    3300032: Box019
+    3300034: Box020
+    3300036: Box025
+    3300038: Box026
+    3300040: Box027
+    3300042: Box028
+    3300044: Box029
+    3300046: Box030
+    3300048: Box031
+    3300050: Box032
+    3300052: Box033
+    3300054: Box034
+    3300056: Box035
+    3300058: Box036
+    3300060: Box037
+    3300062: Box038
+    3300064: Box039
+    3300066: Box040
+    3300068: Cylinder004
+    3300070: Cylinder006
+    3300072: Cylinder008
+    3300074: Cylinder010
+    3300076: Cylinder013
+    3300078: Cylinder014
+    3300080: Cylinder015
+    3300082: Cylinder016
+    3300084: Cylinder017
+    3300086: Cylinder018
+    3300088: Cylinder019
+    3300090: Cylinder020
+    3300092: Cylinder021
+    3300094: Cylinder022
+    3300096: Cylinder023
+    3300098: Cylinder024
+    3300100: Cylinder025
+    3300102: Cylinder026
+    3300104: Cylinder027
+    3300106: Cylinder028
+    3300108: Cylinder029
+    3300110: Cylinder030
+    3300112: Cylinder031
+    3300114: Cylinder032
+    3300116: Cylinder033
+    3300118: Cylinder034
+    3300120: Cylinder035
+    3300122: Cylinder036
+    3300124: Cylinder037
+    3300126: Cylinder038
+    3300128: Cylinder039
+    3300130: Cylinder040
+    3300132: Cylinder041
+    3300134: Cylinder042
+    3300136: Cylinder043
+    3300138: Cylinder044
+    3300140: Cylinder045
+    3300142: Cylinder046
+    3300144: Cylinder047
+    3300146: Cylinder048
+    3300148: Cylinder049
+    3300150: Cylinder050
+    3300152: Cylinder051
+    3300154: Cylinder052
+    3300156: Cylinder053
+    3300158: Cylinder054
+    3300160: Cylinder055
+    3300162: Cylinder056
+    3300164: Cylinder057
+    3300166: Cylinder058
+    3300168: Cylinder059
+    3300170: Cylinder060
+    3300172: Cylinder061
+    3300174: Cylinder062
+    3300176: Cylinder063
+    3300178: Cylinder064
+    3300180: Cylinder065
+    3300182: Cylinder066
+    3300184: Cylinder069
+    3300186: Cylinder070
+    3300188: Cylinder071
+    3300190: Cylinder072
+    3300192: Cylinder075
+    3300194: Cylinder076
+    3300196: Cylinder077
+    3300198: Cylinder078
+    3300200: Cylinder081
+    3300202: Cylinder082
+    3300204: Cylinder083
+    3300206: Cylinder084
+    3300208: Cylinder087
+    3300210: Cylinder088
+    3300212: Cylinder089
+    3300214: Cylinder090
+    3300216: Cylinder095
+    3300218: Cylinder097
+    3300220: Cylinder098
+    3300222: Cylinder100
+    3300224: Cylinder101
+    3300226: Cylinder102
+    3300228: Cylinder103
+    3300230: Cylinder104
+    3300232: Cylinder105
+    3300234: Cylinder106
+    3300236: Cylinder107
+    3300238: Cylinder108
+    3300240: Cylinder109
+    3300242: Cylinder110
+    3300244: Cylinder111
+    3300246: Cylinder112
+    3300248: Cylinder113
+    3300250: Cylinder114
+    3300252: Cylinder115
+    3300254: Cylinder116
+    3300256: Cylinder117
+    3300258: Cylinder118
+    3300260: Cylinder119
+    3300262: Cylinder120
+    3300264: Cylinder121
+    3300266: Cylinder122
+    3300268: Cylinder123
+    3300270: Cylinder124
+    3300272: Cylinder125
+    3300274: Cylinder126
+    3300276: Cylinder127
+    3300278: Cylinder128
+    3300280: Line001
+    3300282: Line002
+    3300284: Line016
+    3300286: Line017
+    3300288: Line018
+    3300290: Line019
+    3300292: Line020
+    3300294: Line021
+    3300296: Line022
+    3300298: Line023
+    3300300: Line024
+    3300302: Line025
+    3300304: Line026
+    3300306: Line027
+    3300308: Line028
+    3300310: Line029
+    3300312: Line030
+    3300314: Line031
+    3300316: Line032
+    3300318: Line033
+    3300320: Line034
+    3300322: Line035
+    3300324: Line036
+    3300326: Line037
+    3300328: Line038
+    3300330: Line039
+    3300332: Line040
+    3300334: Line041
+    3300336: Line042
+    3300338: Line043
+    3300340: Line044
+    3300342: Line045
+    3300344: Line046
+    3300346: Line047
+    3300348: Line048
+    3300350: Line049
+    3300352: Line050
+    3300354: Line051
+    3300356: Line052
+    3300358: Line053
+    3300360: Line054
+    3300362: Line055
+    3300364: Line056
+    3300366: Line057
+    3300368: Line058
+    3300370: Line059
+    3300372: Line060
+    3300374: Line061
+    3300376: Line062
+    3300378: Line063
+    3300380: Line078
+    3300382: Line079
+    3300384: Line080
+    3300386: Line081
+    3300388: Line082
+    3300390: Line086
+    3300392: Line088
+    3300394: Line095
+    3300396: Line096
+    3300398: Line097
+    3300400: Line098
+    3300402: Line099
+    3300404: Line100
+    3300406: Line101
+    3300408: Line103
+    3300410: Line104
+    3300412: Line105
+    3300414: Line106
+    3300416: Line107
+    3300418: Line108
+    3300420: Line109
+    3300422: Line110
+    3300424: Line111
+    3300426: Line115
+    3300428: Line116
+    3300430: Line117
+    3300432: Line118
+    3300434: Line119
+    3300436: Line120
+    3300438: Line121
+    3300440: Line122
+    3300442: Line123
+    3300444: Object011
+    3300446: Object012
+    3300448: Object015
+    3300450: Object016
+    3300452: Object017
+    3300454: Object018
+    3300456: Object019
+    3300458: Object020
+    3300460: Object021
+    3300462: Object022
+    3300464: Object023
+    3300466: Object024
+    3300468: Object025
+    3300470: Object026
+    3300472: Object027
+    3300474: Object028
+    3300476: Object029
+    3300478: Object030
+    3300480: Object031
+    3300482: Object032
+    3300484: Object033
+    3300486: Object034
+    3300488: Object035
+    3300490: Object036
+    3300492: Object037
+    3300494: Object038
+    3300496: Object039
+    3300498: Object040
+    3300500: Object041
+    3300502: Object042
+    3300504: Object043
+    3300506: Object044
+    3300508: Object045
+    3300510: Object046
+    3300512: Object047
+    3300514: Object048
+    3300516: Object049
+    3300518: Object050
+    3300520: Object051
+    3300522: Object052
+    3300524: Object053
+    3300526: Object054
+    3300528: Object055
+    3300530: Object056
+    3300532: Object057
+    3300534: Object058
+    3300536: Object059
+    3300538: Object060
+    3300540: Object061
+    3300542: Object062
+    3300544: Object063
+    3300546: Object064
+    3300548: Object065
+    3300550: Object066
+    3300552: Object067
+    3300554: Object068
+    3300556: Object069
+    3300558: Object070
+    3300560: Object071
+    3300562: Object072
+    3300564: Object073
+    3300566: Object074
+    3300568: Object075
+    3300570: Object076
+    3300572: Object077
+    3300574: Object078
+    3300576: Object079
+    3300578: Object080
+    3300580: Object082
+    3300582: Object083
+    3300584: Object084
+    3300586: Object085
+    3300588: Object089
+    3300590: Object090
+    3300592: Object091
+    3300594: Object092
+    3300596: Object095
+    3300598: Object097
+    3300600: Object099
+    3300602: Object101
+    3300604: Object104
+    3300606: Object105
+    3300608: Object106
+    3300610: Object107
+    3300612: Object110
+    3300614: Object111
+    3300616: Object114
+    3300618: Object117
+    3300620: Object118
+    3300622: Object119
+    3300624: Object120
+    3300626: Object121
+    3300628: Object122
+    3300630: Object123
+    3300632: Object125
+    3300634: Object126
+    3300636: Object127
+    3300638: Object131
+    3300640: Object132
+    3300642: Object133
+    3300644: Object134
+    3300646: Object136
+    3300648: Object137
+    3300650: Object138
+    3300652: Object140
+    3300654: Object141
+    3300656: Object142
+    3300658: Object143
+    3300660: StraightStair001
+    4300000: Cylinder010
+    4300002: Object015
+    4300004: Object016
+    4300006: Object012
+    4300008: Object011
+    4300010: Line051
+    4300012: Line052
+    4300014: Line053
+    4300016: Line054
+    4300018: Line055
+    4300020: Line056
+    4300022: Line057
+    4300024: Line058
+    4300026: Line059
+    4300028: Line060
+    4300030: Line061
+    4300032: Line062
+    4300034: Line063
+    4300036: Line002
+    4300038: Box001
+    4300040: Line016
+    4300042: Line001
+    4300044: Box008
+    4300046: Box009
+    4300048: Box010
+    4300050: Box011
+    4300052: Box012
+    4300054: Box013
+    4300056: Cylinder019
+    4300058: Cylinder020
+    4300060: Cylinder021
+    4300062: Cylinder022
+    4300064: Cylinder023
+    4300066: Cylinder024
+    4300068: Object028
+    4300070: Object029
+    4300072: Object030
+    4300074: Object031
+    4300076: Object032
+    4300078: Object033
+    4300080: Object034
+    4300082: Cylinder025
+    4300084: Cylinder026
+    4300086: Cylinder027
+    4300088: Cylinder028
+    4300090: Cylinder029
+    4300092: Cylinder030
+    4300094: Object035
+    4300096: Object036
+    4300098: Object037
+    4300100: Object038
+    4300102: Object039
+    4300104: Object040
+    4300106: Object041
+    4300108: Object042
+    4300110: Object043
+    4300112: Object044
+    4300114: Object045
+    4300116: Object046
+    4300118: Object047
+    4300120: Object048
+    4300122: Object049
+    4300124: Cylinder049
+    4300126: Line043
+    4300128: Cylinder050
+    4300130: Cylinder051
+    4300132: Cylinder052
+    4300134: Line044
+    4300136: Cylinder053
+    4300138: Cylinder054
+    4300140: Cylinder055
+    4300142: Cylinder056
+    4300144: Line045
+    4300146: Line046
+    4300148: Cylinder057
+    4300150: Cylinder058
+    4300152: Line047
+    4300154: Cylinder059
+    4300156: Line048
+    4300158: Cylinder060
+    4300160: Cylinder061
+    4300162: Cylinder062
+    4300164: Line049
+    4300166: Line050
+    4300168: Cylinder031
+    4300170: Cylinder032
+    4300172: Cylinder033
+    4300174: Cylinder034
+    4300176: Cylinder035
+    4300178: Cylinder036
+    4300180: Object050
+    4300182: Object051
+    4300184: Object052
+    4300186: Object053
+    4300188: Object054
+    4300190: Object055
+    4300192: Object056
+    4300194: Object057
+    4300196: Object058
+    4300198: Object059
+    4300200: Object060
+    4300202: Cylinder037
+    4300204: Cylinder038
+    4300206: Cylinder039
+    4300208: Cylinder040
+    4300210: Cylinder041
+    4300212: Cylinder042
+    4300214: Object061
+    4300216: Object062
+    4300218: Object063
+    4300220: Object064
+    4300222: Object065
+    4300224: Object066
+    4300226: Object067
+    4300228: Object068
+    4300230: Object069
+    4300232: Box029
+    4300234: Box030
+    4300236: Box031
+    4300238: Box032
+    4300240: Box033
+    4300242: Box034
+    4300244: Cylinder101
+    4300246: Cylinder102
+    4300248: Cylinder103
+    4300250: Cylinder104
+    4300252: Cylinder105
+    4300254: Cylinder106
+    4300256: Cylinder107
+    4300258: Cylinder108
+    4300260: Cylinder109
+    4300262: Cylinder110
+    4300264: Cylinder111
+    4300266: Cylinder112
+    4300268: Cylinder113
+    4300270: Cylinder114
+    4300272: Cylinder115
+    4300274: Cylinder116
+    4300276: Cylinder117
+    4300278: Cylinder118
+    4300280: Cylinder119
+    4300282: Cylinder120
+    4300284: Cylinder121
+    4300286: Cylinder122
+    4300288: Cylinder123
+    4300290: Cylinder124
+    4300292: Cylinder125
+    4300294: Cylinder126
+    4300296: Line103
+    4300298: Line104
+    4300300: Line105
+    4300302: Line106
+    4300304: Line107
+    4300306: Line108
+    4300308: Line109
+    4300310: Line110
+    4300312: Object121
+    4300314: Object122
+    4300316: Object123
+    4300318: Object125
+    4300320: Object126
+    4300322: Object127
+    4300324: Object131
+    4300326: Object132
+    4300328: Object133
+    4300330: Object134
+    4300332: Object136
+    4300334: Object137
+    4300336: Object138
+    4300338: Object140
+    4300340: Object141
+    4300342: Object142
+    4300344: Object143
+    4300346: Box035
+    4300348: Cylinder127
+    4300350: Box036
+    4300352: Cylinder128
+    4300354: StraightStair001
+    4300356: Line111
+    4300358: Line115
+    4300360: Line116
+    4300362: Line117
+    4300364: Line118
+    4300366: Line119
+    4300368: Line120
+    4300370: Line121
+    4300372: Line122
+    4300374: Line123
+    4300376: Box016
+    4300378: Box017
+    4300380: Box018
+    4300382: Box019
+    4300384: Cylinder063
+    4300386: Cylinder064
+    4300388: Cylinder065
+    4300390: Cylinder066
+    4300392: Cylinder069
+    4300394: Cylinder070
+    4300396: Cylinder071
+    4300398: Cylinder072
+    4300400: Cylinder087
+    4300402: Cylinder088
+    4300404: Cylinder089
+    4300406: Cylinder090
+    4300408: Cylinder095
+    4300410: Cylinder097
+    4300412: Cylinder098
+    4300414: Cylinder100
+    4300416: Line081
+    4300418: Line082
+    4300420: Line086
+    4300422: Line088
+    4300424: Object082
+    4300426: Object083
+    4300428: Object084
+    4300430: Object085
+    4300432: Object089
+    4300434: Object090
+    4300436: Object091
+    4300438: Object092
+    4300440: Object095
+    4300442: Object097
+    4300444: Object099
+    4300446: Object101
+    4300448: Cylinder075
+    4300450: Cylinder076
+    4300452: Cylinder077
+    4300454: Cylinder078
+    4300456: Cylinder081
+    4300458: Cylinder082
+    4300460: Cylinder083
+    4300462: Cylinder084
+    4300464: Object104
+    4300466: Object105
+    4300468: Object106
+    4300470: Object107
+    4300472: Object110
+    4300474: Object111
+    4300476: Object114
+    4300478: Object117
+    4300480: Object118
+    4300482: Object119
+    4300484: Object120
+    4300486: Cylinder043
+    4300488: Cylinder044
+    4300490: Cylinder045
+    4300492: Cylinder046
+    4300494: Cylinder047
+    4300496: Cylinder048
+    4300498: Line030
+    4300500: Line031
+    4300502: Line032
+    4300504: Line033
+    4300506: Line034
+    4300508: Line035
+    4300510: Line036
+    4300512: Line037
+    4300514: Line038
+    4300516: Line039
+    4300518: Line040
+    4300520: Line041
+    4300522: Line042
+    4300524: Object070
+    4300526: Object071
+    4300528: Object072
+    4300530: Object073
+    4300532: Object074
+    4300534: Object075
+    4300536: Object076
+    4300538: Object077
+    4300540: Object078
+    4300542: Object079
+    4300544: Object080
+    4300546: Box037
+    4300548: Box038
+    4300550: Box039
+    4300552: Box040
+    4300554: Box002
+    4300556: Line017
+    4300558: Line018
+    4300560: Line019
+    4300562: Line020
+    4300564: Line021
+    4300566: Line022
+    4300568: Box003
+    4300570: Box004
+    4300572: Box005
+    4300574: Line023
+    4300576: Box006
+    4300578: Box007
+    4300580: Line025
+    4300582: Line026
+    4300584: Line027
+    4300586: Line028
+    4300588: Line029
+    4300590: Object017
+    4300592: Object018
+    4300594: Object019
+    4300596: Object020
+    4300598: Object021
+    4300600: Object022
+    4300602: Object023
+    4300604: Cylinder013
+    4300606: Cylinder014
+    4300608: Cylinder015
+    4300610: Cylinder016
+    4300612: Cylinder017
+    4300614: Cylinder018
+    4300616: Object024
+    4300618: Object025
+    4300620: Object026
+    4300622: Object027
+    4300624: Line078
+    4300626: Line079
+    4300628: Line080
+    4300630: Line024
+    4300632: Box025
+    4300634: Box026
+    4300636: Box027
+    4300638: Box028
+    4300640: Line095
+    4300642: Line096
+    4300644: Line097
+    4300646: Line098
+    4300648: Line099
+    4300650: Line100
+    4300652: Line101
+    4300654: Cylinder008
+    4300656: Cylinder006
+    4300658: Cylinder004
+    4300660: Box020
+    6400000: Box001
+    6400002: Box002
+    6400004: Box003
+    6400006: Box004
+    6400008: Box005
+    6400010: Box006
+    6400012: Box007
+    6400014: Box008
+    6400016: Box009
+    6400018: Box010
+    6400020: Box011
+    6400022: Box012
+    6400024: Box013
+    6400026: Box016
+    6400028: Box017
+    6400030: Box018
+    6400032: Box019
+    6400034: Box020
+    6400036: Box025
+    6400038: Box026
+    6400040: Box027
+    6400042: Box028
+    6400044: Box029
+    6400046: Box030
+    6400048: Box031
+    6400050: Box032
+    6400052: Box033
+    6400054: Box034
+    6400056: Box035
+    6400058: Box036
+    6400060: Box037
+    6400062: Box038
+    6400064: Box039
+    6400066: Box040
+    6400068: Cylinder004
+    6400070: Cylinder006
+    6400072: Cylinder008
+    6400074: Cylinder010
+    6400076: Cylinder013
+    6400078: Cylinder014
+    6400080: Cylinder015
+    6400082: Cylinder016
+    6400084: Cylinder017
+    6400086: Cylinder018
+    6400088: Cylinder019
+    6400090: Cylinder020
+    6400092: Cylinder021
+    6400094: Cylinder022
+    6400096: Cylinder023
+    6400098: Cylinder024
+    6400100: Cylinder025
+    6400102: Cylinder026
+    6400104: Cylinder027
+    6400106: Cylinder028
+    6400108: Cylinder029
+    6400110: Cylinder030
+    6400112: Cylinder031
+    6400114: Cylinder032
+    6400116: Cylinder033
+    6400118: Cylinder034
+    6400120: Cylinder035
+    6400122: Cylinder036
+    6400124: Cylinder037
+    6400126: Cylinder038
+    6400128: Cylinder039
+    6400130: Cylinder040
+    6400132: Cylinder041
+    6400134: Cylinder042
+    6400136: Cylinder043
+    6400138: Cylinder044
+    6400140: Cylinder045
+    6400142: Cylinder046
+    6400144: Cylinder047
+    6400146: Cylinder048
+    6400148: Cylinder049
+    6400150: Cylinder050
+    6400152: Cylinder051
+    6400154: Cylinder052
+    6400156: Cylinder053
+    6400158: Cylinder054
+    6400160: Cylinder055
+    6400162: Cylinder056
+    6400164: Cylinder057
+    6400166: Cylinder058
+    6400168: Cylinder059
+    6400170: Cylinder060
+    6400172: Cylinder061
+    6400174: Cylinder062
+    6400176: Cylinder063
+    6400178: Cylinder064
+    6400180: Cylinder065
+    6400182: Cylinder066
+    6400184: Cylinder069
+    6400186: Cylinder070
+    6400188: Cylinder071
+    6400190: Cylinder072
+    6400192: Cylinder075
+    6400194: Cylinder076
+    6400196: Cylinder077
+    6400198: Cylinder078
+    6400200: Cylinder081
+    6400202: Cylinder082
+    6400204: Cylinder083
+    6400206: Cylinder084
+    6400208: Cylinder087
+    6400210: Cylinder088
+    6400212: Cylinder089
+    6400214: Cylinder090
+    6400216: Cylinder095
+    6400218: Cylinder097
+    6400220: Cylinder098
+    6400222: Cylinder100
+    6400224: Cylinder101
+    6400226: Cylinder102
+    6400228: Cylinder103
+    6400230: Cylinder104
+    6400232: Cylinder105
+    6400234: Cylinder106
+    6400236: Cylinder107
+    6400238: Cylinder108
+    6400240: Cylinder109
+    6400242: Cylinder110
+    6400244: Cylinder111
+    6400246: Cylinder112
+    6400248: Cylinder113
+    6400250: Cylinder114
+    6400252: Cylinder115
+    6400254: Cylinder116
+    6400256: Cylinder117
+    6400258: Cylinder118
+    6400260: Cylinder119
+    6400262: Cylinder120
+    6400264: Cylinder121
+    6400266: Cylinder122
+    6400268: Cylinder123
+    6400270: Cylinder124
+    6400272: Cylinder125
+    6400274: Cylinder126
+    6400276: Cylinder127
+    6400278: Cylinder128
+    6400280: Line001
+    6400282: Line002
+    6400284: Line016
+    6400286: Line017
+    6400288: Line018
+    6400290: Line019
+    6400292: Line020
+    6400294: Line021
+    6400296: Line022
+    6400298: Line023
+    6400300: Line024
+    6400302: Line025
+    6400304: Line026
+    6400306: Line027
+    6400308: Line028
+    6400310: Line029
+    6400312: Line030
+    6400314: Line031
+    6400316: Line032
+    6400318: Line033
+    6400320: Line034
+    6400322: Line035
+    6400324: Line036
+    6400326: Line037
+    6400328: Line038
+    6400330: Line039
+    6400332: Line040
+    6400334: Line041
+    6400336: Line042
+    6400338: Line043
+    6400340: Line044
+    6400342: Line045
+    6400344: Line046
+    6400346: Line047
+    6400348: Line048
+    6400350: Line049
+    6400352: Line050
+    6400354: Line051
+    6400356: Line052
+    6400358: Line053
+    6400360: Line054
+    6400362: Line055
+    6400364: Line056
+    6400366: Line057
+    6400368: Line058
+    6400370: Line059
+    6400372: Line060
+    6400374: Line061
+    6400376: Line062
+    6400378: Line063
+    6400380: Line078
+    6400382: Line079
+    6400384: Line080
+    6400386: Line081
+    6400388: Line082
+    6400390: Line086
+    6400392: Line088
+    6400394: Line095
+    6400396: Line096
+    6400398: Line097
+    6400400: Line098
+    6400402: Line099
+    6400404: Line100
+    6400406: Line101
+    6400408: Line103
+    6400410: Line104
+    6400412: Line105
+    6400414: Line106
+    6400416: Line107
+    6400418: Line108
+    6400420: Line109
+    6400422: Line110
+    6400424: Line111
+    6400426: Line115
+    6400428: Line116
+    6400430: Line117
+    6400432: Line118
+    6400434: Line119
+    6400436: Line120
+    6400438: Line121
+    6400440: Line122
+    6400442: Line123
+    6400444: Object011
+    6400446: Object012
+    6400448: Object015
+    6400450: Object016
+    6400452: Object017
+    6400454: Object018
+    6400456: Object019
+    6400458: Object020
+    6400460: Object021
+    6400462: Object022
+    6400464: Object023
+    6400466: Object024
+    6400468: Object025
+    6400470: Object026
+    6400472: Object027
+    6400474: Object028
+    6400476: Object029
+    6400478: Object030
+    6400480: Object031
+    6400482: Object032
+    6400484: Object033
+    6400486: Object034
+    6400488: Object035
+    6400490: Object036
+    6400492: Object037
+    6400494: Object038
+    6400496: Object039
+    6400498: Object040
+    6400500: Object041
+    6400502: Object042
+    6400504: Object043
+    6400506: Object044
+    6400508: Object045
+    6400510: Object046
+    6400512: Object047
+    6400514: Object048
+    6400516: Object049
+    6400518: Object050
+    6400520: Object051
+    6400522: Object052
+    6400524: Object053
+    6400526: Object054
+    6400528: Object055
+    6400530: Object056
+    6400532: Object057
+    6400534: Object058
+    6400536: Object059
+    6400538: Object060
+    6400540: Object061
+    6400542: Object062
+    6400544: Object063
+    6400546: Object064
+    6400548: Object065
+    6400550: Object066
+    6400552: Object067
+    6400554: Object068
+    6400556: Object069
+    6400558: Object070
+    6400560: Object071
+    6400562: Object072
+    6400564: Object073
+    6400566: Object074
+    6400568: Object075
+    6400570: Object076
+    6400572: Object077
+    6400574: Object078
+    6400576: Object079
+    6400578: Object080
+    6400580: Object082
+    6400582: Object083
+    6400584: Object084
+    6400586: Object085
+    6400588: Object089
+    6400590: Object090
+    6400592: Object091
+    6400594: Object092
+    6400596: Object095
+    6400598: Object097
+    6400600: Object099
+    6400602: Object101
+    6400604: Object104
+    6400606: Object105
+    6400608: Object106
+    6400610: Object107
+    6400612: Object110
+    6400614: Object111
+    6400616: Object114
+    6400618: Object117
+    6400620: Object118
+    6400622: Object119
+    6400624: Object120
+    6400626: Object121
+    6400628: Object122
+    6400630: Object123
+    6400632: Object125
+    6400634: Object126
+    6400636: Object127
+    6400638: Object131
+    6400640: Object132
+    6400642: Object133
+    6400644: Object134
+    6400646: Object136
+    6400648: Object137
+    6400650: Object138
+    6400652: Object140
+    6400654: Object141
+    6400656: Object142
+    6400658: Object143
+    6400660: StraightStair001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 4f85cf09c2f345db60e25551bee5c40a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalFrame
+    second: {fileID: 2100000, guid: 985da6a399a96f8acf39b7d765b1d132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Colored
+    second: {fileID: 2100000, guid: 48227ea20785186619db04b238ca7e46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: f02f6d9003db7ae300add54ce3bd8155, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
