@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
-  m_Name: 7 Ladder
+  m_Name: 5 Bracing
   m_EditorClassIdentifier: 
-  _subtaskName: "Mont\xE9r stige"
+  _subtaskName: Fest diagonalstag
   _description: 
   _autocompleate: 0
-  _stepList:
-  - {fileID: 11400000, guid: 7e5b0043e8977db44b57b8f77678a65e, type: 2}
-  - {fileID: 11400000, guid: 84c7c9c2d7268f048b39f36ce7c7296e, type: 2}
-  - {fileID: 11400000, guid: 75451a73e3f8a164c8b40309233eb1a5, type: 2}
+  _stepList: []

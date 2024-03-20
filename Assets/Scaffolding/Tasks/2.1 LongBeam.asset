@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
-  m_Name: 8 Top Board
+  m_Script: {fileID: 11500000, guid: dba923aa6c2abb445a10c35f5df190aa, type: 3}
+  m_Name: 2.1 LongBeam
   m_EditorClassIdentifier: 
-  _subtaskName: "Mont\xE9r sparkebrett"
-  _description: 
-  _autocompleate: 0
-  _stepList: []
+  _stepName: Fest lengdebjelker
+  _repetionNumber: 1

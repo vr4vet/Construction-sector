@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
-  m_Name: 4 Horizontals
+  m_Name: 4 Beams
   m_EditorClassIdentifier: 
   _subtaskName: "Fest \xF8vre horisontale bjelker"
   _description: 
   _autocompleate: 1
   _stepList:
-  - {fileID: 11400000, guid: 0570ceea56567af4089000e8be97aa95, type: 2}
-  - {fileID: 11400000, guid: 2c94ccb8e3edaae478460e2aed4b7f19, type: 2}
+  - {fileID: 11400000, guid: d5047ae8930f0b241a553cb1b4869556, type: 2}
+  - {fileID: 11400000, guid: 2ff8083d3243e3d47a0542f7cd129ddc, type: 2}

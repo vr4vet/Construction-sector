@@ -75,7 +75,7 @@ namespace Task
             //the task is not completed if even one aktivitet is not done
             foreach (Step step in activities)
             {
-                if (step.IsCompeleted() == false)
+                if (step.Compleated() == false)
                 {
                     is_task_Completed = false;
                     return;

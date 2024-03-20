@@ -3,13 +3,14 @@
  */
 
 using UnityEngine;
+using Scaffolding;
 
 namespace Task
 {
     [System.Serializable]
 
     [CreateAssetMenu(fileName = "New Step", menuName = "Tasks/Step")]
-    public class Step : ScriptableObject
+    public class Step : ScriptableObject, ScaffoldingManager.ICompletable
     {
         [SerializeField] private string _stepName;
         [SerializeField] [Range(1, 20)] private int _repetionNumber = 1;
@@ -40,7 +41,7 @@ namespace Task
             _repetionsCompleated = _repetionNumber;
         }
 
-        public bool IsCompeleted()
+        public bool Compleated()
         {
             if (_repetionNumber == _repetionsCompleated) _compleated = true;
             return _compleated;

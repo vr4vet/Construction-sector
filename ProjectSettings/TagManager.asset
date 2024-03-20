@@ -15,6 +15,33 @@ TagManager:
   - VaporBarrier
   - Stair
   - Tile
+  - FootPiece
+  - LongBeamBottom
+  - CrossBeamBottom
+  - StandardBottom
+  - Bracing
+  - LongBeamTop
+  - CrossBeamTop
+  - Kickboard
+  - SteelDeck
+  - Railing
+  - LadderBeam
+  - StandardTop
+  - LadderStandard
+  - Ladder
+  - Hand
+  - MovableFootPiece
+  - RailingFront
+  - MovableCrossBeam
+  - MovableStandard
+  - MovableBracing
+  - MovableSteelDeck
+  - MovableLadderBeam
+  - MovableLadderStandard
+  - MovableLadder
+  - MovableRailing
+  - MovableKickboard
+  - MovableLongBeam
   layers:
   - Default
   - TransparentFX
@@ -30,21 +57,21 @@ TagManager:
   - Structure
   - Grab
   - GrabbableScenery
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FootPiece
+  - CrossBeamBottom
+  - LongBeamBottom
+  - StandardBottom
+  - CrossBeamTop
+  - LongBeamTop
+  - Bracing
+  - SteelDeck
+  - LadderBeam
+  - LadderStandard
+  - Ladder
+  - StandardTop
+  - Railing
+  - Kickboard
+  - RailingFront
   - 
   - 
   - 

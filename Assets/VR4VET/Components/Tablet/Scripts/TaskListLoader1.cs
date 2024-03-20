@@ -255,7 +255,7 @@ namespace Tablet
 
                 TMP_Text caption = item.transform.Find("txt_Desc").GetComponent<TMP_Text>();
                 GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
-                if (step.IsCompeleted()) checkmark.SetActive(true);
+                if (step.Compleated()) checkmark.SetActive(true);
 
                 TMP_Text reps = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
 

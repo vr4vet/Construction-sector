@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -14,7 +15,7 @@ public class ContentPageChanger : MonoBehaviour
     {
         get
         {
-            return (content.Count % entriesPerPage > 0 ? (int)(content.Count / entriesPerPage) + 1 : (int)content.Count / entriesPerPage);
+            return (int) Math.Ceiling((double) content.Count / entriesPerPage);
         }
     }
 

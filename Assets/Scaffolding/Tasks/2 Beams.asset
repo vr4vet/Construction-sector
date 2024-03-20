@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
-  m_Name: 1 BasePlates
+  m_Name: 2 Beams
   m_EditorClassIdentifier: 
-  _subtaskName: Plasser bunnskruer
-  _description: "Bunnskruene er delene av stillaset som har kontakt med bakken. Disse
-    kan lengdejusteres for \xE5 sikre at stillaset er i vater."
-  _autocompleate: 0
-  _stepList: []
+  _subtaskName: Fest nedre horisontale bjelker
+  _description: 
+  _autocompleate: 1
+  _stepList:
+  - {fileID: 11400000, guid: 866c91e7cbf18114c8d56bf811623319, type: 2}
+  - {fileID: 11400000, guid: 8b2a5754daf3dd742847d408d6fb7ce9, type: 2}

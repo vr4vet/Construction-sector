@@ -4,11 +4,12 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using Scaffolding;
 
 namespace Task
 {
     [CreateAssetMenu(fileName = "New Subtask", menuName = "Tasks/Subtask")]
-    public class Subtask : ScriptableObject
+    public class Subtask : ScriptableObject, ScaffoldingManager.ICompletable
     {
         [Header("General information")]
         [SerializeField] private string _subtaskName;
@@ -50,7 +51,7 @@ namespace Task
                 _compleated = true;
                 foreach (Step step in StepList)
                 {
-                    if (! step.IsCompeleted())
+                    if (! step.Compleated())
                     {
                         _compleated = false;
                         break;

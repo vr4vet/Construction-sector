@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
-  m_Name: 3 Verticals
+  m_Name: 1 FootPiece
   m_EditorClassIdentifier: 
-  _subtaskName: "Sett p\xE5 spirer"
-  _description: 
+  _subtaskName: Plasser bunnskruer
+  _description: "Bunnskruene er delene av stillaset som har kontakt med bakken. Disse
+    kan lengdejusteres for \xE5 sikre at stillaset er i vater."
   _autocompleate: 0
   _stepList: []
