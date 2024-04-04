@@ -4,12 +4,11 @@
 
 using System.Collections.Generic;
 using UnityEngine;
-using Scaffolding;
 
 namespace Task
 {
     [CreateAssetMenu(fileName = "New Subtask", menuName = "Tasks/Subtask")]
-    public class Subtask : ScriptableObject, ScaffoldingManager.ICompletable
+    public class Subtask : ScriptableObject, ICompletable
     {
         [Header("General information")]
         [SerializeField] private string _subtaskName;
@@ -64,6 +63,8 @@ namespace Task
         public void SetCompleated(bool isCompleated)
         {
             _compleated = isCompleated;
+            Tablet.TaskListLoader1 taskLoader = GameObject.FindObjectsOfType<Tablet.TaskListLoader1>()[0];
+            taskLoader.updateCheckMarks();
         }
 
         public float GeneralPercent()
@@ -79,6 +80,7 @@ namespace Task
         public void AddPoints(int value)
         {
             _points += value;
+            Tablet.TaskListLoader1.Ins.UpdateSkillPoints();
         }
 
         public Step GetStep(string stepname)

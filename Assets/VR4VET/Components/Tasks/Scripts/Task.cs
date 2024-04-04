@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Task
 {
     [CreateAssetMenu(fileName = "New Task", menuName = "Tasks/Task")]
-    public class Task : ScriptableObject
+    public class Task : ScriptableObject, ICompletable
     {
         [Header("General information")]
         [SerializeField] private string _taskName;
@@ -33,9 +33,11 @@ namespace Task
         public string TaskName { get => _taskName; set => _taskName = value; }
         public string Feedback { get => _feedback; set => _feedback = value; }
 
-        public void Compleated(bool value)
+        public void SetCompleated(bool value)
         {
             _compleated = value;
+            Tablet.TaskListLoader1 taskLoader = GameObject.FindObjectsOfType<Tablet.TaskListLoader1>()[0];
+            taskLoader.updateCheckMarks();
         }
 
         public bool Compleated()

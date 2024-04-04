@@ -38,6 +38,7 @@ namespace Task
 
         public Task GetTask(string taskName)
         {
+            // This method could be simplified to: return taskList.FindLast(task => task.TaskName == taskName);
             Task returnTask = null;
 
             foreach (Task task in taskList)
@@ -54,6 +55,7 @@ namespace Task
 
         public Skill GetSkill(string skillName)
         {
+            // This method could be simplified to: return skillList.FindLast(task => task.Name == skillname);
             Skill returnSkill = null;
 
             foreach (Skill task in skillList)
@@ -75,5 +77,11 @@ namespace Task
     {
         public Subtask subtask;
         public GameObject target;
+    }
+
+    public interface ICompletable
+    {
+        bool Compleated();
+        void SetCompleated(bool isCompleated);
     }
 }

@@ -5,11 +5,23 @@ using System;
 
 #nullable enable
 
+/**
+ * TODO
+ * 
+ * Make it possible to teleport to the top of the scaffold
+ * Make the ladder impossible to climb before it has been mounted
+ * Adjust the height of the scaffold to make it look like the picture and easier to build
+ * Fix the task tablet. It currently does not update with tasks properly
+ * Try to make the OUTLINED FixedParts without colliders so they feel like they are not present when placing parts
+ * Show a message or something when the scaffold is complete
+ */
 namespace Scaffolding
 {
     public class ScaffoldingManager : MonoBehaviour
     {
+        #pragma warning disable CS8618
         private TaskManager _taskManager;
+        #pragma warning restore CS8618
 
         // Start is called before the first frame update
         void Start()
@@ -19,18 +31,17 @@ namespace Scaffolding
             _taskManager.CreateBuildTask("FootPiece", "MovableFootPiece", "Plasser bunnskruer");
             _taskManager.CreateBuildTask("LongBeamBottom", "MovableLongBeam", "Fest nedre horisontale bjelker", "Fest lengdebjelker");
             _taskManager.CreateBuildTask("CrossBeamBottom", "MovableCrossBeam", "Fest nedre horisontale bjelker", "Fest tverrbjelker");
-            _taskManager.CreateBuildTask("StandardBottom", "MovableStandard", "Sett p� bunnspirer");
-            _taskManager.CreateBuildTask("LongBeamTop", "MovableLongBeam", "Fest �vre horisontale bjelker", "Fest lengdebjelker");
-            _taskManager.CreateBuildTask("CrossBeamTop", "MovableCrossBeam", "Fest �vre horisontale bjelker", "Fest tverrbjelker");
+            _taskManager.CreateBuildTask("StandardBottom", "MovableStandard", "Sett på bunnspirer");
+            _taskManager.CreateBuildTask("LongBeamTop", "MovableLongBeam", "Fest øvre horisontale bjelker", "Fest lengdebjelker");
+            _taskManager.CreateBuildTask("CrossBeamTop", "MovableCrossBeam", "Fest øvre horisontale bjelker", "Fest tverrbjelker");
             _taskManager.CreateBuildTask("Bracing", "MovableBracing", "Fest diagonalstag");
-            _taskManager.CreateBuildTask("SteelDeck", "MovableSteelDeck", "Mont�r innplanking");
-            _taskManager.CreateBuildTask("LadderBeam", "MovableLadderBeam", "Mont�r stige", "Fest stigebjelke");
-            _taskManager.CreateBuildTask("LadderStandard", "MovableLadderStandard", "Mont�r stige", "Fest stigespire");
-            _taskManager.CreateBuildTask("Ladder", "MovableLadder", "Mont�r stige", "Fest stige");
-            _taskManager.CreateBuildTask("StandardTop", "MovableStandard", "Sett p� toppspirer");
-            _taskManager.CreateBuildTask("Railing", "MovableRailing", "Mont�r rekkverk");
-            _taskManager.CreateBuildTask("Kickboard", "MovableKickboard", "Mont�r sparkebrett");
-            _taskManager.CreateBuildTask("RailingFront", "MovableRailing", "Mont�r framre rekkverk");
+            _taskManager.CreateBuildTask("SteelDeck", "MovableSteelDeck", "Monter innplanking");
+            _taskManager.CreateBuildTask("LadderBeam", "MovableLadderBeam", "Monter stige", "Fest stigebjelke");
+            _taskManager.CreateBuildTask("LadderStandard", "MovableLadderStandard", "Monter stige", "Fest stigespire");
+            _taskManager.CreateBuildTask("StandardTop", "MovableStandard", "Sett på toppspirer");
+            _taskManager.CreateBuildTask("Railing", "MovableRailing", "Monter rekkverk");
+            _taskManager.CreateBuildTask("Kickboard", "MovableKickboard", "Monter sparkebrett");
+            _taskManager.CreateBuildTask("RailingFront", "MovableRailing", "Monter framre rekkverk");
             Debug.Log($"Successfully created {_taskManager.count} tasks");
             _taskManager.ActivateFirstTask();
             Debug.Log($"Successfully activated {_taskManager.currentTask.name}");
@@ -39,7 +50,10 @@ namespace Scaffolding
         // Update is called once per frame
         void Update()
         {
-            _taskManager.currentTask.AttemptToCompleteAndActivateNext(_taskManager.GetNextTask());
+            if (_taskManager.currentTask != null)
+            {
+                _taskManager.currentTask.AttemptToCompleteAndActivateNext(_taskManager.GetNextTask());
+            }
         }
 
         [System.Serializable]
@@ -65,7 +79,7 @@ namespace Scaffolding
                 {
                     return _buildTasks[nextIndex];
                 }
-                catch (IndexOutOfRangeException)
+                catch (ArgumentOutOfRangeException)
                 {
                     return null;
                 }
@@ -108,12 +122,6 @@ namespace Scaffolding
                     Debug.Log("Failed to activate first task");
                 }
             }
-        }
-
-        public interface ICompletable
-        {
-            bool Compleated();
-            void SetCompleated(bool isCompleated);
         }
 
         [System.Serializable]
@@ -216,11 +224,18 @@ namespace Scaffolding
             private GameObject _gameObject;
             private BlinkingEffect? _blinkingEffect;
             private State _state;
+            private GameObject? _ladder;
 
             public FixedPart(GameObject gameObject)
             {
                 _gameObject = gameObject;
                 SetState(State.INVISIBLE);
+
+                if (gameObject.tag == "LadderStandard")
+                {
+                    _ladder = GameObject.FindGameObjectWithTag("Ladder");
+                    _ladder.SetActive(false);
+                }
             }
 
             public GameObject gameObject { get => _gameObject; }
@@ -239,17 +254,26 @@ namespace Scaffolding
                         _gameObject.SetActive(false);
                         break;
                     case State.OUTLINED:
+                        var collider = _gameObject.GetComponent<Collider>();
+                        if (collider is MeshCollider)
+                        {
+                            ((MeshCollider)collider).convex = true;
+                        }
+                        _gameObject.GetComponent<Collider>().isTrigger = true;
                         _gameObject.SetActive(true);
                         _blinkingEffect = _gameObject.AddComponent<BlinkingEffect>();
                         break;
                     case State.VISIBLE:
                         _gameObject.SetActive(true);
-                        
+                        if (_ladder != null)
+                        {
+                            _ladder.SetActive(true);
+                        }
                         if (_blinkingEffect != null)
                         {
                             _blinkingEffect.enabled = false;
                         }
-
+                        _gameObject.GetComponent<Collider>().isTrigger = false;
                         break;
                 }
 

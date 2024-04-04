@@ -73,12 +73,51 @@ namespace Tablet
         [SerializeField] private UnityEvent _taskPageOpen;
         [SerializeField] private UnityEvent _subtaskPageOpen;
 
+        private List<GameObject> _skillsClones = new List<GameObject>();
+
+        private Task.Task currentTask;
+        private Task.Subtask currentSubtask;
+
+        public static TaskListLoader1 Ins;
+        private void Awake()
+        {
+            if(Ins == null)
+            {
+                Ins = this;
+            }else
+            {
+                Destroy(this);
+            }
+
+        }
         private void Start()
         {
             //setting loading the scriptable objects
             Task.TaskHolder th = GameObject.FindObjectsOfType<Task.TaskHolder>()[0];
             _tasks = th.taskList;
             _skills = th.skillList;
+
+            if (_tasks != null)
+            {
+                foreach (Task.Task task in _tasks)
+                {
+                    if (task.Subtasks != null)
+                    {
+                        foreach (Task.Subtask subtask in task.Subtasks)
+                        {
+                            if (subtask.StepList != null)
+                            {
+                                foreach (Task.Step step in subtask.StepList)
+                                {
+                                    step.SetCompleated(false);
+                                }
+                            }
+                            subtask.SetCompleated(false);
+                        }
+                    }
+                    task.SetCompleated(false);
+                }
+            }
 
             panelManager = this.gameObject.GetComponent<StaticPanelManager>();
             //load info in the tablet
@@ -94,6 +133,14 @@ namespace Tablet
             LoadSkillsPage();
         }
 
+        public void UpdateSkillPoints()
+        {
+            for (int i = 0; i < _skills.Count; i++)
+            {
+                _skillsClones[i].GetComponentInChildren<TMP_Text>().text =
+                  _skills[i].GetArchivedPoints() + "/" + _skills[i].MaxPossiblePoints;
+            }
+        }
         public void LoadSkillsPage()
         {
             //loads each skill on the parent object
@@ -106,11 +153,14 @@ namespace Tablet
                 item.transform.localPosition = Vector3.zero;
                 item.transform.localScale = Vector3.one;
                 item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                _skillsClones.Add(item);
 
                 // we find the button first and then its text component
                 Button button = item.transform.Find("btn_SubTask").GetComponent<Button>();
                 TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>(true);
                 buttonText.text = skill.Name;
+                item.GetComponentInChildren<TMP_Text>().text = 
+                    skill.GetArchivedPoints() + "/" + skill.MaxPossiblePoints;
 
                 button.onClick.AddListener(() => SkillPageLoader(skill));
             }
@@ -188,10 +238,30 @@ namespace Tablet
             taskContent.GetComponent<ContentPageChanger>().Refresh();
         }
 
+        public void UpdateTaskPage()
+        {
+            Task.TaskHolder th = GameObject.FindObjectsOfType<Task.TaskHolder>()[0];
+
+            // Get the Transform component of the taskContent GameObject
+            Transform taskContentTransform = taskContent.transform;
+
+            // Loop through each child of taskContent
+            foreach (Transform child in taskContentTransform)
+            {
+                TMP_Text caption = child.Find("txt_TaskNr").GetComponent<TMP_Text>();
+                string taskName = caption.text;
+                Task.Task task = th.GetTask(taskName);
+                GameObject checkmark = child.Find("img_Checkmark").gameObject;
+                if (task.Compleated()) checkmark.SetActive(true);
+            }
+        }
+
         public void TaskPageLoader(Task.Task task)
         {
+            Debug.Log("Task page loading");
+            currentTask = task;
             //for extra events
-            if (_taskPageOpen != null) _taskPageOpen.Invoke();
+            if (_taskPageOpen != null) _taskPageOpen.Invoke(); 
 
             panelManager.OnClickBackToAboutTask();
 
@@ -200,34 +270,57 @@ namespace Tablet
             _taskAboutTab.text = task.Description;
             _taskFeedback.text = task.Feedback;
 
-            //cleaning list before loading the new subtasks
-            foreach (Transform child in TaskSubtaskContent.transform)
-            {
-                GameObject.Destroy(child.gameObject);
-            }
-
-            foreach (Task.Subtask sub in task.Subtasks)
-            {
-                //task for the list
-                GameObject item = Instantiate(_subtaskListEntry, Vector3.zero, Quaternion.identity);
-                item.transform.SetParent(TaskSubtaskContent.transform);
-                item.transform.localPosition = Vector3.zero;
-                item.transform.localScale = Vector3.one;
-                item.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
-                TMP_Text caption = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
-                // GameObject points = item.transform.Find("PointText").gameObject; points for later
-                caption.text = sub.SubtaskName;
-
-                Button button = item.transform.Find("btn_SubTask").GetComponent<Button>();
-                GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
-                if (sub.Compleated()) checkmark.SetActive(true);
-                button.onClick.AddListener(() => SubTaskPageLoader(sub));
-            }
+            // Start a coroutine to wait for the child GameObjects to be destroyed
+            StartCoroutine(WaitForChildrenDestroyed(task));
         }
+
+        IEnumerator WaitForChildrenDestroyed(Task.Task task)
+        {
+            //cleaning list before loading the new subtasks
+            foreach(Transform child in TaskSubtaskContent.transform) {
+                Destroy(child.gameObject);
+            }
+
+            // Wait until there are no more child GameObjects
+            while (TaskSubtaskContent.transform.childCount > 0)
+            {
+                yield return null; // Wait for the next frame
+            }
+
+            if (task.Subtasks != null)
+            {
+                // Create a list to store gameobjects from the subtasks list items
+                List<GameObject> childObjects = new List<GameObject>();
+
+                foreach (Task.Subtask sub in task.Subtasks)
+                {
+                    //task for the list
+                    GameObject item = Instantiate(_subtaskListEntry, Vector3.zero, Quaternion.identity);
+                    item.transform.SetParent(TaskSubtaskContent.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    item.transform.localScale = Vector3.one;
+                    item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+                    TMP_Text caption = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
+                    // GameObject points = item.transform.Find("PointText").gameObject; points for later
+                    caption.text = sub.SubtaskName;
+
+                    Button button = item.transform.Find("btn_SubTask").GetComponent<Button>();
+                    GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
+                    if (sub.Compleated()) checkmark.SetActive(true);
+                    button.onClick.AddListener(() => SubTaskPageLoader(sub));
+                    childObjects.Add(item);
+                }
+            }
+
+            // Load the new subtask list
+            TaskSubtaskContent.GetComponent<ContentPageChanger>().Refresh();
+        }
+
 
         public void SubTaskPageLoader(Task.Subtask subtask)
         {
+            currentSubtask = subtask;
             if (_subtaskPageOpen != null) _subtaskPageOpen.Invoke();
 
             //hide previos pagee
@@ -239,28 +332,111 @@ namespace Tablet
             _subtaskNameTab.GetComponent<TMP_Text>().text = subtask.SubtaskName;
             _subtaskAboutTab.GetComponent<TMP_Text>().text = subtask.Description;
 
+            // Start a coroutine to wait for the child GameObjects to be destroyed
+            StartCoroutine(WaitForChildrenDestroyedSubtask(subtask));
+        }
+
+        IEnumerator WaitForChildrenDestroyedSubtask(Task.Subtask subtask)
+        {
+            //cleaning list before loading the new subtasks
+            foreach (Transform child in _subtaskContent.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            // Wait until there are no more child GameObjects
+            while (_subtaskContent.transform.childCount > 0)
+            {
+                yield return null; // Wait for the next frame
+            }
+
+            if (subtask.StepList != null)
+            {
+                foreach (Task.Step step in subtask.StepList)
+                {
+                    GameObject item = Instantiate(_stepListEntry, Vector3.zero, Quaternion.identity);
+                    item.transform.SetParent(_subtaskContent.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    item.transform.localScale = Vector3.one;
+                    item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+                    TMP_Text caption = item.transform.Find("txt_Desc").GetComponent<TMP_Text>();
+                    GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
+                    if (step.Compleated()) checkmark.SetActive(true);
+
+                    TMP_Text reps = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
+
+                    caption.text = step.StepName;
+                    reps.text = step.RepetionsCompleated + "/" + step.RepetionNumber;
+                }
+            }
+
+            // Load the new subtask list
+            _subtaskContent.GetComponent<ContentPageChanger>().Refresh();
+        }
+
+        public void updateCheckMarks()
+        {
+            if (currentTask == null)
+            {
+                return;
+            }
+            UpdateTaskPage();
+            //cleaning list before loading the new subtasks
+            foreach (Transform child in TaskSubtaskContent.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+            if (currentTask.Subtasks != null)
+            {
+                foreach (Task.Subtask sub in currentTask.Subtasks)
+                {
+                    //task for the list
+                    GameObject item = Instantiate(_subtaskListEntry, Vector3.zero, Quaternion.identity);
+                    item.transform.SetParent(TaskSubtaskContent.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    item.transform.localScale = Vector3.one;
+                    item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+                    TMP_Text caption = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
+                    // GameObject points = item.transform.Find("PointText").gameObject; points for later
+                    caption.text = sub.SubtaskName;
+
+                    Button button = item.transform.Find("btn_SubTask").GetComponent<Button>();
+                    GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
+                    if (sub.Compleated()) checkmark.SetActive(true);
+                    button.onClick.AddListener(() => SubTaskPageLoader(sub));
+                }
+            }
+
             //cleaning list before loading the new subtasks
             foreach (Transform child in _subtaskContent.transform)
             {
                 GameObject.Destroy(child.gameObject);
             }
-
-            foreach (Task.Step step in subtask.StepList)
+            if (currentSubtask == null)
             {
-                GameObject item = Instantiate(_stepListEntry, Vector3.zero, Quaternion.identity);
-                item.transform.SetParent(_subtaskContent.transform);
-                item.transform.localPosition = Vector3.zero;
-                item.transform.localScale = Vector3.one;
-                item.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                return;
+            }
+            if (currentSubtask.StepList != null)
+            {
+                foreach (Task.Step step in currentSubtask.StepList)
+                {
+                    GameObject item = Instantiate(_stepListEntry, Vector3.zero, Quaternion.identity);
+                    item.transform.SetParent(_subtaskContent.transform);
+                    item.transform.localPosition = Vector3.zero;
+                    item.transform.localScale = Vector3.one;
+                    item.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-                TMP_Text caption = item.transform.Find("txt_Desc").GetComponent<TMP_Text>();
-                GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
-                if (step.Compleated()) checkmark.SetActive(true);
+                    TMP_Text caption = item.transform.Find("txt_Desc").GetComponent<TMP_Text>();
+                    GameObject checkmark = item.transform.Find("img_Checkmark").gameObject;
+                    if (step.Compleated()) checkmark.SetActive(true);
 
-                TMP_Text reps = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
+                    TMP_Text reps = item.transform.Find("txt_SubTaskNr").GetComponent<TMP_Text>();
 
-                caption.text = step.StepName;
-                reps.text = step.RepetionsCompleated + "/" + step.RepetionNumber;
+                    caption.text = step.StepName;
+                    reps.text = step.RepetionsCompleated + "/" + step.RepetionNumber;
+                }
             }
         }
     }
