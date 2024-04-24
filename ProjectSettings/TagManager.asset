@@ -41,6 +41,7 @@ TagManager:
   - MovableKickboard
   - MovableLongBeam
   - Ladder
+  - FinishedMsg
   layers:
   - Default
   - TransparentFX

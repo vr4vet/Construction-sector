@@ -22,7 +22,7 @@ namespace Scaffolding
         #pragma warning disable CS8618
         private TaskManager _taskManager;
         #pragma warning restore CS8618
-
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -173,6 +173,7 @@ namespace Scaffolding
                             else
                             {
                                 Debug.Log("Congratulations! Scaffolding is complete.");
+                                GameObject.FindGameObjectWithTag("FinishedMsg").transform.GetChild(0).gameObject.SetActive(true);
                             }
 
                             return;
