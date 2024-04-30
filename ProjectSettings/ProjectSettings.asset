@@ -169,6 +169,8 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -283,8 +285,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/irtaz/OneDrive/Documents/GitHub/vr4vet_keystore.keystore
-  AndroidKeyaliasName: vr4vetc
+  AndroidKeystoreName: '{inproject}: user.keystore'
+  AndroidKeyaliasName: cgl-vr4vet
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

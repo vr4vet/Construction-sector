@@ -75,3 +75,11 @@ crashlytics-build.properties
 /[Aa]ssets/VR4VET/Scenes/MyScene.unity
 /[Aa]ssets/VR4VET/Scenes/MyScene.unity.meta
 Assets/Photon/PhotonVoice/PhotonVoiceLibs/x86_64/opus_egpv.dll
+Assets/AddressableAssetsData/AssetGroups/Localization-Asset-Tables-Dutch (nl).asset
+Assets/AddressableAssetsData/AssetGroups/Localization-Asset-Tables-English (en).asset
+Assets/AddressableAssetsData/AssetGroups/Localization-Asset-Tables-French (fr).asset
+Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset
+Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Dutch (nl).asset
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (en).asset
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-French (fr).asset
