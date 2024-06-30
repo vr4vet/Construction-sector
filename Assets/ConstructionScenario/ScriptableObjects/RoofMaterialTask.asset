@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde12d0a8b818546a8e6a31e7c4d19f, type: 3}
+  m_Name: RoofMaterialTask
+  m_EditorClassIdentifier: 
+  _taskName: 
+  _description: "- understanding the roof structure of a gable\r\nroof (Tile roof,
+    roof battens, underlayment,\r\nrafters)\r\n- learn that rafters are the foundation
+    of the\r\nroof\r\n- learn that underlayments ensure that the roof\nstructure
+    and the space below it are protected\r\nfrom weather influences\r\n- learn that
+    the roof battens\_allow adequate\r\nventilation of the roofing material\r\n-
+    Learn that roof tiles serve as a protective layer\r\nagainst external weather
+    influences\n-lay tiles on a roof truss model\r\n-place storm clips\r\n-attach
+    storm clips to tiles\r\n- learn that storm clips help prevent the roof\r\nfrom
+    lifting off during high winds or storms"
+  _autocompleate: 0
+  _subtasks: []
+  prerequisite: {fileID: 0}
+  target: {fileID: 0}

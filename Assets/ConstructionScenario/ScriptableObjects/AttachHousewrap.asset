@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694b8dd6ca4134b4d82fc6b2dc8d2848, type: 3}
+  m_Name: AttachHousewrap
+  m_EditorClassIdentifier: 
+  _subtaskName: Attach housewrap and housewrap tape
+  _description: '- Attach housewrap to the wooden frame wall
+
+    using a staple
+    gun
+
+    - Tape spots and cracks to close the housewrap
+
+    - understand that
+    the housewrap protects the
+
+    insulation material from moisture and wind'
+  _autocompleate: 0
+  _stepList: []
