@@ -31,7 +31,6 @@ public class T1S0Manager : MonoBehaviour
     IEnumerator finishedSubtask()
     {
 
-        ConstructionManager.Instance._narrator.Narrate("You picked the correct shoes! Good work!");
        yield return new WaitForSecondsRealtime(3f);
         ConstructionManager.Instance.HasFinishedSubtask(ConstructionManager.SubTaskEnum.ZERO);
 
@@ -54,6 +53,7 @@ public class T1S0Manager : MonoBehaviour
             Debug.Log("Correct shoe collided!");
             // Handle correct shoe collided, proceed to the next task
             StartCoroutine(finishedSubtask());
+            gameObject.SetActive(false);
         }
         else
         {
