@@ -46,8 +46,9 @@ public class StairScript : MonoBehaviour
     }
     public void OnTrigger(Collider other)
     {
-        
-           
+        if (other.tag == "Player")
+        {
             StartCoroutine(delayNextInteraction());
+        }
     }
 }

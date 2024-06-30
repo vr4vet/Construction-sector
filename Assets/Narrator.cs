@@ -12,8 +12,8 @@ public class Narrator : MonoBehaviour
 
     public void Narrate(string text)
     {
-        StopAllCoroutines();
-        StartCoroutine(narrate(text));
+        //StopAllCoroutines();
+        //StartCoroutine(narrate(text));
     }
 
     IEnumerator narrate(string text)

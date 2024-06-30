@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Task;
 using UnityEngine;
 
 public class ConstructionManager : MonoBehaviour
@@ -129,10 +130,49 @@ public class ConstructionManager : MonoBehaviour
         _narrator.Narrate("Turn around, go to the ladder and touch it, to go upstairs.");
     }
 
-    /// <summary>
-    /// finishes subtask. provide with the CURRENT subtask.
-    /// </summary>
-    /// <param name="stask"></param>
+
+    [Header("Tasks")]
+    public Task.Task T1, T2;
+
+    [Header("Subtasks")]
+    public Subtask T1_S0_protection_equipment, T1_S1, T1_S2, T1_S3, T1_S4, T2_S1, T2_S2;
+    void CompleteElement(SubTaskEnum which)
+    {
+
+
+        switch (which)
+        {
+            case SubTaskEnum.ZERO:
+                T1_S0_protection_equipment.SetCompleated(true);
+                break;
+            case SubTaskEnum.ONE:
+                T1_S1.SetCompleated(true);
+
+                break;
+            case SubTaskEnum.TWO:
+                T1_S1.SetCompleated(true);
+                break;
+            case SubTaskEnum.THREE:
+                T1_S1.SetCompleated(true);
+                break;
+            case SubTaskEnum.FOUR:
+                T1_S1.SetCompleated(true);
+                break;
+            case SubTaskEnum.FIVE:
+                T1_S1.SetCompleated(true);
+                break;
+            case SubTaskEnum.SIX:
+                T1_S1.SetCompleated(true);
+                break;
+            case SubTaskEnum.SEVEN:
+                T2_S2.SetCompleated(true);
+                T2.Compleated(true);
+                break;
+            default:
+                break;
+        }
+    }
+
 public void HasFinishedSubtask(SubTaskEnum stask)
     {
         foreach (var item in _temporarySubtaskObjects)
@@ -178,7 +218,7 @@ public void HasFinishedSubtask(SubTaskEnum stask)
                 break;
 
             case SubTaskEnum.SEVEN:
-                _narrator.Narrate("Congratulations! You've finished the entire game, as of 24 November.");
+                
                 break;
             default:
                 break;
