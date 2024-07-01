@@ -35,7 +35,6 @@ public class WoodFibreAdjustment : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.JoystickButton11) || Input.GetKeyDown(KeyCode.JoystickButton12)) && playerNear)
         {
           
-            finished = true;
             Finish();
         }
 
@@ -44,8 +43,9 @@ public class WoodFibreAdjustment : MonoBehaviour
     }
 
 
-    void Finish()
+   public  void Finish()
     {
+        finished = true;
         _grab.enabled = false;
         _text.SetActive(false);
         _textDone.SetActive(true);
