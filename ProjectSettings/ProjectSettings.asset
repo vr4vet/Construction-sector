@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: CGL
-  productName: 'VR4VET: Construction scenario'
+  productName: 'VR4VET: Construction Scenario'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -170,6 +170,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -4725437308299915138, guid: efc564812903f744da3d5ca8621eb950, type: 2}
+  - {fileID: 6944003072686510143, guid: 8dbb7755b900c4a4f88d3b3a572c20a9, type: 2}
+  - {fileID: 11400000, guid: eca02971ffee3a04d94e8c70ca441417, type: 2}
   - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
