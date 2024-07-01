@@ -47,67 +47,67 @@ public class ConstructionManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            _subtask = SubTaskEnum.ZERO;
-            SwitchElementVisibility(subtaskObjects[0]);
-			 _narrator.Narrate("Task 1, Subtask 0 - Safety equipment!<br>Pick up the correct protective equipment.");
-            CompleteElement(SubTaskEnum.START);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _subtask = SubTaskEnum.ONE;
-            SwitchElementVisibility(subtaskObjects[1]);
-			_narrator.Narrate("Task 1, Subtask 1 - Create a wooden frame wall \n Pick up a beam from the table and attach it to the corresponding spot at one of the green outlines.");
-            CompleteElement(SubTaskEnum.ZERO);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _subtask = SubTaskEnum.TWO;
-            SwitchElementVisibility(subtaskObjects[2]);
-			 _narrator.Narrate("Task 1, Subtask 2 - Attach the housewrap for the outer layer, then staple it. Tape the holes, if any.");
-            CompleteElement(SubTaskEnum.ONE);//always one less because we dont want the task to be completed...
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            _subtask = SubTaskEnum.THREE;
-            SwitchElementVisibility(subtaskObjects[3]);
-			 _narrator.Narrate("Task 1, Subtask 3 - Insert wood fiber insulation into the frame, then arrange it neatly into place.");
-            CompleteElement(SubTaskEnum.TWO);//always one less because we dont want the task to be completed...
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            _subtask = SubTaskEnum.FOUR;
-            SwitchElementVisibility(subtaskObjects[4]);
-			_narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
-            CompleteElement(SubTaskEnum.THREE);//always one less because we dont want the task to be completed...
+   //     if (Input.GetKeyDown(KeyCode.Alpha0))
+   //     {
+   //         _subtask = SubTaskEnum.ZERO;
+   //         SwitchElementVisibility(subtaskObjects[0]);
+			// _narrator.Narrate("Task 1, Subtask 0 - Safety equipment!<br>Pick up the correct protective equipment.");
+   //         CompleteElement(SubTaskEnum.START);
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha1))
+   //     {
+   //         _subtask = SubTaskEnum.ONE;
+   //         SwitchElementVisibility(subtaskObjects[1]);
+			//_narrator.Narrate("Task 1, Subtask 1 - Create a wooden frame wall \n Pick up a beam from the table and attach it to the corresponding spot at one of the green outlines.");
+   //         CompleteElement(SubTaskEnum.ZERO);
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha2))
+   //     {
+   //         _subtask = SubTaskEnum.TWO;
+   //         SwitchElementVisibility(subtaskObjects[2]);
+			// _narrator.Narrate("Task 1, Subtask 2 - Attach the housewrap for the outer layer, then staple it. Tape the holes, if any.");
+   //         CompleteElement(SubTaskEnum.ONE);//always one less because we dont want the task to be completed...
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha3))
+   //     {
+   //         _subtask = SubTaskEnum.THREE;
+   //         SwitchElementVisibility(subtaskObjects[3]);
+			// _narrator.Narrate("Task 1, Subtask 3 - Insert wood fiber insulation into the frame, then arrange it neatly into place.");
+   //         CompleteElement(SubTaskEnum.TWO);//always one less because we dont want the task to be completed...
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha4))
+   //     {
+   //         _subtask = SubTaskEnum.FOUR;
+   //         SwitchElementVisibility(subtaskObjects[4]);
+			//_narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
+   //         CompleteElement(SubTaskEnum.THREE);//always one less because we dont want the task to be completed...
 
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            _subtask = SubTaskEnum.FIVE;
-            SwitchElementVisibility(subtaskObjects[5]);
-			_narrator.Narrate("Task 2, Subtask 1 - Learn the layers of a roof, then fill out a short quiz.");
-            CompleteElement(SubTaskEnum.FOUR);//always one less because we dont want the task to be completed...
-        }
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha5))
+   //     {
+   //         _subtask = SubTaskEnum.FIVE;
+   //         SwitchElementVisibility(subtaskObjects[5]);
+			//_narrator.Narrate("Task 2, Subtask 1 - Learn the layers of a roof, then fill out a short quiz.");
+   //         CompleteElement(SubTaskEnum.FOUR);//always one less because we dont want the task to be completed...
+   //     }
 
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            _subtask = SubTaskEnum.SIX;
+   //     if (Input.GetKeyDown(KeyCode.Alpha6))
+   //     {
+   //         _subtask = SubTaskEnum.SIX;
 
-            SwitchElementVisibility(subtaskObjects[6]);
-			_narrator.Narrate("Task 2, Subtask 2 - Assemble the tiling of a roof.");
-            CompleteElement(SubTaskEnum.FIVE);//always one less because we dont want the task to be completed...
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            _subtask = SubTaskEnum.SEVEN;
+   //         SwitchElementVisibility(subtaskObjects[6]);
+			//_narrator.Narrate("Task 2, Subtask 2 - Assemble the tiling of a roof.");
+   //         CompleteElement(SubTaskEnum.FIVE);//always one less because we dont want the task to be completed...
+   //     }
+   //     if (Input.GetKeyDown(KeyCode.Alpha7))
+   //     {
+   //         _subtask = SubTaskEnum.SEVEN;
 
-            SwitchElementVisibility(subtaskObjects[6]);
+   //         SwitchElementVisibility(subtaskObjects[6]);
  
-            CompleteElement(SubTaskEnum.SIX);//always one less because we dont want the task to be completed...
+   //         CompleteElement(SubTaskEnum.SIX);//always one less because we dont want the task to be completed...
 
-        }
+   //     }
 
     }
 
@@ -246,7 +246,51 @@ public class ConstructionManager : MonoBehaviour
         }
     }
 
-public void HasFinishedSubtask(SubTaskEnum stask)
+
+    public void ChangeLevelDebug(int i)
+    {
+
+        switch (i)
+        {
+
+            case 0:
+                SwitchElementVisibility(subtaskObjects[0]);
+                CompleteElement(SubTaskEnum.START);
+                break;
+            case 1:
+                SwitchElementVisibility(subtaskObjects[1]);
+                CompleteElement(SubTaskEnum.ZERO);
+                break;
+            case 2:
+                SwitchElementVisibility(subtaskObjects[2]);
+                CompleteElement(SubTaskEnum.ONE);
+                break;
+            case 3:
+                SwitchElementVisibility(subtaskObjects[3]);
+                CompleteElement(SubTaskEnum.TWO);
+                break;
+            case 4:
+                SwitchElementVisibility(subtaskObjects[4]);
+                CompleteElement(SubTaskEnum.THREE);
+                break;
+            case 5:
+                SwitchElementVisibility(subtaskObjects[5]);
+                CompleteElement(SubTaskEnum.FOUR);
+                break;
+            case 6:
+                SwitchElementVisibility(subtaskObjects[6]);
+                CompleteElement(SubTaskEnum.FIVE);
+                break;
+
+            default:
+                break;
+        }
+
+        
+
+
+    }
+    public void HasFinishedSubtask(SubTaskEnum stask)
     {
         foreach (var item in _temporarySubtaskObjects)
         {
