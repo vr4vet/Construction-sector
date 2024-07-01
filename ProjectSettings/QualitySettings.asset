@@ -27,6 +27,7 @@ QualitySettings:
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
+    realtimeGICPUUsage: 25
     lodBias: 0.7
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -56,13 +57,14 @@ QualitySettings:
     shadowmaskMode: 0
     skinWeights: 2
     textureQuality: 0
-    anisotropicTextures: 0
+    anisotropicTextures: 1
     antiAliasing: 2
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
+    realtimeGICPUUsage: 25
     lodBias: 0.7
     maximumLODLevel: 0
     streamingMipmapsActive: 0
