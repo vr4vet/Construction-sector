@@ -28,11 +28,4 @@ public class WoodFiberPlayerDetector : MonoBehaviour
     }
 
 
-    public void Grabbed()
-    {
-
-
-        adj.Finish();
-
-    }
 }

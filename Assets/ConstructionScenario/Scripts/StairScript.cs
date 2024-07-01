@@ -1,34 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StairScript : MonoBehaviour
 {
-    [SerializeReference]GameObject bottomCoord, topCoord;
+    [SerializeReference] GameObject bottomCoord, topCoord;
     [SerializeReference] CharacterController _charControl;
     [SerializeReference] GameObject _Player;
     bool wentUp;
 
 
 
+
+
    
-    bool canInteract = true;
-    IEnumerator delayNextInteraction()
+
+    public void Initiate()
+    {
+        StartCoroutine(TeleportWithCooldown());
+    }
+  
+    bool cooldown;
+    IEnumerator TeleportWithCooldown()
     {
 
         yield return new WaitForEndOfFrame();
         Teleport();
 
 
-        canInteract = false;
-        yield return new WaitForSecondsRealtime(1f);
+        cooldown = false;
+        yield return new WaitForSecondsRealtime(2f);
 
-        canInteract = true;
+        cooldown = true;
+
     }
-   
 
-
-
+    
     void Teleport()
     {
         _charControl.enabled = false;
@@ -44,11 +50,5 @@ public class StairScript : MonoBehaviour
         wentUp = !wentUp;
         _charControl.enabled = true;
     }
-    public void OnTrigger(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            StartCoroutine(delayNextInteraction());
-        }
-    }
+
 }
