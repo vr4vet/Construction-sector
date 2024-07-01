@@ -27,6 +27,7 @@ public class ConstructionManager : MonoBehaviour
             }
         }
     }
+    
     private Narrator Narr;
     public Material placeableMat, unplaceableMat;
     public List<GameObject> _temporarySubtaskObjects = new();//to wipe when we switch subtask
