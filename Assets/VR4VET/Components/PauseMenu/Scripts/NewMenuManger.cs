@@ -165,7 +165,7 @@ public class NewMenuManger : MonoBehaviour
             {
                 Debug.Log(context);
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 LoadingWheel.fillAmount = 0f;
                 I = 1.6f;

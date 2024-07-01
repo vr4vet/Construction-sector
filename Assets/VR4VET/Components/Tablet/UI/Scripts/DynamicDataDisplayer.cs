@@ -61,7 +61,7 @@ public class DynamicDataDisplayer : MonoBehaviour
 
     void Start()
     {
-        ProcessDebugInput();
+       // ProcessDebugInput();
     }
 
     void Update()
@@ -78,7 +78,7 @@ public class DynamicDataDisplayer : MonoBehaviour
 
 
 
-        Debug.LogWarning("Added debug task.");
+        
 
         //we need tasks, subtasks, steps, skills.
 

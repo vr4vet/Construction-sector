@@ -47,10 +47,10 @@ public class ContentPageChanger : MonoBehaviour
 
     public void Refresh()
     {
-        Debug.Log("Refreshing content page: " + name);
+       // Debug.Log("Refreshing content page: " + name);
         currentPage = 1;
         content.Clear();
-        Debug.Log(content.Count);
+       // Debug.Log(content.Count);
         GetAllChildren();
         VieWCurrentPage();
     }
@@ -59,7 +59,7 @@ public class ContentPageChanger : MonoBehaviour
     {
         if (content.Contains(b))
         {
-            Debug.Log("Tried to add a child that was already in " + name + ". Child name: " + b.name);
+            //Debug.Log("Tried to add a child that was already in " + name + ". Child name: " + b.name);
             return;
             //throw new System.Exception(name +" - ContentPageChanger.AddChild() - Managed list already contains object =>" + b.name);
         }
@@ -72,7 +72,7 @@ public class ContentPageChanger : MonoBehaviour
         {
             // Get the i-th child transform
             Transform childTransform = transform.GetChild(i);
-            Debug.Log("Adding child " + childTransform.name + " to ContentPageChanger");
+            //Debug.Log("Adding child " + childTransform.name + " to ContentPageChanger");
             // Do something with the child transform
             AddChild(childTransform.gameObject);
         }
@@ -86,7 +86,7 @@ public class ContentPageChanger : MonoBehaviour
         }
         else currentPage = Mathf.Clamp(currentPage + 1, 1, pageCount);
 
-        Debug.Log("Current page: " + currentPage);
+        //Debug.Log("Current page: " + currentPage);
         VieWCurrentPage();
     }
     public void VieWCurrentPage()
@@ -96,16 +96,16 @@ public class ContentPageChanger : MonoBehaviour
             item.SetActive(false);
         }
 
-        Debug.Log("Content Count: " + content.Count);
+        //Debug.Log("Content Count: " + content.Count);
 
         List<GameObject> objectsToActivate = content.Skip((currentPage - 1) * entriesPerPage).Take(entriesPerPage).ToList();
 
-        Debug.Log("Objects to Activate Count: " + objectsToActivate.Count);
+        //Debug.Log("Objects to Activate Count: " + objectsToActivate.Count);
 
         foreach (var item in objectsToActivate)
         {
             item.SetActive(true);
-            Debug.Log(item);
+           // Debug.Log(item);
         }
 
         if (pageCount == 0)
