@@ -308,7 +308,7 @@ public class ConstructionManager : MonoBehaviour
                 _narrator.Narrate("Task 1, Subtask 0 - Safety equipment!<br>Pick up the correct protective equipment.");
                 break;
             case SubTaskEnum.ONE:
-                CompleteElement(SubTaskEnum.ZERO);//completes the last task
+                CompleteElement(SubTaskEnum.ZERO);//completes the previous task
 
                 SwitchElementVisibility(subtaskObjects[1]);
                 _narrator.Narrate("Task 1, Subtask 1 - Create a wooden frame wall \n Pick up a beam from the table and attach it to the corresponding spot at one of the green outlines.");
