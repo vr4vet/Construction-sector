@@ -177,8 +177,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 4b86fcd44acca364d97c5a6a11517ab2, type: 2}
-  - {fileID: 6944003072686510143, guid: 8dbb7755b900c4a4f88d3b3a572c20a9, type: 2}
-  - {fileID: 11400000, guid: eca02971ffee3a04d94e8c70ca441417, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -282,7 +280,7 @@ PlayerSettings:
   clonedFromGUID: faa1288a57094514db58bdfeeca64429
   templatePackageId: 
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  useCustomMainManifest: 1
+  useCustomMainManifest: 0
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
@@ -293,8 +291,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: alex_keystore.keystore'
-  AndroidKeyaliasName: test
+  AndroidKeystoreName: '{inproject}: TPM_KEYSTORE.keystore'
+  AndroidKeyaliasName: at
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
