@@ -123,6 +123,7 @@ public class ConstructionObjectSocket : MonoBehaviour
                     {
                         Destroy(other.gameObject);
                         FinishedBlock.SetActive(true);
+                        
                     }
                     
                     if (!needsExtraStep) //in case we need to do something else after placing the block before it can be considered completed (like in the case of Wood Fiber insulation.)
@@ -156,12 +157,19 @@ public class ConstructionObjectSocket : MonoBehaviour
             }
         }
     }
-
+    bool onceLock = false;
     public void Finished()
     {
+        if (onceLock)
+        {
+            return;
+        }
+        onceLock = true;
+        Debug.LogError("ARRANGED WOODFIBRE");
         isActuallyFinished = true;
         _state = blockState.placed;
-        Debug.Log("Finished a wood fibre socketing + adjustment."); //only one that uses this for now.
+
+        _rend.enabled = false;
         managerRef.InitiateCheck();
     }
     /// <summary>

@@ -43,10 +43,9 @@ public class ConstructionBlockManager : MonoBehaviour
             }
             item.RefreshVisibility();
         }
-        Debug.Log(s);
         if (complete && FinishesSubtaskWhenDone)
         {
-            Debug.LogWarning("We finished the subtask.");
+            Debug.LogError("We finished the subtask.");
             _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }
