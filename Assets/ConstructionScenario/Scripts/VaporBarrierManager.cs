@@ -166,7 +166,7 @@ public class VaporBarrierManager : MonoBehaviour
     {
         if (isDone)
         {
-            Debug.LogWarning("We finished the subtask.");
+            //Debug.LogWarning("We finished the subtask.");
             _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }

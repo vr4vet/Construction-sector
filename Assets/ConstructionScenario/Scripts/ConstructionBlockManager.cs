@@ -45,7 +45,7 @@ public class ConstructionBlockManager : MonoBehaviour
         }
         if (complete && FinishesSubtaskWhenDone)
         {
-            Debug.LogError("We finished the subtask.");
+            //Debug.LogError("We finished the subtask.");
             _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }
