@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class VaporBarrierSegment : MonoBehaviour
     [SerializeReference] List<VaporBarrierStapleSpot> staples = new();
     [SerializeReference] public VaporBarrierManager _manager;
     [SerializeReference] Renderer _rend;
+
     public int stapleAreaCount
     {
         get
@@ -46,7 +48,7 @@ public class VaporBarrierSegment : MonoBehaviour
     }
 
 
-    
+
 
     public bool isRolled
     {
@@ -124,12 +126,9 @@ public class VaporBarrierSegment : MonoBehaviour
             _manager.OnDrag(this);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public void Hit()
     {
-        if (other.gameObject.CompareTag("VaporBarrier") && !_rend.enabled) //when we drag the foil on the thing
-        {
-            TryAdvance();
-        }
+        TryAdvance();
     }
 
 }

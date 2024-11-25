@@ -203,7 +203,7 @@ public class ConstructionManager : MonoBehaviour
                 T1_S1.SetCompleated(true);
                 T1_S2.SetCompleated(true);
                 T1_S3.SetCompleated(true);
-                T1_S4.SetCompleated(false);
+                T1_S4.SetCompleated(true);
                 T2_S1.SetCompleated(false);
                 T2_S2.SetCompleated(false);
                 break;
@@ -325,14 +325,22 @@ public class ConstructionManager : MonoBehaviour
                 SwitchElementVisibility(subtaskObjects[3]);
                 _narrator.Narrate("Task 1, Subtask 3 - Insert wood fiber insulation into the frame, then arrange it neatly into place.");
                 break;
+
             case SubTaskEnum.FOUR:
                 CompleteElement(SubTaskEnum.THREE);
+                CompleteElement(SubTaskEnum.FOUR);
 
-                SwitchElementVisibility(subtaskObjects[4]);
-                _narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
+                SwitchElementVisibility(subtaskObjects[5]);
+                _narrator.Narrate("Task 2, Subtask 1 - Learn the layers of a roof, then fill out a short quiz.");
+                StartCoroutine(narrateT2S1());
+                //CompleteElement(SubTaskEnum.THREE);
+
+                //SwitchElementVisibility(subtaskObjects[4]);
+                //_narrator.Narrate("Task 1, Subtask 4 - Apply the vapor foil, stapling and taping it.");
                 break;
 
             case SubTaskEnum.FIVE:
+                CompleteElement(SubTaskEnum.THREE);
                 CompleteElement(SubTaskEnum.FOUR);
 
                 SwitchElementVisibility(subtaskObjects[5]);
