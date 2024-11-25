@@ -32,7 +32,7 @@ public class MoveOnTouch : MonoBehaviour
         {
             moving = true;
         }
-        collision.gameObject.SendMessage("Hit");
+       // collision.gameObject.SendMessage("Hit");
        
     }
 

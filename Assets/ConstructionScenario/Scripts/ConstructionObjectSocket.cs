@@ -165,7 +165,7 @@ public class ConstructionObjectSocket : MonoBehaviour
             return;
         }
         onceLock = true;
-        Debug.LogError("ARRANGED WOODFIBRE");
+        //Debug.LogError("ARRANGED WOODFIBRE");
         isActuallyFinished = true;
         _state = blockState.placed;
 
