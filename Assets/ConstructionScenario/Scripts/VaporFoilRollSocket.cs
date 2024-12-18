@@ -29,50 +29,50 @@ public class VaporFoilRollSocket : MonoBehaviour
 
 
     
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
 
-        if (other.CompareTag("Plank") && !placed)
-        {
-            //Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
-            Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
-            ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
+    //    if (other.CompareTag("Plank") && !placed)
+    //    {
+    //        //Debug.Log("Object with name " + other.gameObject.name + " entered the trigger of object " + gameObject.name);
+    //        Grabbable other_GRABBABLE = other.GetComponent<Grabbable>();
+    //        ConstructionObject other_CONSTRUCTIONOBJECT = other.GetComponent<ConstructionObject>();
 
-            if (other_CONSTRUCTIONOBJECT._ObjectType == ConstructionObjectType.vaporFoil)
-            {
-                ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
-                Destroy(other.gameObject);
-                foil_segments_parent.SetActive(true);
-                _manager.ActivateFoilDragging();
-            }
+    //        if (other_CONSTRUCTIONOBJECT._ObjectType == ConstructionObjectType.vaporFoil)
+    //        {
+    //            ClearInhandObject(other_CONSTRUCTIONOBJECT, other_GRABBABLE);
+    //            Destroy(other.gameObject);
+    //            foil_segments_parent.SetActive(true);
+    //            _manager.ActivateFoilDragging();
+    //        }
 
           
            
           
-        }
+    //    }
 
 
-        void ClearInhandObject(ConstructionObject cobj, Grabbable cobjGrabbable)
-        {
-            if (cobj._heldby != null)  //removes the item from player hand
-            {
-                cobj._heldby.heldObject = null; //clears previous holder
-                cobj._heldby = null;
-                _manager.ActivateFoilDragging();
-                return;
-            }
-            if (cobjGrabbable != null)
-            {
-                if (cobjGrabbable.BeingHeld)
-                {
-                    cobjGrabbable.DropItem(cobjGrabbable.GetPrimaryGrabber());
-                    cobjGrabbable.enabled = false;
-                }
+    //    void ClearInhandObject(ConstructionObject cobj, Grabbable cobjGrabbable)
+    //    {
+    //        if (cobj._heldby != null)  //removes the item from player hand
+    //        {
+    //            cobj._heldby.heldObject = null; //clears previous holder
+    //            cobj._heldby = null;
+    //            _manager.ActivateFoilDragging();
+    //            return;
+    //        }
+    //        if (cobjGrabbable != null)
+    //        {
+    //            if (cobjGrabbable.BeingHeld)
+    //            {
+    //                cobjGrabbable.DropItem(cobjGrabbable.GetPrimaryGrabber());
+    //                cobjGrabbable.enabled = false;
+    //            }
 
-            }
+    //        }
            
-        }
-    }
+    //    }
+    //}
 
 
 

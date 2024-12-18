@@ -7,49 +7,18 @@ public class VaporBarrierManager : MonoBehaviour
     [SerializeField] public ConstructionManager.SubTaskEnum RelatedSubTask;
 
     [SerializeField] public ConstructionManager _manager;
-    [SerializeField] public float _RollRadiusDecrementPerSegment = 0.1f;
+    [SerializeField] List<VaporBarrierSegment> segmentObjects = new();
 
-
-    [SerializeReference] public Rigidbody DraggableFoilObject; //we enable this when we put the foil on the frame 
-
-    public GameObject pos_Start, pos_End;
-    public float movementIncrement = 0.01f;
-    private float currentMovementStatus = 0;
+    int tapes = 0;
+    int tapesTarget;
 
     int segmentsTotal
     {
         get { return segmentObjects.Count; }
     }
-    int segmentsStapled
-    {
-        get
-        {
-            int b = 0; 
-            foreach (var item in segmentObjects)
-            {
-                if (item.isStapled && item.isRolled)
-                {
-                    b++;
-                }
-            }
-            return b;
-        }
-    }
-    int segmentsDone
-    {
-        get
-        {
-            int b = 0; foreach (var item in segmentObjects)
-            {
-                if (item.isStapled && item.isTaped && item.isRolled)
-                {
-                    b++;
-                }
-            }
-            return b;
-        }
-    }
-    int segmentsRolled
+
+
+   public int segmentsDone
     {
         get
         {
@@ -59,114 +28,61 @@ public class VaporBarrierManager : MonoBehaviour
                 {
                     b++;
                 }
-            }
-            return b;
-        }
-    }
-    int staplesTarget
-    {
-        get
-        {
-            int b = 0;
-            foreach (var item in segmentObjects)
-            {
-                b += item.stapleAreaCount;
+                else
+                {
+                    return b;
+                }
             }
             return b;
         }
     }
 
-
-    [SerializeField] List<VaporBarrierSegment> segmentObjects = new();
-
-    [SerializeField] List<VaporBarrierStapleSpot> stapleAreas = new();
-    int tapes = 0;
-    int tapesTarget;
-
-
-    bool canDrag
-    {
-        get
-        {
-            if (segmentsStapled >= segmentsRolled)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
     bool isDone
     {
         get
         {
-            if (segmentsDone >= segmentsTotal) //we need all the staples taped too.
-            {
-                return true;
-            }
-            return false;
+            Debug.Log($"Segments Done: {segmentsDone}/{segmentsTotal}");
+            return segmentsDone >= segmentsTotal;
         }
     }
 
-    bool isFlattening;
-    public void StartedFlattening()
-    {
-        isFlattening = true;
-    }
+    
 
-    public void StoppedFlattening()
-    {
-        isFlattening = false;
-    }
-
-    void ReduceRollSize()
-    {
-        DraggableFoilObject.transform.localScale = new Vector3(DraggableFoilObject.transform.localScale.x, DraggableFoilObject.transform.localScale.y, DraggableFoilObject.transform.localScale.z);
-    }
     void Update()
     {
-        if (isFlattening && DraggableFoilObject.gameObject.activeInHierarchy)
-        {
-
-            //if (!canDrag || segmentsStapled < segmentsRolled )
-            //{
-            //    return;
-            //}
-            if (DraggableFoilObject.transform.position.x <= 2.413)
-            {
-                Debug.LogWarning("PRESSED");
-                DraggableFoilObject.transform.position = new Vector3((DraggableFoilObject.transform.position.x + movementIncrement), DraggableFoilObject.transform.position.y, DraggableFoilObject.transform.position.z);
-            }
-
-        }
     }
 
     void Start()
     {
-        DraggableFoilObject.gameObject.SetActive(false);
-    }
-    public void OnDrag(VaporBarrierSegment segment)
-    {
-        //nothing happens here. 
-    }
-    public void OnStaple(VaporBarrierStapleSpot segment)
-    {
-        //nothing happens here. 
     }
 
-    public void OnTape(VaporBarrierStapleSpot segment)
+
+    public int? GetIndexOfSegment(VaporBarrierSegment segment)
     {
-        CheckIfDone();
+        try
+        {
+            int index = segmentObjects.IndexOf(segment);
+            if (index >= 0)
+            {
+                return index;
+            }
+            else
+            {
+                // Segment not found
+                return null;
+            }
+        }
+        catch (System.Exception)
+        {
+            return null;
+        }
     }
 
-    public void ActivateFoilDragging()
-    {
-        DraggableFoilObject.gameObject.SetActive(true);
-    }
+   
     public void CheckIfDone()
     {
         if (isDone)
         {
-            //Debug.LogWarning("We finished the subtask.");
             _manager.HasFinishedSubtask(RelatedSubTask);
         }
     }

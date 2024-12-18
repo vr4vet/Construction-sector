@@ -4,91 +4,46 @@ using UnityEngine;
 
 public class VaporBarrierSegment : MonoBehaviour
 {
-    [SerializeReference] List<VaporBarrierStapleSpot> staples = new();
     [SerializeReference] public VaporBarrierManager _manager;
     [SerializeReference] Renderer _rend;
 
-    public int stapleAreaCount
+    int? ourIndex;
+    void SetIndex()
     {
-        get
-        {
-            return staples.Count;
-        }
+
+
     }
-    public int stapleAreaStapledCount
-    {
-        get
-        {
-            int b = 0;
-            foreach (var item in staples)
-            {
-                if (item.Stapled)
-                {
-                    b++;
-                }
-            }
-            return b;
-        }
-    }
-
-    public int stapleAreaCompleteCount
-    {
-        get
-        {
-            int b = 0;
-            foreach (var item in staples)
-            {
-                if (item.Stapled && item.Taped)
-                {
-                    b++;
-                }
-            }
-            return b;
-        }
-    }
-
-
-
 
     public bool isRolled
     {
         get
         {
+            Debug.Log(gameObject.name + " is rolled: " + _rend.enabled.ToString());
             return _rend.enabled;
         }
     }
-
-    public bool isStapled
+    public bool isPrerequisiteRolled
     {
         get
         {
-            bool stapled = true;
-            foreach (var item in staples)
+            if (ourIndex == null)
             {
-                if (!item.Stapled)
+                ourIndex = _manager.GetIndexOfSegment(this);
+                Debug.Log("Our index is " + ourIndex.ToString());
+                if (ourIndex == null)
                 {
-                    stapled = false;
+                    Debug.LogError("Unregistered vapor foil segment  = " + gameObject.name);
                 }
             }
-            return stapled;
-        }
-    }
+            if (ourIndex <= _manager.segmentsDone)
+            {
+                return true;
+            }
+            return true;
 
-    public bool isTaped
-    {
-        get
-        {
-            bool taped = true;
-            foreach (var item in staples)
-            {
-                if (!item.Taped)
-                {
-                    taped = false;
-                }
-            }
-            return taped;
         }
     }
+   
 
 
 
@@ -102,33 +57,23 @@ public class VaporBarrierSegment : MonoBehaviour
         _rend.enabled = false;
     }
 
-    public bool _CanAdvance
-    {
-        get
-        {
-            if (stapleAreaStapledCount >= stapleAreaCount)
-            {
-                return true;
-            }
-            else return true;
-        }
-    }
-
     void TryAdvance()
     {
-        if (_CanAdvance && !_rend.enabled)
+        if (isPrerequisiteRolled && !_rend.enabled)
         {
             _rend.enabled = true;
-            foreach (var item in staples)
-            {
-                item.ShowStapleArea();
-            }
-            _manager.OnDrag(this);
+            _manager.CheckIfDone();
         }
     }
-    public void Hit()
+    private void OnTriggerEnter(Collider other)
     {
-        TryAdvance();
-    }
+
+        if ((other.tag == "VaporObject") && !isRolled)
+        
+            TryAdvance();
+        }
+
+
+
 
 }

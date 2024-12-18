@@ -16,6 +16,7 @@ TagManager:
   - Stair
   - Tile
   - Pusher
+  - VaporObject
   layers:
   - Default
   - TransparentFX
