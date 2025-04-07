@@ -24,7 +24,7 @@ public class ConstructionBlockManager : MonoBehaviour
     public void InitiateCheck()
     {
         bool complete = true;
-        Debug.Log("Initiating completion check for " + gameObject.name);
+       // Debug.Log("Initiating completion check for " + gameObject.name);
         string s = "checking the following blocks:\n";
 
         foreach (var item in blocks)
@@ -33,12 +33,12 @@ public class ConstructionBlockManager : MonoBehaviour
            
             if (item._complete || item.isActuallyFinished)
             {
-                s += item.gameObject.name + " was checked. it is complete \n";
+               // s += item.gameObject.name + " was checked. it is complete \n";
                 
             }
             else
             {
-                s += item.gameObject.name + " was checked. it is incomplete \n";
+               // s += item.gameObject.name + " was checked. it is incomplete \n";
                 complete = false;
             }
             item.RefreshVisibility();

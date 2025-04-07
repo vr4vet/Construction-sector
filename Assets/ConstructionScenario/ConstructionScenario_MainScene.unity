@@ -41793,7 +41793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &958776314
 Transform:
   m_ObjectHideFlags: 0
@@ -102078,13 +102078,20 @@ MonoBehaviour:
   placeableMat: {fileID: 2100000, guid: cc5b56dcb36384442836371662842910, type: 2}
   unplaceableMat: {fileID: 2100000, guid: f40293367d39d9e44b1d99b4f5e4e5ac, type: 2}
   _temporarySubtaskObjects: []
-  _subtask: 0
+  LAST_SUBTASK: 1
   S2_Prefab_WrapRipDecal: {fileID: 6250495235164979689, guid: ebd94852380669247b5c81dd439bd937,
     type: 3}
   S2_Prefab_Staple: {fileID: 7248994895189067167, guid: c755939297a6f854fa6c5fc9cbfd8305,
     type: 3}
   max_rips: 3
-  subtaskObjects: []
+  subtaskObjects:
+  - {fileID: 258707437}
+  - {fileID: 1966218928}
+  - {fileID: 2008931121}
+  - {fileID: 282853487}
+  - {fileID: 958776313}
+  - {fileID: 550591661}
+  - {fileID: 1926253412744764138}
   T1S0_VisibleElements: {fileID: 258707437}
   T1S1_VisibleElements: {fileID: 1966218928}
   T1S2_VisibleElements: {fileID: 2008931121}

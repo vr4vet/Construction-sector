@@ -33,7 +33,7 @@ public class StapleTracker : MonoBehaviour
 
         if (tears.Count < 1 && allStapled)
         {
-            Debug.LogWarning("Finished SubTask 2.");
+            Debug.LogWarning("Finished SubTask 2 - thermal foil attachment and stapling.");
             _manager.HasFinishedSubtask(ConstructionManager.SubTaskEnum.TWO);
         }
     }
